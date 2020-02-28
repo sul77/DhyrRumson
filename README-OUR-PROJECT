@@ -1,0 +1,12 @@
+We work in the www folder
+
+To start a server with our work write
+npm start www 4000
+in your terminal
+
+If you want to view the documentation for the framework
+we use when we program write
+npm start www 5000
+in your terminal
+
+You can the documentation and our project running at the same time - use several terminal windows/tabs i Visual Studio Code.
