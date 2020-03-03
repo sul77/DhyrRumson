@@ -5,7 +5,7 @@ class App extends Base {
       { label: 'Hem', route: '/' },
       { label: 'Till salu', route: '/till-salu' },
       { label: 'Sälja bostad', route: '/salja-bostad' },
-      { label: 'Våra maklare', route: '/vara-maklare' },
+      { label: 'Våra mäklare', route: '/vara-maklare' },
       { label: 'Kontakta oss', route: '/Kontakta-Oss' },
       { label: 'Om oss', route: '/Om-Oss' }
     ];
