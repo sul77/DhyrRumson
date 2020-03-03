@@ -6,6 +6,11 @@ class StartPage extends Base {
         <div class="col-12">
           <h1>Hem Sida</h1>
           <p>Detta är start sida.</p>
+
+<div class="col-12 text-center">
+<a class="btn btn-dark" href="/till-salu">Sök bostad</a>
+</div>
+
         </div>
       </div>
     `;
