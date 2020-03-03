@@ -11,7 +11,7 @@ class Footer extends Base {
         <div class="row">
           <div class="col text-center text light">
            <button type="button" class="btn btn-link" click="backToTop">  <!-- link-type button that calls for 'backToTop' function -->
-              [Back to Top]          <!-- '[Back To Top]' receives the button link
+              [Back to Top]          <!-- '[Back To Top]' receives the button link -->
            </button>                                                      <!-- button ends -->
           </div>
         </div> 
