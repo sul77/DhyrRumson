@@ -1,6 +1,7 @@
 class App extends Base {
 
-  mount() {
+  async mount() {
+    await this.sqlQueries();
     this.navBarLinks = [
       { label: 'Hem', route: '/' },
       { label: 'Till salu', route: '/till-salu' },
@@ -18,6 +19,12 @@ class App extends Base {
     this.TillSaluPage = new TillSaluPage();
     this.SaljaBostadPage = new SaljaBostadPage();
     this.VaraMaklarePage = new VaraMaklarePage();
+  }
+  async sqlQueries() {
+    // Which database to use
+    await sql(/*sql*/`
+      USE dhyrRumson
+    `);
   }
 
   render() {
