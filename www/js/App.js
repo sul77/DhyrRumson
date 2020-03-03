@@ -2,7 +2,11 @@ class App extends Base {
 
   mount() {
     this.navBarLinks = [
-      { label: 'Welcome', route: '/' },
+      { label: 'Hem', route: '/' },
+      { label: 'Till Salu', route: '/Om-Oss' },
+      { label: 'Salja bostad', route: '/Om-Oss' },
+      { label: 'Vra maklare', route: '/Om-Oss' },
+      { label: 'Kontakta oss', route: '/Om-Oss' },
       { label: 'Om oss', route: '/Om-Oss' }
     ];
     this.navBar = new NavBar({ links: this.navBarLinks });
@@ -14,7 +18,8 @@ class App extends Base {
 
   render() {
     return /*html*/`
-      <div base-title="Minimal: ">
+    
+      <div style="color:'white'" base-title="Minimal: ">
         <header>
           ${this.navBar}
         </header>
