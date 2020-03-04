@@ -6,6 +6,7 @@ class App extends Base {
       { label: 'Hem', route: '/' },
       { label: 'Till salu', route: '/till-salu' },
       { label: 'Sälja bostad', route: '/salja-bostad' },
+      { label: 'Nyproduktion', route: '/Ny-produktion' },
       { label: 'Våra mäklare', route: '/vara-maklare' },
       { label: 'Kontakta oss', route: '/Kontakta-Oss' },
       { label: 'Om oss', route: '/Om-Oss' }
@@ -19,6 +20,7 @@ class App extends Base {
     this.TillSaluPage = new TillSaluPage();
     this.SaljaBostadPage = new SaljaBostadPage();
     this.VaraMaklarePage = new VaraMaklarePage();
+    this.NyProduktionPage = new NyProduktionPage();
   }
   async sqlQueries() {
     // Which database to use
@@ -42,6 +44,7 @@ class App extends Base {
           ${this.TillSaluPage}
           ${this.SaljaBostadPage}
           ${this.VaraMaklarePage}
+          ${this.NyProduktionPage}
 
         </main>
         ${this.footer}
