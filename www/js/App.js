@@ -19,7 +19,7 @@ class App extends Base {
     this.OmOssPage = new OmOssPage();
     this.KontaktaOssPage = new KontaktaOssPage();
     this.missingPage = new MissingPage();
-    this.SokaBostadPage = new SokBostadPage();
+    this.SokBostadPage = new SokBostadPage();
     this.SaljaBostadPage = new SaljaBostadPage();
     this.VaraMaklarePage = new VaraMaklarePage();
     this.NyProduktionPage = new NyProduktionPage();
