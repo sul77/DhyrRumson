@@ -5,11 +5,13 @@ class App extends Base {
     this.navBarLinks = [
       { label: 'Hem', route: '/' },
       { label: 'Sök bostad', route: '/sok-bostad' },
+      { label: 'Köpa bostad', route: '/kopa-bostad' },
       { label: 'Sälja bostad', route: '/salja-bostad' },
       { label: 'Nyproduktion', route: '/Ny-produktion' },
       { label: 'Våra mäklare', route: '/vara-maklare' },
       { label: 'Kontakta oss', route: '/Kontakta-Oss' },
       { label: 'Om oss', route: '/Om-Oss' }
+
     ];
     this.navBar = new NavBar({ links: this.navBarLinks });
     this.footer = new Footer();
@@ -21,6 +23,7 @@ class App extends Base {
     this.SaljaBostadPage = new SaljaBostadPage();
     this.VaraMaklarePage = new VaraMaklarePage();
     this.NyProduktionPage = new NyProduktionPage();
+    this.KopaBostadPage = new KopaBostadPage();
   }
   async sqlQueries() {
     // Which database to use
@@ -45,8 +48,9 @@ class App extends Base {
           ${this.SaljaBostadPage}
           ${this.VaraMaklarePage}
           ${this.NyProduktionPage}
-
+          ${this.KopaBostadPage}
         </main>
+
         ${this.footer}
         ${this.shoppingCart}
       </div>

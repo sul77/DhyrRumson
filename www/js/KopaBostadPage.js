@@ -1,4 +1,4 @@
-class SaljaBostadPage extends Base {
+class KopaBostadPage extends Base {
 
   mount() {
       this.formFields = [
@@ -14,7 +14,7 @@ class SaljaBostadPage extends Base {
        delete this.saved;
           // Thank the customer and tell he will be contacted soon
           return /*html*/`
-            <div class="row" route="/salja-bostad" page-title="Sälja bostad">
+            <div class="row" route="/kopa-bostad" page-title="Köpa bostad">
               <div class="col-12">
                 <h1>Tack!</h1>
                 <p>Vi kommer att kontakta dig inom kort.</p>
@@ -25,12 +25,12 @@ class SaljaBostadPage extends Base {
         }
 
       return /*html*/`
-      <div class="row" route="/salja-bostad" page-title="Sälja bostad">
-       <img src="images/ExampleSaleHouse.jpg" height="290"  class="card-img-top" alt="...">
+      <div class="row" route="/kopa-bostad" page-title="Sälja bostad">
+       <img src="images/ExampleBuyHouse.jpg" height="290"  class="card-img-top" alt="...">
        <div class="col-12">
            <h3 class="mt-5 mb-3">Boka värdering av din bostad</h3>
            <p>Oavsett om du vill sälja nu, eller bara vill veta vad din bostad är värd, så hjälper vi dig gärna att värdera din bostad.</p>
-           <form class="row checkout-form" submit="saveSaleDetails">
+           <form class="row checkout-form" submit="saveDetails">
 
                   ${(this.formFields || []).map(field => /*html*/`
                   <div class="col-12">
@@ -63,12 +63,12 @@ class SaljaBostadPage extends Base {
 
   `; }
 
-  async saveSaleDetails(e) {
+  async saveDetails(e) {
          e.preventDefault();
          let data = this.collectFormData(e);
          await sql(/*sql*/`
                INSERT INTO Form (type, name, email, telephone, comment)
-               VALUES('sale', $name, $email, $phone, $comments);
+               VALUES('buy', $name, $email, $phone, $comments);
              `, data);
 
          this.saved = true
