@@ -12,16 +12,16 @@ class StartPageCarousel extends Base {
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div style="max-height:400px" class="item active">
-              <img style="width:100%; max-height:100%" src="../images/ExampleHouse1.jpg">
+            <div class="item active">
+              <img src="../images/ExampleHouse1.jpg">
             </div>
 
-            <div style="max-height:400px" class="item">
-              <img style="width:100%; max-height:100%" src="../images/ExampleHouse2.jpg" display="block">
+            <div class="item">
+              <img src="../images/ExampleHouse2.jpg" display="block">
             </div>
 
-            <div style="max-height:400px" class="item">
-              <img style="width:100%; max-height:100%" src="../images/ExampleHouse3.jpg">
+            <div class="item">
+              <img src="../images/ExampleHouse3.jpg">
             </div>
           </div>
 
