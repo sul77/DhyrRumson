@@ -14,7 +14,7 @@ class StartPage extends Base {
           <p>Detta är start sida.</p>
 
 <div class="col-12 text-center">
-<a class="btn btn-dark" href="/till-salu">Sök bostad</a>
+<a class="btn btn-dark btn-md sharp" href="/till-salu">Sök bostad</a>
 </div>
 
         </div>
