@@ -4,7 +4,7 @@ class App extends Base {
     await this.sqlQueries();
     this.navBarLinks = [
       { label: 'Hem', route: '/' },
-      { label: 'Till salu', route: '/till-salu' },
+      { label: 'Sök bostad', route: '/sok-bostad' },
       { label: 'Sälja bostad', route: '/salja-bostad' },
       { label: 'Nyproduktion', route: '/Ny-produktion' },
       { label: 'Våra mäklare', route: '/vara-maklare' },
@@ -17,7 +17,7 @@ class App extends Base {
     this.OmOssPage = new OmOssPage();
     this.KontaktaOssPage = new KontaktaOssPage();
     this.missingPage = new MissingPage();
-    this.TillSaluPage = new TillSaluPage();
+    this.SokaBostadPage = new SokBostadPage();
     this.SaljaBostadPage = new SaljaBostadPage();
     this.VaraMaklarePage = new VaraMaklarePage();
     this.NyProduktionPage = new NyProduktionPage();
@@ -41,7 +41,7 @@ class App extends Base {
           ${this.OmOssPage}
           ${this.KontaktaOssPage}
           ${this.missingPage}
-          ${this.TillSaluPage}
+          ${this.SokBostadPage}
           ${this.SaljaBostadPage}
           ${this.VaraMaklarePage}
           ${this.NyProduktionPage}
