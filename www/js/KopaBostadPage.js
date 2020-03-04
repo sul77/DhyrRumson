@@ -52,8 +52,8 @@ class KopaBostadPage extends Base {
 
 
               <div class="col-12 checkout-buttons">
-                <button type="submit" class="btn btn-primary float-md-right d-block d-md-inline mt-3">Skicka</button>
-                <button type="button" click="resetFields" class="btn btn-secondary float-md-right d-block d-md-inline mt-3 mr-md-3">Empty fields</button>
+                <button type="submit" class="btn btn-primary btn-md sharp float-md-right d-block d-md-inline mt-3">Skicka</button>
+                <button type="button" click="resetFields" class="btn btn-secondary btn-md sharp float-md-right d-block d-md-inline mt-3 mr-md-3">Empty fields</button>
                </div>
 
            </form>

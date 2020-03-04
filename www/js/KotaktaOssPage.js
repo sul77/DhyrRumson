@@ -42,7 +42,7 @@ class KontaktaOssPage extends Base {
               <p class="text-left">
                 Om ni är i behov av att komma i kontakt med en mäklare, så besöker du oss på
               </p>
-              <a href="/vara-maklare" class="btn btn-info" role="button">Våra mäklare</a>
+              <a href="/vara-maklare" class="btn btn-primary btn-md sharp" role="button">Våra mäklare</a>
               </button>
               
        </div>

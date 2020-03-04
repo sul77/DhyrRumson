@@ -4,6 +4,13 @@
 // Base styles
 //
 
+
+
+//Sharp buttons. use: 'btn-sm sharp', 'btn-md sharp', or 'btn-lg sharp' inside the class of a button
+.btn.sharp {
+  border-radius:0;
+}
+
 .btn {
   display: inline-block;
   font-family: $btn-font-family;
