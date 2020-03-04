@@ -29,7 +29,7 @@ class StartPage extends Base {
               <label style="display:block; text-align:left">E-post<span class="required" style="color:red">*</span></label>
               <input type="email" id="epost" style="width:100%; height:40px" required><br><br>
               <label style="display:block; text-align:left">Address<span class="required" style="color:red">*</span></label>
-              <input type="text" id="address" style="width:100%; height:40px" required><br><br>
+              <textarea rows="3" id="address" style="width:100%; height:40px" required></textarea><br><br>
               <input type="submit"  style="width:50%; height:40px" value="Submit">
             </form>
           </div>
