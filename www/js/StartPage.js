@@ -11,41 +11,42 @@ class StartPage extends Base {
         </div> 
 <div class="col-12">
 <div class="col-12 text-center">
-<a class="btn btn-dark btn-md sharp" href="/till-salu">Sök bostad</a>
+<a class="btn btn-dark btn-md sharp" href="/sok-bostad">Sök bostad</a>
 </div>
 
         </div>
-        <div class="card-group">
+<div class="card-group">
   <div class="card">
     <img class="card-img-top" src='../images/ExampleEstate1.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">FRILIGGANDE VILLA
 
-<p>Persön, Luleå</p></h5>
-       <p class="card-text">ADRESS:.........................................Månsgårdsvägen 7</p>
+      <p>Persön, Luleå</p></h5>
+      <p class="card-text">ADRESS:.........................................Månsgårdsvägen 7</p>
       <p class="card-text">UTGÅNGSPRIS:.........................................2 000 000 kr</p>
       <p class="card-text">BOAREA:........................................................50kvm</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
+
   <div class="card">
     <img class="card-img-top" src='../images/ExampleEstate2.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">BOSTADSRÄTTSLÄGENHET
 
-<p>Stallhagen, Västerås</p></h5>
+      <p>Stallhagen, Västerås</p></h5>
       <p class="card-text">ADRESS:.........................................Nanna Svartz Gata 5</p>
       <p class="card-text">UTGÅNGSPRIS:.........................................2 095 000 kr</p>
       <p class="card-text">BOAREA:........................................................70kvm</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
+  
   <div class="card">
     <img class="card-img-top" src='../images/ExampleEstate3.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">BOSTADSRÄTTSLÄGENHET
-
-<p>Sibbarp, Malmö</p></h5>
+       <p>Sibbarp, Malmö</p></h5>
        <p class="card-text">ADRESS:..................................Hammars Parkväg 28B</p>
       <p class="card-text">UTGÅNGSPRIS:.........................................3 195 000 kr</p>
       <p class="card-text">BOAREA:........................................................88kvm</p>
@@ -53,12 +54,10 @@ class StartPage extends Base {
     </div>
   </div>
 </div>
-<h2>Möt några av Sveriges bästa mäklare</h2>
-<main>
-           <div class="mb-4">
-             <h2> </h2>
-            </div>
-        </main> 
+
+<div class = "col-12">
+  <h2>Möt några av Sveriges bästa mäklare</h2>
+</div>
         
         <div style="background-color:#CDCDCD; padding-top:10px; padding-bottom:10px; width:40%; margin:auto">
           <div style="text-align:center; display:block">
