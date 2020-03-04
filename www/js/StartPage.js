@@ -6,7 +6,7 @@ class StartPage extends Base {
   render() {
     return /*html*/`
       <div class="row" route="/" page-title="Hem">
-        <div>
+        <div style="margin:auto">
         ${this.carousel}
         </div>
         <div class="col-12">
