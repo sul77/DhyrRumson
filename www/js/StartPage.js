@@ -19,18 +19,18 @@ class StartPage extends Base {
 
         </div>
          
-        <div style="background-color:#CDCDCD; padding-left:100px; padding-right:100px; padding-top:30px; padding-bottom:30px; margin:auto">
+        <div style="background-color:#CDCDCD; padding-top:30px; padding-bottom:30px; width:60%; margin:auto">
           <div style="text-align:center; display:block">
-            <form action="/action_page.php" style="display:inline-block">
+            <form action="/action_page.php" style="display:inline-block;width:50%">
               <label style="display:block; text-align:left">Namn<span class="required" style="color:red">*</span></label>
-              <input type="text" id="namn" required><br><br>
+              <input type="text" id="namn" style="width:100%; height:40px" required><br><br>
               <label style="display:block; text-align:left">Telefon<span class="required" style="color:red">*</span></label>
-              <input type="tel" id="fon" required><br><br>
+              <input type="tel" id="fon" style="width:100%; height:40px" required><br><br>
               <label style="display:block; text-align:left">E-post<span class="required" style="color:red">*</span></label>
-              <input type="email" id="epost" required><br><br>
+              <input type="email" id="epost" style="width:100%; height:40px" required><br><br>
               <label style="display:block; text-align:left">Address<span class="required" style="color:red">*</span></label>
-              <input type="text" id="address" required><br><br>
-              <input type="submit" value="Submit">
+              <input type="text" id="address" style="width:100%; height:40px" required><br><br>
+              <input type="submit"  style="width:50%; height:40px" value="Submit">
             </form>
           </div>
         </div>
