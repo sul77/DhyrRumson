@@ -1,15 +1,16 @@
 class NyProduktionPage extends Base {
 
+  mount() {
+    this.carousel = new Carousel();
+  }
+
   render() {
     return /*html*/`
-      <div class="row" route="/ny-produktion" page-title="Nyproduktion">
-        <main>
-           <div class="mb-3">
-             <h2> Våra Nyproduktion</h2>
-            </div>
-        </main> 
+      <div class="row" route="/Ny-produktion" page-title="Vi kan Nyproduktion">
+      <div class="col-12">   
+        ${this.carousel} 
       </div>
-      
+      </div>
     `;
   }
 

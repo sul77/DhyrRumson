@@ -1,6 +1,7 @@
 class App extends Base {
 
   async mount() {
+
     await this.sqlQueries();
     this.navBarLinks = [
       { label: 'Hem', route: '/' },
@@ -39,7 +40,7 @@ class App extends Base {
         <header>
           ${this.navBar}
         </header>
-        <main class="container my-4">
+        <main class="container">
           ${this.startPage}
           ${this.OmOssPage}
           ${this.KontaktaOssPage}
