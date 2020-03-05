@@ -13,6 +13,7 @@ class App extends Base {
       { label: 'Kontakta oss', route: '/Kontakta-Oss' },
       { label: 'Om oss', route: '/Om-Oss' }
 
+
     ];
     this.navBar = new NavBar({ links: this.navBarLinks });
     this.footer = new Footer();
@@ -50,6 +51,7 @@ class App extends Base {
           ${this.VaraMaklarePage}
           ${this.NyProduktionPage}
           ${this.KopaBostadPage}
+          
         </main>
 
         ${this.footer}
