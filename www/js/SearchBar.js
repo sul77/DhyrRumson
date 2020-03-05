@@ -24,21 +24,25 @@ class SearchBar extends Base {
   }
 
   async searchCity(e) {
-    if (['ArrowUp', 'ArrowDown'].includes(e.key)) { return; }
-    if (e.key === 'Enter' && this.selected >= 0) {
-      this.chosen = this.foundCities[this.selected].name;
-      this.foundCities = [];
-      this.selected = -1;
-      this.render();
-      return;
-    }
-    this.selected = 0;
-    this.foundCities = e.target.value.length < 1 ? [] : await sql(/*sql*/`
+    try {
+      if (['ArrowUp', 'ArrowDown'].includes(e.key)) { return; }
+      if (e.key === 'Enter' && this.selected >= 0) {
+        this.chosen = this.foundCities[this.selected].name;
+        this.foundCities = [];
+        this.selected = -1;
+        this.render();
+        return;
+      }
+      this.selected = 0;
+      this.foundCities = e.target.value.length < 1 ? [] : await sql(/*sql*/`
       SELECT name FROM cities WHERE name LIKE $name
     `, {
-      name: e.target.value + '%'
-    });
-    this.render();
+        name: e.target.value + '%'
+      });
+      this.render();
+    } catch (e) {
+      console.log(e.message)
+    }
   }
 
   render() {
