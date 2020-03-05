@@ -1,4 +1,4 @@
-class SearchBar extends Base {
+class Sokbar extends Base {
   mount() {
     this.foundCities = [];
     this.selected = -1;
