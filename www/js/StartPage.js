@@ -11,8 +11,7 @@ class StartPage extends Base {
         </div> 
 <div class="col-12">
 <div class="col-12 text-center">
-<a class="btn btn-dark btn-md sharp" href="/sok-bostad">Sök bostad</a>
-</div>
+
 
         </div>
 <div class="card-group">
@@ -56,7 +55,14 @@ class StartPage extends Base {
 </div>
 
 <div class = "col-12">
-  <h2>Möt några av Sveriges bästa mäklare</h2>
+ <h2 class="text-center">Möt några av Svergies bästa mäklare</h2>
+                   <p class="text-center">
+                   DhyrRumson är en av Sveriges snabbast växande mäklarföretag idag.
+                   Sedan början på 2020, har vi växt och spridit vårat nystartade privatföretag
+                   över nästan hela Sverige med inga tecken på att stoppa. I dagsläget befinner sig
+                   våran verksamhet bara i Sverige, men vi har planer runt hörnet; att sprida våran verksamhet
+                   ut över hela Skandinavien och så småningom; Europa.
+                   </p>
 </div>
         
         <div style="background-color:#CDCDCD; padding-top:10px; padding-bottom:10px; width:40%; margin:auto">
