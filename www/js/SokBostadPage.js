@@ -1,6 +1,6 @@
 class SokBostadPage extends Base {
   mount() {
-    this.searchBar = new SearchBar();
+    this.sokbar = new Sokbar();
   }
 
   render() {
@@ -8,7 +8,7 @@ class SokBostadPage extends Base {
       <div class="row" route="/sok-bostad" page-title="Sök bostad">
         <main>
            <div class="mb-3">
-              ${this.searchBar}
+              ${this.sokbar}
             </div>
         </main> 
       </div>
