@@ -5,7 +5,6 @@ class Carousel extends Base {
 
   }
 
-
   async getNewHousing() {
     this.housing = await sql(/*sql*/`
        SELECT Housing.id AS id, GROUP_CONCAT(HousingImages.url) AS imageUrls
@@ -21,13 +20,11 @@ class Carousel extends Base {
     }
 
     console.log(this.housing)
-
   }
 
   render() {
     return /*html*/`
     
-     
       <div id="nyProduktionCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -38,7 +35,7 @@ class Carousel extends Base {
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-
+         <!-- mappa bilderna  -->
           ${this.housing.map((house, index) => /*html*/`
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
                   <img class="img-fluid" src="${house.imageUrls[0]}" >

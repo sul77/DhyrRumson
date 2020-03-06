@@ -2,6 +2,8 @@ class NyProduktionPage extends Base {
 
   mount() {
     this.carousel = new Carousel();
+    this.nyBostad = new NyBostadPage();
+
 
   }
 
@@ -10,6 +12,7 @@ class NyProduktionPage extends Base {
       <div class="row" route="/Ny-produktion" page-title="Vi kan Nyproduktion">
       <div class="col-12">   
         ${this.carousel} 
+        ${this.nyBostad}
         
 
         <div class="row">
@@ -20,7 +23,7 @@ class NyProduktionPage extends Base {
 
         <p class="card-text">Vi kan ny produktion <br>
                              Här hittar du alla våra aktuella projekt.</p>
-        <a href="#" class="btn btn-primary">Läs mer </a>
+        <a href="/nya-bostader" class="btn btn-primary">Läs mer </a>
       </div>
     </div>
   </div>
