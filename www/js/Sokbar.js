@@ -35,12 +35,13 @@ class Sokbar extends Base {
       }
       this.selected = 0;
       this.foundCities = e.target.value.length < 1 ? [] : await sql(/*sql*/`
-      SELECT name FROM cities WHERE name LIKE $name
+      SELECT name FROM cities WHERE name LIKE $name 
     `, {
         name: e.target.value + '%'
       });
       this.render();
-    } catch (e) {
+    }
+    catch (e) {
       console.log(e.message)
     }
   }
@@ -54,7 +55,7 @@ class Sokbar extends Base {
             <div class="dropdown">
               <input class="form-control" type="text" placeholder="Ort" keyup="searchCity" keydown="selectWithUpDownArrows" autocomplete="off" autocorrect="off">
               ${this.foundCities.length < 1 ? '' : /*html*/`
-                <div class="dropdown-menu show w-1001 position-absolute">
+                <div class="dropdown-menu show w-100 position-absolute search-dropdown">
                   ${this.foundCities.map((city, index) => /*html*/`
                     <button click="clickCity" class="dropdown-item ${this.selected !== index ? '' : 'bg-primary text-light'}" type="button">${city.name}</button>
                   `)}

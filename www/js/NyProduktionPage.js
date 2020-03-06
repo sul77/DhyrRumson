@@ -3,6 +3,7 @@ class NyProduktionPage extends Base {
   mount() {
     this.carousel = new Carousel();
     this.nyBostad = new NyBostadPage();
+    this.byggHerre = new ByggHerrePage();
 
 
   }
@@ -13,6 +14,7 @@ class NyProduktionPage extends Base {
       <div class="col-12">   
         ${this.carousel} 
         ${this.nyBostad}
+        ${this.byggHerre}
         
 
         <div class="row">
@@ -33,7 +35,7 @@ class NyProduktionPage extends Base {
         <p class="font-weight-bold">  Bygger du bostad ? </p>
         <p class="card-text">Vår ambition är att våra mäklare ska inleda ett samarbete med byggherrarna i ett tydigt skede
                               för att skapa rätt föruttsättningar för varje projekt.</p>
-        <a href="#" class="btn btn-primary">Läs mer </a>
+        <a href="bygg-herre" class="btn btn-primary">Läs mer </a>
       </div>
     </div>
   </div>
