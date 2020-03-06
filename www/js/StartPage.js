@@ -33,10 +33,10 @@ class StartPage extends Base {
         <div style="margin:auto">
         ${this.carousel}
         </div> 
-      <div class="col-12">
+      <div class="col-12 mt-5">
       
 <div class="card-group">
-  <div class="card">
+  <div class="card mr-5">
     <img class="card-img-top" src='../images/ExampleEstate1.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">FRILIGGANDE VILLA
@@ -49,7 +49,7 @@ class StartPage extends Base {
     </div>
   </div>
 
-  <div class="card">
+  <div class="card mr-5">
     <img class="card-img-top" src='../images/ExampleEstate2.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">BOSTADSRÄTTSLÄGENHET
