@@ -6,11 +6,21 @@ class StartPage extends Base {
   render() {
     return /*html*/`
       <div class="row" route="/" page-title="Hem">
+      <div style="background: #000000; color: #FFF; opacity: 0.8; width: 100%; top: 0; left: 0; z-index: 1; height: 100px; position: fixed;" id="target">
+        <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
+          <p>Vi använder cookies för att ge dig en bättre upplevelse av webbplatsen och för vår marknadsföring. Genom att fortsätta använda vår webbplats accepterar du att cookies används.</p>
+          <button type="button" class="btn btn-success accept-cookie" onclick="$('#target').hide();">
+            Ok
+          </button>
+        </div>
+      </div>
+
+
         <div style="margin:auto">
         ${this.carousel}
         </div> 
-<div class="col-12">
-<div class="col-12 text-center">
+      <div class="col-12">
+      <div class="col-12 text-center">
 
 
         </div>
