@@ -2,6 +2,7 @@ class StartPage extends Base {
   async mount() {
     this.carousel = new StartPageCarousel();
     this.CheckIfCookiesAccepted();
+    this.f = new ContactForm({toSave:"meeting"});
   }
 
   CheckIfCookiesAccepted() {
@@ -10,7 +11,7 @@ class StartPage extends Base {
         $('#cookieInfoDiv').show();
       }
     }, 10);
-    this.f = new ContactForm({toSave:"meeting"});
+    
   }
 
   HideCookies() {
