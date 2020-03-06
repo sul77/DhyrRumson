@@ -1,17 +1,31 @@
 class StartPage extends Base {
   async mount() {
     this.carousel = new StartPageCarousel();
+    this.CheckIfCookiesAccepted();
+  }
+  
+  CheckIfCookiesAccepted() { 
+    setTimeout(function () {
+      if (!sessionStorage.cookiesAccepted == '1') { 
+        $('#cookieInfoDiv').show();
+      }
+    }, 10);
   }
 
+  HideCookies() {
+    sessionStorage.setItem('cookiesAccepted', '1');
+    $('#cookieInfoDiv').hide();
+  }
   render() {
+    this.CheckIfCookiesAccepted();
     return /*html*/`
+    
       <div class="row" route="/" page-title="Hem">
-      <div style="background: #000000; color: #FFF; opacity: 0.8; width: 100%; top: 0; left: 0; z-index: 1; height: 100px; position: fixed;" id="target">
+      
+      <div id="cookieInfoDiv" style="background: #000000; color: #FFF; opacity: 0.8; width: 100%; top: 0; left: 0; z-index: 1; height: 100px; position: fixed; display: none;">
         <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
           <p>Vi använder cookies för att ge dig en bättre upplevelse av webbplatsen och för vår marknadsföring. Genom att fortsätta använda vår webbplats accepterar du att cookies används.</p>
-          <button type="button" class="btn btn-success accept-cookie" onclick="$('#target').hide();">
-            Ok
-          </button>
+          <button type="button" class="btn btn-success accept-cookie" click="HideCookies"> Ok </button>
         </div>
       </div>
 
@@ -19,13 +33,10 @@ class StartPage extends Base {
         <div style="margin:auto">
         ${this.carousel}
         </div> 
-      <div class="col-12">
-      <div class="col-12 text-center">
-
-
-        </div>
+      <div class="col-12 mt-5">
+      
 <div class="card-group">
-  <div class="card">
+  <div class="card mr-5">
     <img class="card-img-top" src='../images/ExampleEstate1.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">FRILIGGANDE VILLA
@@ -38,7 +49,7 @@ class StartPage extends Base {
     </div>
   </div>
 
-  <div class="card">
+  <div class="card mr-5">
     <img class="card-img-top" src='../images/ExampleEstate2.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">BOSTADSRÄTTSLÄGENHET
@@ -93,5 +104,4 @@ class StartPage extends Base {
       </div>
     `;
   }
-
 }
