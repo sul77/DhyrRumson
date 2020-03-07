@@ -13,3 +13,20 @@
   max-height: 300px;
   overflow-y: scroll;
 }
+
+.center_content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack-top{   
+        position: absolute;
+        z-index: 9;
+        opacity: 0.9;
+        background-color: #F8F8FF;
+}
+    

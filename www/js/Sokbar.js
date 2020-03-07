@@ -49,11 +49,10 @@ class Sokbar extends Base {
   render() {
     return /*html*/`
       <div class="container">
-        <div class="row mt-5">
+        <div class="row mt-4">
           <div class="col-12">
-            <h1>Var vill du bo?</h1>
-            <div class="dropdown">
-              <input class="form-control" type="text" placeholder="Ort" keyup="searchCity" keydown="selectWithUpDownArrows" autocomplete="off" autocorrect="off">
+            <div class="dropdown"  style="background:#000000">
+              <input class="form-control" type="text" placeholder="Ort" keyup="searchCity" keydown="selectWithUpDownArrows" autocomplete="off" autocorrect="off" style="background:#F5F5F5">
               ${this.foundCities.length < 1 ? '' : /*html*/`
                 <div class="dropdown-menu show w-100 position-absolute search-dropdown">
                   ${this.foundCities.map((city, index) => /*html*/`
