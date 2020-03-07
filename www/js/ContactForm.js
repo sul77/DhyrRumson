@@ -11,7 +11,6 @@ class ContactForm extends Base {
     render() {
        if (this.saved) {
          delete this.saved;
-            // Thank the customer and tell he will be contacted soon
             return /*html*/`
                <div class="col-12">
                    <h1>Tack!</h1>
@@ -41,7 +40,6 @@ class ContactForm extends Base {
         e.preventDefault();
         let data = this.collectFormData(e);
         data["save"] = this.toSave;
-        console.log(data)
         await sql(/*sql*/`
               INSERT INTO Form (type, name, email, telephone, comment)
               VALUES($save, $name, $email, $phone, $comments);
