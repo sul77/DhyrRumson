@@ -21,7 +21,6 @@ class ContactForm extends Base {
           }
 
         return /*html*/`
-
              <form class=" checkout-form" submit="saveDetails">
                  ${(this.formFields || []).map(e => /*html*/`
                  <div class="input-group mb-3">
@@ -50,8 +49,7 @@ class ContactForm extends Base {
     }
 
     collectFormData(e) {
-       // Loop through the form and collect the input
-       let data = {}; // map
+       let data = {};
        for (let element of [...e.target.closest('form').elements]) {
          if (!element.name) { continue; }
          data[element.name] = element.value;
