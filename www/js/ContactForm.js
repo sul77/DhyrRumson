@@ -11,7 +11,6 @@ class ContactForm extends Base {
     render() {
        if (this.saved) {
          delete this.saved;
-            // Thank the customer and tell he will be contacted soon
             return /*html*/`
                <div class="col-12">
                    <h1>Tack!</h1>
@@ -22,7 +21,6 @@ class ContactForm extends Base {
           }
 
         return /*html*/`
-
              <form class=" checkout-form" submit="saveDetails">
                  ${(this.formFields || []).map(e => /*html*/`
                  <div class="input-group mb-3">
@@ -41,7 +39,6 @@ class ContactForm extends Base {
         e.preventDefault();
         let data = this.collectFormData(e);
         data["save"] = this.toSave;
-        console.log(data)
         await sql(/*sql*/`
               INSERT INTO Form (type, name, email, telephone, comment)
               VALUES($save, $name, $email, $phone, $comments);
@@ -52,8 +49,7 @@ class ContactForm extends Base {
     }
 
     collectFormData(e) {
-       // Loop through the form and collect the input
-       let data = {}; // map
+       let data = {};
        for (let element of [...e.target.closest('form').elements]) {
          if (!element.name) { continue; }
          data[element.name] = element.value;

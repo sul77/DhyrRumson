@@ -91,7 +91,7 @@ class StartPage extends Base {
                    våran verksamhet bara i Sverige, men vi har planer runt hörnet; att sprida våran verksamhet
                    ut över hela Skandinavien och så småningom; Europa.
                    </p>
-                    ${this.f}
+                   ${this.f}
 </div>
 
 
