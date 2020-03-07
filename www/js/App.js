@@ -27,6 +27,7 @@ class App extends Base {
     this.NyProduktionPage = new NyProduktionPage();
     this.KopaBostadPage = new KopaBostadPage();
     this.nyBostad = new NyBostadPage();
+    this.byggHerre = new ByggHerrePage();
   }
   async sqlQueries() {
     // Which database to use
@@ -53,6 +54,7 @@ class App extends Base {
           ${this.NyProduktionPage}
           ${this.KopaBostadPage}
           ${this.nyBostad}
+          ${this.byggHerre}
           
         </main>
 
