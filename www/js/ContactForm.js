@@ -21,7 +21,7 @@ class ContactForm extends Base {
           }
 
         return /*html*/`
-             <form class=" checkout-form" submit="saveDetails">
+             <form class="checkout-form" submit="saveDetails">
                  ${(this.formFields || []).map(e => /*html*/`
                  <div class="input-group mb-3">
 
@@ -29,8 +29,11 @@ class ContactForm extends Base {
                      <input name="${e.key}" type="${e.type}" class="form-control" placeholder="${e.placeholder}" value="">
 
                  </div>`)}
-                 <button type="submit" class="btn btn-primary btn-md sharp float-md-right d-block d-md-inline mt-3">Skicka</button>
-                 <button type="button" click="resetFields" class="btn btn-secondary btn-md sharp float-md-right d-block d-md-inline mt-3 mr-md-3">Empty fields</button>
+
+                 <div style="margin: auto;text-align: center">
+                     <button type="submit" class="btn btn-primary btn-md sharp float-md-none  d-md-inline mt-3">Skicka</button>
+                     <button type="button" click="resetFields" class="btn btn-secondary btn-md sharp float-md-none  d-md-inline mt-3 mr-md-3">Empty fields</button>
+                 </div>
              </form>
 
     `; }
