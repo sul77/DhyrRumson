@@ -11,9 +11,8 @@ class App extends Base {
       { label: 'Nyproduktion', route: '/Ny-produktion' },
       { label: 'Våra mäklare', route: '/vara-maklare' },
       { label: 'Kontakta oss', route: '/Kontakta-Oss' },
+      { label: 'Planskiss',    route: '/Planskiss'},
       { label: 'Om oss', route: '/Om-Oss' }
-
-
     ];
     this.navBar = new NavBar({ links: this.navBarLinks });
     this.footer = new Footer();
@@ -27,17 +26,19 @@ class App extends Base {
     this.NyProduktionPage = new NyProduktionPage();
     this.KopaBostadPage = new KopaBostadPage();
     this.nyBostad = new NyBostadPage();
+    this.byggHerre = new ByggHerrePage();
+    this.Planskiss = new Planskiss();
   }
   async sqlQueries() {
     // Which database to use
-    await sql(/*sql*/`
+      await sql( /*sql*/ `
       USE dhyrRumson
     `);
-  }
+    }
 
-  render() {
-    return /*html*/`
-    
+    render() {
+        return /*html*/ `
+
       <div style="color:'white'" base-title="Minimal: ">
         <header>
           ${this.navBar}
@@ -53,6 +54,8 @@ class App extends Base {
           ${this.NyProduktionPage}
           ${this.KopaBostadPage}
           ${this.nyBostad}
+          ${this.byggHerre}
+          ${this.Planskiss}
           
         </main>
 
@@ -60,6 +63,6 @@ class App extends Base {
         ${this.shoppingCart}
       </div>
     `;
-  }
+    }
 
 }

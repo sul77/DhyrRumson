@@ -1,8 +1,9 @@
 class StartPage extends Base {
   async mount() {
     this.carousel = new StartPageCarousel();
+    this.sokbar = new Sokbar();
     this.CheckIfCookiesAccepted();
-    this.f = new ContactForm({toSave:"meeting"});
+    this.f = new ContactForm({ toSave: "meeting" });
   }
 
   CheckIfCookiesAccepted() {
@@ -11,8 +12,7 @@ class StartPage extends Base {
         $('#cookieInfoDiv').show();
       }
     }, 10);
-    
-  }
+    }
 
   HideCookies() {
     sessionStorage.setItem('cookiesAccepted', '1');
@@ -30,11 +30,16 @@ class StartPage extends Base {
           <button type="button" class="btn btn-success accept-cookie" click="HideCookies"> Ok </button>
         </div>
       </div>
-
-
-        <div style="margin:auto">
-        ${this.carousel}
-        </div> 
+    <div>
+    
+    <div class="center_content" style="margin:auto">
+      ${this.carousel}
+      <div class="center_content stack-top" style="width:30%; height:20%; align-content:baseline">
+        <h3 float:left>Sök Område</h3>
+        ${this.sokbar}
+      </div> 
+    </div> 
+      
       <div class="col-12 mt-5">
 
 <div class="card-group">
@@ -86,7 +91,7 @@ class StartPage extends Base {
                    våran verksamhet bara i Sverige, men vi har planer runt hörnet; att sprida våran verksamhet
                    ut över hela Skandinavien och så småningom; Europa.
                    </p>
-                    ${this.f}
+                   ${this.f}
 </div>
 
 
