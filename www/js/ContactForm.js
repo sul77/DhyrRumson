@@ -4,7 +4,7 @@ class ContactForm extends Base {
        { key: 'name', label: 'Namn', placeholder: 'Your name' , type: 'text'},
        { key: 'email', label: 'E-post', placeholder: 'Your email-address', type: 'email' },
        { key: 'phone', label: 'Telefon', placeholder: 'Mobile number', type: 'text'},
-       { key: 'comments', label: 'Meddelande till Bjurfors (frivilligt)', type: 'text' }
+       { key: 'comments', label: 'Meddelande till DhyrRumson (frivilligt)', type: 'textarea' }
       ]
     }
 
@@ -21,21 +21,25 @@ class ContactForm extends Base {
           }
 
         return /*html*/`
+          <div style="background-color:#CDCDCD; padding-top:2px; padding-bottom:19px; width:99%; margin:auto">
              <form class="checkout-form" submit="saveDetails">
-                 ${(this.formFields || []).map(e => /*html*/`
-                 <div class="input-group mb-3">
+                 ${(this.formFields || []).filter(e => e.type !== "textarea").map(e => /*html*/`
+                     <div class="input-group mb-3">
+                         <h4 style="display:block; text-align:left">${e.label}</h4>
+                         <input name="${e.key}" type="${e.type}" class="form-control" placeholder="${e.placeholder}" value="" required>
+                    </div>`)}
 
-                     <h4 class="input-group-text">${e.label}</h4>
-                     <input name="${e.key}" type="${e.type}" class="form-control" placeholder="${e.placeholder}" value="">
-
-                 </div>`)}
+                 ${(this.formFields || []).filter(e => e.type === "textarea").map(e => /*html*/`
+                      <div class="input-group mb-3">
+                          <h4 style="display:block; text-align:left">${e.label}</h4>
+                          <textarea rows="3" name="${e.key}" style="width:100%; height:80px" required></textarea>
+                      </div>`)}
 
                  <div style="margin: auto;text-align: center">
                      <button type="submit" class="btn btn-primary btn-md sharp float-md-none  d-md-inline mt-3">Skicka</button>
-                     <button type="button" click="resetFields" class="btn btn-secondary btn-md sharp float-md-none  d-md-inline mt-3 mr-md-3">Empty fields</button>
                  </div>
-             </form>
-
+            </form>
+           </div>
     `; }
 
     async saveDetails(e) {
@@ -59,11 +63,5 @@ class ContactForm extends Base {
        }
        return data;
     }
-
-    async resetFields(e) {
-        for (let element of [...e.target.closest('form').elements]) {
-             element.value = '';
-           }
-       }
 
  }
