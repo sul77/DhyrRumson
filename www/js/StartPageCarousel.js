@@ -1,28 +1,46 @@
 class StartPageCarousel extends Base {
 
+
+  async mount() {
+    await this.getHousing();
+
+  }
+
+  async getHousing() {
+    this.housing = await sql(/*sql*/`
+       SELECT Housing.id AS id, GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
+       FROM Housing, HousingImages 
+       WHERE Housing.id = HousingImages.housingId
+       GROUP BY Housing.id
+    `);
+
+    // convert imageUrls to an array
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
+    }
+
+    console.log(this.housing)
+  }
+
   render() {
     return /*html*/`
-      <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:80%; margin:auto">
+    
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
           <ol class="carousel-indicators">
-            <li style="margin:0 5px 0 0" data-target="#myCarousel" data-slide-to="0" class="active" ></li>
-            <li style="margin:0 5px 0 0" data-target="#myCarousel" data-slide-to="1"></li>
-            <li style="margin:0 5px 0 0" data-target="#myCarousel" data-slide-to="2"></li>
+          ${this.housing.map((house, index) => /*html*/` 
+            <li style="margin:0 5px 0 0" data-target="myCarousel" data-slide-to="${index}" class="${index === 0 ? 'active' : ''}"></li>
+            `)}
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="item active">
-              <img src="../images/ExampleHouse1.jpg">
-            </div>
-
-            <div class="item">
-              <img src="../images/ExampleHouse2.jpg" display="block">
-            </div>
-
-            <div class="item">
-              <img src="../images/ExampleHouse3.jpg">
-            </div>
+         <!-- mappa bilderna  -->
+          ${this.housing.map((house, index) => /*html*/`
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                  <img class="img-fluid" src="${house.imageUrls[0]}" >
+                </div>
+          `)}
           </div>
 
           <!-- Left and right controls -->
@@ -39,3 +57,4 @@ class StartPageCarousel extends Base {
   }
 
 }
+

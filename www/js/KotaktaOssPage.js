@@ -1,5 +1,8 @@
 class KontaktaOssPage extends Base {
- 
+
+  mount(){
+  this.f = new ContactForm({ toSave: "contact" });
+  }
   render() {
     return /*html*/`
       <div class="row" route="/kontakta-oss" page-title="Kontakta oss">
@@ -44,6 +47,11 @@ class KontaktaOssPage extends Base {
               </p>
               <a href="/vara-maklare" class="btn btn-primary btn-md sharp" role="button">Våra mäklare</a>
               </button>
+
+               <div style="text-align:center; display:block">
+                     <h2>Kontakta oss</h2>
+                </div>
+               ${this.f}
               
        </div>
       </div>
