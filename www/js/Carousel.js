@@ -7,7 +7,7 @@ class Carousel extends Base {
 
   async getNewHousing() {
     this.housing = await sql(/*sql*/`
-       SELECT Housing.id AS id, GROUP_CONCAT(HousingImages.url) AS imageUrls
+       SELECT Housing.id AS id, GROUP_CONCAT(HousingImages.nyUrl) AS imageUrls
        FROM Housing, HousingImages 
        WHERE Housing.id = HousingImages.housingId
          AND Housing.nyProduktion = 1

@@ -12,7 +12,7 @@ class StartPage extends Base {
         $('#cookieInfoDiv').show();
       }
     }, 10);
-  }
+    }
 
   HideCookies() {
     sessionStorage.setItem('cookiesAccepted', '1');
