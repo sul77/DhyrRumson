@@ -8,14 +8,14 @@ class StartPage extends Base {
 
   CheckIfCookiesAccepted() {
     setTimeout(function () {
-      if (!sessionStorage.cookiesAccepted == '1') {
+      if (!localStorage.cookiesAccepted == '1') {
         $('#cookieInfoDiv').show();
       }
     }, 10);
     }
 
   HideCookies() {
-    sessionStorage.setItem('cookiesAccepted', '1');
+    localStorage.setItem('cookiesAccepted', '1');
     $('#cookieInfoDiv').hide();
   }
   render() {

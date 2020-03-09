@@ -26,6 +26,7 @@ class Footer extends Base {
                     <ul class="pages">
                         <li><a href="/">Hem</a></li>
                         <li><a href="/sok-bostad">Sök bostad</a></li>
+                        <li><a href="/kopa-bostad">Köpa bostad</a></li>
                         <li><a href="/salja-bostad">Sälj bostad</a></li>
                         <li><a href="/ny-produktion">Nyproduktion</a></li>
                         <li><a href="/vara-maklare">Våra mäklare</a></li>
