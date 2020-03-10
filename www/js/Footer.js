@@ -43,9 +43,9 @@ class Footer extends Base {
         	<div class="col-md-2 footer-social animated fadeInDown">
             	<h4>Följ oss på:</h4>
             	<ul>
-                	<li><a href="#">Facebook</a></li>
-                	<li><a href="#">Twitter</a></li>
-                	<li><a href="#">Instagram</a></li>
+                	<li><a href="https://www.facebook.com/DhyrRumson">Facebook</a></li>
+                	<li><a href="https://twitter.com/DhyrRumson">Twitter</a></li>
+                	<li><a href="https://www.instagram.com/DhyrRumson">Instagram</a></li>
                 </ul>
             </div>
         	
