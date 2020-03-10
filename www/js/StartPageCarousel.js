@@ -1,29 +1,29 @@
 class StartPageCarousel extends Base {
 
 
-  async mount() {
-    await this.getHousing();
+    async mount() {
+        await this.getHousing();
 
-  }
+    }
 
-  async getHousing() {
-    this.housing = await sql(/*sql*/`
-       SELECT Housing.id AS id, GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
+    async getHousing() {
+        this.housing = await sql( /*sql*/ `
+       SELECT Housing.id AS id, GROUP_CONCAT(HousingImages.url) AS imageUrls
        FROM Housing, HousingImages 
        WHERE Housing.id = HousingImages.housingId
        GROUP BY Housing.id
     `);
 
-    // convert imageUrls to an array
-    for (let house of this.housing) {
-      house.imageUrls = house.imageUrls.split(',');
+        // convert imageUrls to an array
+        for (let house of this.housing) {
+            house.imageUrls = house.imageUrls.split(',');
+        }
+
+        console.log(this.housing)
     }
 
-    console.log(this.housing)
-  }
-
-  render() {
-    return /*html*/`
+    render() {
+            return /*html*/ `
     
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -57,4 +57,3 @@ class StartPageCarousel extends Base {
   }
 
 }
-
