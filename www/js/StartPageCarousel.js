@@ -6,15 +6,9 @@ class StartPageCarousel extends Base {
 
     }
 
-<<<<<<< HEAD
   async getHousing() {
     this.housing = await sql(/*sql*/`
        SELECT Housing.id AS id, GROUP_CONCAT(HousingImages.Url) AS imageUrls
-=======
-    async getHousing() {
-        this.housing = await sql( /*sql*/ `
-       SELECT Housing.id AS id, GROUP_CONCAT(HousingImages.url) AS imageUrls
->>>>>>> 3c4906a2e3241ad6aefb33bc9b985f7a970a2143
        FROM Housing, HousingImages 
        WHERE Housing.id = HousingImages.housingId
        GROUP BY Housing.id
