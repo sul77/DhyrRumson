@@ -9,6 +9,8 @@ class Sokbar extends Base {
     this.foundCities = [];
     this.selected = -1;
     this.chosen = e.target.innerText;
+    this.field = document.getElementById('input-city')
+    this.field.value = this.chosen
     this.render();
   }
 
@@ -51,8 +53,8 @@ class Sokbar extends Base {
       <div class="container">
         <div class="row mt-4">
           <div class="col-12">
-            <div class="dropdown"  style="background:#000000">
-              <input class="form-control" type="text" placeholder="Ort" keyup="searchCity" keydown="selectWithUpDownArrows" autocomplete="off" autocorrect="off" style="background:#F5F5F5">
+            <div class="dropdown" style="background:#000000">
+              <input class="form-control" id="input-city" type="text" placeholder="Ort" keyup="searchCity" keydown="selectWithUpDownArrows" autocomplete="off" autocorrect="off" style="background:#F5F5F5">
               ${this.foundCities.length < 1 ? '' : /*html*/`
                 <div class="dropdown-menu show w-100 position-absolute search-dropdown">
                   ${this.foundCities.map((city, index) => /*html*/`
@@ -61,9 +63,6 @@ class Sokbar extends Base {
                 </div>
               `}
              </div>
-             ${!this.chosen ? '' : /*html*/`
-              <h4 class="mt-5">Du valde: ${this.chosen}</h4>
-            `}
           </div>
         </div>
       </div>
