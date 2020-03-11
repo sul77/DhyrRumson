@@ -1,7 +1,7 @@
 class SokBostadPage extends Base {
 
   async mount() {
-    let url = window.location.search // Getting URL
+    let url = decodeUri(window.location.search) // Getting URL and decoding it
     console.log(url)
 
     let city = url.replace("?", ''); // Extracting city from query params
