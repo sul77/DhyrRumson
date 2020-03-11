@@ -10,6 +10,7 @@ class Sokbar extends Base {
     this.selected = -1;
     this.chosen = e.target.innerText;
     this.render();
+    sendSelectedCity(this.chosen);
   }
 
   selectWithUpDownArrows(e) {
