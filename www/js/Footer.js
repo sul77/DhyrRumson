@@ -31,6 +31,7 @@ class Footer extends Base {
                         <ul class="list">
                             <li><a href="/om-oss">Om oss</a></li>
                             <li><a href="/kontakta-oss">Kontakta oss</a></li>
+                            <li><a href="/integritetpolicy">Integritetspolicy</a></li> 
                             <li><a href="#">Cookies</a></li>                     
                         </ul>
                     </div>
