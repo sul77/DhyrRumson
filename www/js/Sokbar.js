@@ -10,10 +10,8 @@ class Sokbar extends Base {
     this.foundCities = [];
     this.selected = -1;
     this.chosen = e.target.innerText;
-    this.field = document.getElementById('input-city')
-    this.field.value = this.chosen
     this.render();
-    sendCity(this.chosen);
+    sendSelectedCity(this.chosen);
   }
 
   selectWithUpDownArrows(e) {

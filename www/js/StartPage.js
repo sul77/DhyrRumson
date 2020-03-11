@@ -4,7 +4,6 @@ class StartPage extends Base {
     this.sokbar = new Sokbar();
     this.CheckIfCookiesAccepted();
     this.f = new ContactForm({ toSave: "meeting" });
-    this.sokBostad = new SokBostadPage();
   }
 
   CheckIfCookiesAccepted() {
@@ -104,6 +103,6 @@ class StartPage extends Base {
   }
 }
 
-function sendCity(selectedCity) {
-  window.location = '/sok-bostad';
+function sendSelectedCity(selectedCity) {
+  window.location.href = '/sok-bostad?' + selectedCity;
 }

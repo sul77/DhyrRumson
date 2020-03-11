@@ -1,6 +1,9 @@
 class SokBostadPage extends Base {
 
   async mount() {
+    var url = window.location.search
+    url = url.replace("?", '');
+
     this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea, Address.city,
          GROUP_CONCAT(HousingImages.nyUrl) AS imageUrls
