@@ -1,22 +1,49 @@
 class StartPage extends Base {
   async mount() {
     this.carousel = new StartPageCarousel();
+    this.sokbar = new Sokbar();
+    this.CheckIfCookiesAccepted();
+    this.f = new ContactForm({ toSave: "meeting" });
   }
 
-  render() {
-    return /*html*/`
-      <div class="row" route="/" page-title="Hem">
-        <div style="margin:auto">
-        ${this.carousel}
-        </div> 
-<div class="col-12">
-<div class="col-12 text-center">
-<a class="btn btn-dark btn-md sharp" href="/sok-bostad">Sök bostad</a>
-</div>
+  CheckIfCookiesAccepted() {
+    setTimeout(function () {
+      if (!localStorage.cookiesAccepted == '1') {
+        $('#cookieInfoDiv').show();
+      }
+    }, 10);
+    }
 
+  HideCookies() {
+    localStorage.setItem('cookiesAccepted', '1');
+    $('#cookieInfoDiv').hide();
+  }
+  render() {
+    this.CheckIfCookiesAccepted();
+    return /*html*/`
+
+      <div class="row" route="/" page-title="Hem">
+
+      <div id="cookieInfoDiv" style="background: #000000; color: #FFF; opacity: 0.8; width: 100%; top: 0; left: 0; z-index: 1; height: 100px; position: fixed; display: none;">
+        <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
+          <p>Vi använder cookies för att ge dig en bättre upplevelse av webbplatsen och för vår marknadsföring. Genom att fortsätta använda vår webbplats accepterar du att cookies används.</p>
+          <button type="button" class="btn btn-success accept-cookie" click="HideCookies"> Ok </button>
         </div>
+      </div>
+    <div>
+    
+    <div class="center_content" style="margin:auto">
+      ${this.carousel}
+      <div class="center_content stack-top" style="width:30%; height:20%; align-content:baseline">
+        <h3 float:left>Sök Område</h3>
+        ${this.sokbar}
+      </div> 
+    </div> 
+      
+      <div class="col-12 mt-5">
+
 <div class="card-group">
-  <div class="card">
+  <div class="card mr-5">
     <img class="card-img-top" src='../images/ExampleEstate1.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">FRILIGGANDE VILLA
@@ -29,7 +56,7 @@ class StartPage extends Base {
     </div>
   </div>
 
-  <div class="card">
+  <div class="card mr-5">
     <img class="card-img-top" src='../images/ExampleEstate2.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">BOSTADSRÄTTSLÄGENHET
@@ -56,26 +83,22 @@ class StartPage extends Base {
 </div>
 
 <div class = "col-12">
-  <h2>Möt några av Sveriges bästa mäklare</h2>
+ <h2 class="text-center">Möt några av Svergies bästa mäklare</h2>
+                   <p class="text-center">
+                   DhyrRumson är en av Sveriges snabbast växande mäklarföretag idag.
+                   Sedan början på 2020, har vi växt och spridit vårat nystartade privatföretag
+                   över nästan hela Sverige med inga tecken på att stoppa. I dagsläget befinner sig
+                   våran verksamhet bara i Sverige, men vi har planer runt hörnet; att sprida våran verksamhet
+                   ut över hela Skandinavien och så småningom; Europa.
+                   </p>
+                   <div style="text-align:center; display:block">
+                   <h2>Kontakta oss</h2>
+                   </div>
+
+                   ${this.f}
 </div>
-        
-        <div style="background-color:#CDCDCD; padding-top:10px; padding-bottom:10px; width:40%; margin:auto">
-          <div style="text-align:center; display:block">
-            <form action="/action_page.php" style="display:inline-block;width:50%">
-              <label style="display:block; text-align:left">Namn<span class="required" style="color:red">*</span></label>
-              <input type="text" id="namn" style="width:100%; height:40px" required><br><br>
-              <label style="display:block; text-align:left">Telefon<span class="required" style="color:red">*</span></label>
-              <input type="tel" id="fon" style="width:100%; height:40px" required><br><br>
-              <label style="display:block; text-align:left">E-post<span class="required" style="color:red">*</span></label>
-              <input type="email" id="epost" style="width:100%; height:40px" required><br><br>
-              <label style="display:block; text-align:left">Address<span class="required" style="color:red">*</span></label>
-              <textarea rows="3" id="address" style="width:100%; height:30px" required></textarea><br><br>
-              <input type="submit"  style="width:50%; height:40px" value="Submit">
-            </form>
-          </div>
-        </div>
-      </div>
+
+
     `;
   }
-
 }
