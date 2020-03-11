@@ -44,8 +44,12 @@ class Footer extends Base {
                       <li><a href="https://www.instagram.com/DhyrRumson">Instagram</a></li>
                     </ul>
                 </div>
+<<<<<<< HEAD
               
               </div>
+=======
+            	  </div>
+>>>>>>> 3093e51dcd43f28f69d767adf9c4863845a26970
               
             </footer>
             <!-------- Footer ends -------->
@@ -58,9 +62,12 @@ class Footer extends Base {
                   [Tillbaka till toppen]          <!-- '[Back To Top]' receives the button link -->
               </button>                                                      <!-- button ends -->
               </div>
+<<<<<<< HEAD
             </div>            
+=======
+            </div>       
+>>>>>>> 3093e51dcd43f28f69d767adf9c4863845a26970
         </div>
-      
     `;
     }
 

@@ -1,6 +1,12 @@
 class SokBostadPage extends Base {
 
+<<<<<<< HEAD
     async mount() {
+=======
+  async mount() {
+    let url = decodeURI(window.location.search) // Getting URL and decoding it
+    console.log(url)
+>>>>>>> 3093e51dcd43f28f69d767adf9c4863845a26970
 
         this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea, Address.city,
