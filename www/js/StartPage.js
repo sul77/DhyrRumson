@@ -12,7 +12,7 @@ class StartPage extends Base {
         $('#cookieInfoDiv').show();
       }
     }, 10);
-    }
+  }
 
   HideCookies() {
     localStorage.setItem('cookiesAccepted', '1');
@@ -101,4 +101,8 @@ class StartPage extends Base {
 
     `;
   }
+}
+
+function sendSelectedCity(selectedCity) {
+  window.location.href = '/sok-bostad?' + selectedCity;
 }
