@@ -152,10 +152,5 @@ class StartPage extends Base {
 }
 
 function sendSelectedCity(selectedCity) {
-<<<<<<< HEAD
-  window.location.href = '/sok-bostad?' + selectedCity;
-}
-=======
   window.location.href = '/sok-bostad?' + encodeURI(selectedCity); // encoding to avoid replacement of Non-English characters
 }
->>>>>>> 3093e51dcd43f28f69d767adf9c4863845a26970
