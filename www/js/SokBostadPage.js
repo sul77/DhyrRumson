@@ -13,7 +13,6 @@ class SokBostadPage extends Base {
        FROM Housing, HousingImages, Address
        WHERE Housing.id = HousingImages.housingId AND Address.city = "${city}" 
        AND Housing.addressId = Address.id
-       
        GROUP BY Housing.id
     `);
 

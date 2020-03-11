@@ -1,7 +1,7 @@
 class Footer extends Base {
 
 
-  backToTop(){      //backToTop function is created
+  backToTop() {      //backToTop function is created
     document.body.scrollTop = 0;              //Scroll to the top for Safari
     document.documentElement.scrollTop = 0;   //Scroll to the top for Chrome, Firefox, IE, and Opera
   }                 //backToTop function ends
@@ -31,6 +31,7 @@ class Footer extends Base {
                         <ul class="list">
                             <li><a href="/om-oss">Om oss</a></li>
                             <li><a href="/kontakta-oss">Kontakta oss</a></li>
+                            <li><a href="/integritetpolicy">Integritetspolicy</a></li> 
                             <li><a href="#">Cookies</a></li>                     
                         </ul>
                     </div>
