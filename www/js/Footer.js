@@ -44,39 +44,7 @@ class Footer extends Base {
                       <li><a href="https://www.instagram.com/DhyrRumson">Instagram</a></li>
                     </ul>
                 </div>
-            	  <div class="col-md-6">
-                    <ul class="list">
-                        <li><a href="/om-oss">Om oss</a></li>
-                        <li><a href="/kontakta-oss">Kontakta oss</a></li>
-                        <li><a href="#">Cookies</a></li>                     
-                    </ul>
-                </div>
-            </div>
-        	<div class="col-md-2 footer-social animated fadeInDown">
-            	<h4>Följ oss på:</h4>
-            	<ul>
-                	<li><a href="https://www.facebook.com/DhyrRumson">Facebook</a></li>
-                	<li><a href="https://twitter.com/DhyrRumson">Twitter</a></li>
-                	<li><a href="https://www.instagram.com/DhyrRumson">Instagram</a></li>
-                </ul>
-            </div>
-        	
-        </div>
-        <div class="margin: auto;text-align: center">
-          <p>
-            © DhyrRumson 2020 
-          </p>
-        </div>
-    </footer>
-    <!-------- Footer ends -------->
-        <div class="margin: auto;text-align: center">
-          <div class="col text-center text light">
-           <button type="button" class="btn btn-link" click="backToTop">  <!-- link-type button that calls for 'backToTop' function -->
-              [Tillbaka till toppen]          <!-- '[Back To Top]' receives the button link -->
-           </button>                                                      <!-- button ends -->
-          </div>
-              
-              </div>
+            	  </div>
               
             </footer>
             <!-------- Footer ends -------->
@@ -89,9 +57,8 @@ class Footer extends Base {
                   [Tillbaka till toppen]          <!-- '[Back To Top]' receives the button link -->
               </button>                                                      <!-- button ends -->
               </div>
-            </div>            
+            </div>       
         </div>
-      
     `;
   }
 
