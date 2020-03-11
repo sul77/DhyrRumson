@@ -1,26 +1,48 @@
 class StartPage extends Base {
-  async mount() {
-    this.carousel = new StartPageCarousel();
-    this.sokbar = new Sokbar();
-    this.CheckIfCookiesAccepted();
-    this.f = new ContactForm({ toSave: "meeting" });
-  }
+    async mount() {
+        this.carousel = new StartPageCarousel();
+        this.sokbar = new Sokbar();
+        this.CheckIfCookiesAccepted();
+        this.f = new ContactForm({
+            toSave: "meeting"
+        });
 
-  CheckIfCookiesAccepted() {
-    setTimeout(function () {
-      if (!localStorage.cookiesAccepted == '1') {
-        $('#cookieInfoDiv').show();
-      }
-    }, 10);
-  }
+        this.housing = await sql( /*sql*/ `
+       SELECT Housing.*, Address.postalArea, Address.city,
+         GROUP_CONCAT(HousingImages.nyUrl) AS imageUrls
+       FROM Housing, HousingImages, Address
+       WHERE Housing.id = HousingImages.housingId
+       AND Housing.addressId = Address.id
+       AND Housing.nyProduktion = 0
+       GROUP BY Housing.id
+    `);
 
-  HideCookies() {
-    localStorage.setItem('cookiesAccepted', '1');
-    $('#cookieInfoDiv').hide();
-  }
-  render() {
-    this.CheckIfCookiesAccepted();
-    return /*html*/`
+        // convert imageUrls to an array
+        for (let house of this.housing) {
+            house.imageUrls = house.imageUrls.split(',');
+        }
+
+        console.log(this.housing)
+    }
+
+    CheckIfCookiesAccepted() {
+        setTimeout(function() {
+            if (!localStorage.cookiesAccepted == '1') {
+                $('#cookieInfoDiv').show();
+            }
+        }, 10);
+    }
+
+    HideCookies() {
+        localStorage.setItem('cookiesAccepted', '1');
+        $('#cookieInfoDiv').hide();
+    }
+
+
+
+    render() {
+            this.CheckIfCookiesAccepted();
+            return /*html*/ `
 
       <div class="row" route="/" page-title="Hem">
 
@@ -43,7 +65,33 @@ class StartPage extends Base {
       <div class="col-12 mt-5">
 
 <div class="card-group">
-  <div class="card mr-5">
+ ${this.housing.map(house => `
+
+          <div class="card mr-5">
+           <div class="card-img-top">
+              <img src="${house.imageUrls[0]}" class="img-fluid">
+           </div>
+           
+            <div class="card-img-top" src="${house.imageUrls[0]}" alt="Card image cap">
+             <div class="card-body">
+              <h4 class="card-title">${house.projectName}</h4>
+             
+             
+              <p class="card-text"><strong>Pris:</strong>${house.price} kr</p>
+              <p class="card-text"><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
+              <p class="card-text"><strong>Boarea:</strong>${house.livingArea} Kvm</p>
+              <p class="card-text"><strong>Område:</strong>${house.postalArea}</p>
+            
+              
+           
+          
+           </div>
+          </div>
+          </div>
+          
+      `)}
+
+  <!--<div class="card mr-5">
     <img class="card-img-top" src='../images/ExampleEstate1.jpg' alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">FRILIGGANDE VILLA
@@ -80,7 +128,7 @@ class StartPage extends Base {
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
-</div>
+</div>-->
 
 <div class = "col-12">
  <h2 class="text-center">Möt några av Svergies bästa mäklare</h2>
