@@ -1,15 +1,13 @@
 class SokBostadPage extends Base {
 
     async mount() {
-        /* let url = decodeURI(window.location.search) // Getting URL and decoding it
-         console.log(url)*/
-
         this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea, Address.city,
-       GROUP_CONCAT(HousingImages.nyUrl) AS imageUrls
+         GROUP_CONCAT(HousingImages.url) AS imageUrls
        FROM Housing, HousingImages, Address
-       WHERE Housing.id = HousingImages.housingId AND Address.city = "${city}" 
+       WHERE Housing.id = HousingImages.housingId
        AND Housing.addressId = Address.id
+       
        GROUP BY Housing.id
     `);
 
@@ -24,8 +22,8 @@ class SokBostadPage extends Base {
     render() {
             return /*html*/ `
       <div route="/sok-bostad" page-title="Sök Bostad">
-      <h1>Sök resultat</h1>
-       ${this.housing.map(house => `
+      
+      ${this.housing.map(house => `
           <div class="row mb-5">
           <div class="col-md-4">
               <img src="${house.imageUrls[0]}" class="img-fluid">
