@@ -6,10 +6,11 @@ class VaraMaklarePage extends Base {
        FROM Broker 
     `);
     
-    //Bara för att image url är inte sparat i databasen. 
-    this.brokers.forEach((broker, index) => {
-      broker.imgSrc = "../images/mäklare/Broker" + (index + 1) +".jpg"
-    });
+    for (let Broker of this.brokers) {
+      Broker.imageUrls ;
+    }
+
+    console.log(this.brokers)
   }
 
   render() {
