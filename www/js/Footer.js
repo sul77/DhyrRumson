@@ -1,13 +1,13 @@
 class Footer extends Base {
 
 
-  backToTop() {      //backToTop function is created
-    document.body.scrollTop = 0;              //Scroll to the top for Safari
-    document.documentElement.scrollTop = 0;   //Scroll to the top for Chrome, Firefox, IE, and Opera
-  }                 //backToTop function ends
+    backToTop() { //backToTop function is created
+            document.body.scrollTop = 0; //Scroll to the top for Safari
+            document.documentElement.scrollTop = 0; //Scroll to the top for Chrome, Firefox, IE, and Opera
+        } //backToTop function ends
 
-  render() {
-    return /*html*/`      
+    render() {
+        return /*html*/ `      
         <div class="container-fluid" style="background-color: #e5e5e5;">
             <section style="height:10px;"></section>
             <!----------- Footer ------------>
@@ -44,39 +44,6 @@ class Footer extends Base {
                       <li><a href="https://www.instagram.com/DhyrRumson">Instagram</a></li>
                     </ul>
                 </div>
-<<<<<<< HEAD
-            	  <div class="col-md-6">
-                    <ul class="list">
-                        <li><a href="/om-oss">Om oss</a></li>
-                        <li><a href="/kontakta-oss">Kontakta oss</a></li>
-                        <li><a href="#">Cookies</a></li>                     
-                    </ul>
-                </div>
-            </div>
-        	<div class="col-md-2 footer-social animated fadeInDown">
-            	<h4>Följ oss på:</h4>
-            	<ul>
-                	<li><a href="https://www.facebook.com/DhyrRumson">Facebook</a></li>
-                	<li><a href="https://twitter.com/DhyrRumson">Twitter</a></li>
-                	<li><a href="https://www.instagram.com/DhyrRumson">Instagram</a></li>
-                </ul>
-            </div>
-        	
-        </div>
-        <div class="margin: auto;text-align: center">
-          <p>
-            © DhyrRumson 2020 
-          </p>
-        </div>
-    </footer>
-    <!-------- Footer ends -------->
-        <div class="margin: auto;text-align: center">
-          <div class="col text-center text light">
-           <button type="button" class="btn btn-link" click="backToTop">  <!-- link-type button that calls for 'backToTop' function -->
-              [Tillbaka till toppen]          <!-- '[Back To Top]' receives the button link -->
-           </button>                                                      <!-- button ends -->
-          </div>
-=======
               
               </div>
               
@@ -92,10 +59,9 @@ class Footer extends Base {
               </button>                                                      <!-- button ends -->
               </div>
             </div>            
->>>>>>> 09364b80eb1de6f753b42f3d223783a930dd5360
         </div>
       
     `;
-  }
+    }
 
 }
