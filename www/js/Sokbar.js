@@ -3,6 +3,7 @@ class Sokbar extends Base {
     this.foundCities = [];
     this.selected = -1;
     sql(/*sql*/`USE dhyrRumson`);
+
   }
 
   clickCity(e) {
@@ -12,6 +13,7 @@ class Sokbar extends Base {
     this.field = document.getElementById('input-city')
     this.field.value = this.chosen
     this.render();
+    sendCity(this.chosen);
   }
 
   selectWithUpDownArrows(e) {
