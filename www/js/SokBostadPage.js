@@ -2,13 +2,13 @@ class SokBostadPage extends Base {
 
   async mount() {
     var url = window.location.search
-    url = url.replace("?", '');
+    let city = url.replace("?", '');
 
     this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea, Address.city,
          GROUP_CONCAT(HousingImages.nyUrl) AS imageUrls
        FROM Housing, HousingImages, Address
-       WHERE Housing.id = HousingImages.housingId
+       WHERE Housing.id = HousingImages.housingId AND Address.city = "${city}"
        AND Housing.addressId = Address.id
        
        GROUP BY Housing.id
