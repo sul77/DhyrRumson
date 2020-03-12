@@ -55,15 +55,15 @@ class StartPage extends Base {
       </div>
     <div>
     
-    <div class="center_content" style="margin:auto">
+    <div class="center_content">
       ${this.carousel}
       <div class="center_content stack-top start-page-search-holder">
         <h3 float:left>Sök Område</h3>
         ${this.sokbar}
-      </div> 
+      </div>
     </div> 
       
-      <div class="col-12 mt-5">
+      <div class="card-style">
 
 <div class="card-group">
  ${this.housing.map(house => `
@@ -92,46 +92,8 @@ class StartPage extends Base {
           
       `)}
 
-  <!--<div class="card mr-5">
-    <img class="card-img-top" src='../images/ExampleEstate1.jpg' alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">FRILIGGANDE VILLA
-
-      <p>Persön, Luleå</p></h5>
-      <p class="card-text">ADRESS:.........................................Månsgårdsvägen 7</p>
-      <p class="card-text">UTGÅNGSPRIS:.........................................2 000 000 kr</p>
-      <p class="card-text">BOAREA:........................................................50kvm</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-
-  <div class="card mr-5">
-    <img class="card-img-top" src='../images/ExampleEstate2.jpg' alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">BOSTADSRÄTTSLÄGENHET
-
-      <p>Stallhagen, Västerås</p></h5>
-      <p class="card-text">ADRESS:.........................................Nanna Svartz Gata 5</p>
-      <p class="card-text">UTGÅNGSPRIS:.........................................2 095 000 kr</p>
-      <p class="card-text">BOAREA:........................................................70kvm</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
   
-  <div class="card">
-    <img class="card-img-top" src='../images/ExampleEstate3.jpg' alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">BOSTADSRÄTTSLÄGENHET
-       <p>Sibbarp, Malmö</p></h5>
-       <p class="card-text">ADRESS:..................................Hammars Parkväg 28B</p>
-      <p class="card-text">UTGÅNGSPRIS:.........................................3 195 000 kr</p>
-      <p class="card-text">BOAREA:........................................................88kvm</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>-->
-
-<div class = "col-12">
+<div class ="text-start-page">
  <h2 class="text-center">Möt några av Svergies bästa mäklare</h2>
                    <p class="text-center">
                    DhyrRumson är en av Sveriges snabbast växande mäklarföretag idag.
@@ -139,13 +101,30 @@ class StartPage extends Base {
                    över nästan hela Sverige med inga tecken på att stoppa. I dagsläget befinner sig
                    våran verksamhet bara i Sverige, men vi har planer runt hörnet; att sprida våran verksamhet
                    ut över hela Skandinavien och så småningom; Europa.
+                   Med anledning av utbrottet av Coronaviruset(Covid - 19) kommer 
+                    att införa nya rutiner gällande visningar av bostäder.
+                    Vi tillämpar försiktighetsprincipen vilket betyder att 
+                    vi vill ta det säkra före det osäkra.Spridningen av 
+                    viruset i Sverige är fortfarande mycket låg men då 
+                    det har konstaterats fall i Sverige har vi med omsorg 
+                    för våra kunder och anställda beslutat att införa försiktighetsåtgärder inför våra visningar,
+                     vilket innebär delvis nya arbetsrutiner för våra mäklare.
+
+                   Om du har vistats i områden där smittan är
+                    känd är det viktigt att du följer riktlinjerna 
+                    från Folkhälsomyndigheten gällande Coronaviruset, 
+                    Covid - 19. Om det finns någon risk att du kan vara 
+                    smittbärare ber vi dig att avstå från att delta på visningar.
+                    Kontakta istället ansvarig mäklare för mer information och material.
                    </p>
-                   <div style="text-align:center; display:block">
+                   </div>
+</div>
+                   <div class="text-center">
                    <h2>Kontakta oss</h2>
                    </div>
 
                    ${this.f}
-</div>
+
 
 
     `;
