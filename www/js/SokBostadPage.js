@@ -19,7 +19,6 @@ class SokBostadPage extends Base {
        FROM Housing, HousingImages, Address
        WHERE Housing.id = HousingImages.housingId
        AND Housing.addressId = Address.id
-       AND Housing.nyProduktion = 0
        AND (city = $chosenCity OR $chosenCity = "")
        GROUP BY Housing.id
     `, this.userChoices);
