@@ -23,8 +23,8 @@ class ByggHerrePage extends Base {
                                bostäder och att hitta nöjda köpare till dessa.<br>Vi är medvetnaom  om att genom innovativa försäljningsplan och
                                marknadsförings,god målgruppsförståelse kan vi nå ett framgångsrikt resultat.<br>Vår policy vilar på att bygga långsiktiga
                                relationer och med våra mäklares gedigna erfarenheter lyckades vi lägga arbetet på bästa sättet<br>
-                               och därmed maximera resultatet.</p><br>
-                              <h4><p class="text-center"> Kontakta oss gärna om du har fler funderingar</h4></P>
+                               och därmed maximera resultatet.</p>
+                              <h4><p class="text-left"> Kontakta oss gärna om du har fler funderingar</h4></P>
 
                         </div>
                      </div>
