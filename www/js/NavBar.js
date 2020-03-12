@@ -2,9 +2,9 @@ class NavBar extends Base {
 
   render() {
     return /*html*/`
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav class="navbar navbar-expand-lg navbar-light font-weight-bold bg-light shadow-lg p-3 bg-white rounded border">
         <a class="navbar-brand" href="/">
-        <img src='../images/logo.png' alt="Mäkar" height="42" width="42">
+         <img src='../images/logo.png' alt="Mäkar" height="42" style="margin-top:-15px;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
