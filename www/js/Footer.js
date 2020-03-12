@@ -11,9 +11,9 @@ class Footer extends Base {
         <div class="container">
             <section style="height:80px;"></section>
             <!----------- Footer ------------>
-            <footer class="footer-bs">
+            <footer class="footer-bs shadow-lg">
               <div class="row">
-                  <div class="col-md-3 footer-brand animated fadeInLeft">    
+                  <div class="col-md-3 footer-brand animated fadeInLeft"> 
                   </div>
               <div class="col-md-4 footer-nav animated fadeInUp">                
                   <h4>Meny —</h4>
