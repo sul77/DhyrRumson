@@ -3,7 +3,7 @@ class SokBostadPage extends Base {
     async mount() {
         this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea, Address.city,
-         GROUP_CONCAT(HousingImages.url) AS imageUrls
+         GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
        FROM Housing, HousingImages, Address
        WHERE Housing.id = HousingImages.housingId
        AND Housing.addressId = Address.id
