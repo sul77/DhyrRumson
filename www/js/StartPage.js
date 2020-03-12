@@ -15,6 +15,7 @@ class StartPage extends Base {
        AND Housing.addressId = Address.id
        AND Housing.nyProduktion = 0
        GROUP BY Housing.id
+       LIMIT 3
     `);
 
         // convert imageUrls to an array
@@ -56,7 +57,7 @@ class StartPage extends Base {
     
     <div class="center_content" style="margin:auto">
       ${this.carousel}
-      <div class="center_content stack-top" style="width:30%; height:20%; align-content:baseline">
+      <div class="center_content stack-top start-page-search-holder">
         <h3 float:left>Sök Område</h3>
         ${this.sokbar}
       </div> 
@@ -149,8 +150,4 @@ class StartPage extends Base {
 
     `;
   }
-}
-
-function sendSelectedCity(selectedCity) {
-  window.location.href = '/sok-bostad?' + encodeURI(selectedCity); // encoding to avoid replacement of Non-English characters
 }

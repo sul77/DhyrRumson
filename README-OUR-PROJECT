@@ -10,3 +10,10 @@ npm start www 5000
 in your terminal
 
 You can the documentation and our project running at the same time - use several terminal windows/tabs i Visual Studio Code. 
+
+IMPORTANT!
+
+We now let the server work against a database called workingDb.db This database is NOT in Git (and should not be!)
+To create it make a copy of dhyrRumson.db and rename it workingDb.db.
+IF YOU WANT TO MAKE AN IMPORTANT CHANGE TO THE DB, make it in dhyrRumson.db and tell the other team members to update!
+This stops conflicts every time the server changes the  DB!

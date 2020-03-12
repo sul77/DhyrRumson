@@ -8,15 +8,15 @@ class Footer extends Base {
 
     render() {
         return /*html*/ `      
-        <div class="container-fluid" style="background-color: #e5e5e5;">
-            <section style="height:10px;"></section>
+        <div class="container">
+            <section style="height:80px;"></section>
             <!----------- Footer ------------>
             <footer class="footer-bs">
               <div class="row">
-                  <div class="col-md-3 footer-brand">    
+                  <div class="col-md-3 footer-brand animated fadeInLeft">    
                   </div>
-              <div class="col-md-4 footer-nav">                
-                  <h4>Meny ——————————————————————————</h4>
+              <div class="col-md-4 footer-nav animated fadeInUp">                
+                  <h4>Meny —</h4>
                   <div class="col-md-6">
                         <ul class="pages">
                             <li><a href="/">Hem</a></li>
@@ -36,19 +36,16 @@ class Footer extends Base {
                         </ul>
                     </div>
               </div>
-              <div class="col-md-2 footer-social">
-                  <h4>Följ oss på ————————</h4>
+              <div class="col-md-2 footer-social animated fadeInDown">
+                  <h4>Följ oss på —</h4>
                   <ul>
                       <li><a href="https://www.facebook.com/DhyrRumson">Facebook</a></li>
                       <li><a href="https://twitter.com/DhyrRumson">Twitter</a></li>
                       <li><a href="https://www.instagram.com/DhyrRumson">Instagram</a></li>
                     </ul>
                 </div>
-            	  </div>
-              
-            </footer>
-            <!-------- Footer ends -------->
-            <div class="margin: auto;text-align: center">
+                  </div>
+                  <div class="margin: auto;text-align: center">
               <div class="col text-center text light">
                     <p>
                      © DhyrRumson 2020
@@ -57,7 +54,10 @@ class Footer extends Base {
                   [Tillbaka till toppen]          <!-- '[Back To Top]' receives the button link -->
               </button>                                                      <!-- button ends -->
               </div>
-            </div>       
+            </div>
+              
+            </footer>
+            <!-------- Footer ends -------->       
         </div>
     `;
     }

@@ -1,6 +1,8 @@
 *.css
 .DS_Store
 
+workingDb.db
+
 # Logs
 logs
 *.log
