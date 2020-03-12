@@ -1,51 +1,34 @@
 class SokBostadPage extends Base {
 
-<<<<<<< HEAD
   async mount() {
-    this.housing = await sql( /*sql*/ `
-       SELECT Housing.*, Address.postalArea, Address.city,
-=======
-    async mount() {
-        this.userChoices = {
-            // t.ex. kvadradmeter, pris etc
-            chosenCity: ''
-        }
-        await this.search();
+    this.userChoices = {
+      // t.ex. kvadradmeter, pris etc
+      chosenCity: ''
     }
+    await this.search();
+  }
 
-    async search() {
-        // sokBar sets the app.chosenCity and we
-        // just add this to userChoices
-        this.userChoices.chosenCity = app.chosenCity || "";
-        console.log("this.userChoices", this.userChoices)
-        this.housing = await sql( /*sql*/ `
+  async search() {
+    // sokBar sets the app.chosenCity and we
+    // just add this to userChoices
+    this.userChoices.chosenCity = app.chosenCity || "";
+    console.log("this.userChoices", this.userChoices)
+    this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city,
->>>>>>> cc65a420ecc6a92c8676d8609c81ea21147767f8
          GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
        FROM Housing, HousingImages, Address
        WHERE Housing.id = HousingImages.housingId
        AND Housing.addressId = Address.id
-<<<<<<< HEAD
-       ANd Housing.nyproduktion = 0
-       GROUP BY Housing.id
-    `);
-
-    // convert imageUrls to an array
-    for (let house of this.housing) {
-      house.imageUrls = house.imageUrls.split(',');
-=======
        AND Housing.nyProduktion = 0
        AND (city = $chosenCity OR $chosenCity = "")
        GROUP BY Housing.id
     `, this.userChoices);
-        console.log("this.housing  (after search in DB)", this.housing)
-            // convert imageUrls to an array
-        for (let house of this.housing) {
-            house.imageUrls = house.imageUrls.split(',');
-        }
-        this.render();
->>>>>>> cc65a420ecc6a92c8676d8609c81ea21147767f8
+    console.log("this.housing  (after search in DB)", this.housing)
+    // convert imageUrls to an array
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
     }
+    this.render();
 
     console.log(this.housing)
   }
