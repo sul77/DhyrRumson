@@ -5,12 +5,6 @@ class VaraMaklarePage extends Base {
        Broker.telephone, Broker.description, Broker.image AS imgSrc
        FROM Broker 
     `);
-    
-    for (let Broker of this.brokers) {
-      Broker.imageUrls ;
-    }
-
-    console.log(this.brokers)
   }
 
   render() {
