@@ -15,6 +15,7 @@ class StartPage extends Base {
        AND Housing.addressId = Address.id
        AND Housing.nyProduktion = 0
        GROUP BY Housing.id
+       LIMIT 3
     `);
 
         // convert imageUrls to an array
@@ -150,7 +151,7 @@ class StartPage extends Base {
     `;
   }
 }
-
+/*
 function sendSelectedCity(selectedCity) {
   window.location.href = '/sok-bostad?' + encodeURI(selectedCity); // encoding to avoid replacement of Non-English characters
-}
+}*/
