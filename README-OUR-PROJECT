@@ -15,5 +15,6 @@ IMPORTANT!
 
 We now let the server work against a database called workingDb.db This database is NOT in Git (and should not be!)
 To create it make a copy of dhyrRumson.db and rename it workingDb.db.
+(When you make the copy - make sure you have turned off your server - Ctrl+C in the terminal and that you do not have workingDb open in SQLiteStudio)
 IF YOU WANT TO MAKE AN IMPORTANT CHANGE TO THE DB, make it in dhyrRumson.db and tell the other team members to update!
 This stops conflicts every time the server changes the  DB!
