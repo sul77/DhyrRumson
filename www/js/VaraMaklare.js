@@ -18,15 +18,19 @@ class VaraMaklarePage extends Base {
       <div class="row" route="/vara-maklare" page-title="Våra mäklare">
 
        ${this.brokers.map(broker => `
-            <div class="col-md-6 mt-5 text-center">
-                <img src="${broker.imgSrc}" class="img-fluid mb-2">
-                <div class="mt-2 border border-light">
-                 <h3><strong> ${broker.firstName} ${broker.lastName}</strong></h3>
-                 <h4><strong>Email: </strong>${broker.email}</h4>
-                 <h4><strong>Telephone: </strong>${broker.telephone}</h4>
-                 <h4><strong>Kort om mig: </strong>${broker.description}</h4>
-                </div>              
-             </div>
+            <div class="col-md-6 shadow-lg p-3 bg-white rounded">
+              <div class="col-md-12">
+                <div class="col-md-3">
+                  <img src="${broker.imgSrc}" style="width:130px">
+                </div>
+                <div class="col-md-6 mt-5 ml-5">
+                  <h5><strong> ${broker.firstName} ${broker.lastName}</strong></h5>
+                  <h5><strong>Email: </strong>${broker.email}</h5>
+                  <h5><strong>Telephone: </strong>${broker.telephone}</h5>
+               </div>
+              </div>
+              <div class="col-md-12 mt-5 pb-5 text-justify">${broker.description}</div>
+            </div>
       `)}
     </div>`;
   }
