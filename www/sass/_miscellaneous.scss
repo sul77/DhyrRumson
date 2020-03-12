@@ -1,37 +1,36 @@
 // Cursor pointer on all elements with the click attribute
-[click]{ 
-  cursor: pointer;
+[click] {
+    cursor: pointer;
 }
 
 #nyProduktionCarousel .carousel-item img {
-  height: 50vh;
-  width: 100%;
-  object-fit: cover;
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
 }
+
 #myCarousel .carousel-item img {
-   height: 60vh;
-   width: 100%;
-   object-fit: cover;
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
 }
 
- HEAD
-.nyproduktion-facts p strong {
-  display: inline-block;
-  min-width: 80px;
+HEAD .nyproduktion-facts p strong {
+    display: inline-block;
+    min-width: 80px;
 }
 
-.nyproduktion-line {                                        
-  border-top: 1px solid #000;
-  margin: 20px 200px 20px 0;
+.nyproduktion-line {
+    border-top: 1px solid #000;
+    margin: 20px 200px 20px 0;
 }
-
 
 .search-dropdown {
-  max-height: 300px;
-  overflow-y: scroll;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 
-.center_content{
+.center_content {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -40,16 +39,15 @@
     align-items: center;
 }
 
-.stack-top{   
-        position: absolute;
-        z-index: 9;
-        opacity: 0.9;
-        background-color: #F8F8FF;
+.stack-top {
+    position: absolute;
+    z-index: 9;
+    opacity: 0.9;
+    background-color: #F8F8FF;
 }
- 
 
-
-
-
-
-
+.start-page-search-holder {
+    width: 30%;
+    height: 20%;
+    align-content: baseline;
+}
