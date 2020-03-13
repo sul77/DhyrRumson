@@ -68,9 +68,10 @@ class StartPage extends Base {
 <div class="card-group">
  ${this.housing.map(house => `
 
-          <div class="card mr-5">
+          <div class="card mr-7 ml-5 mr-5 ">
            <div class="card-img-top">
-              <img src="${house.imageUrls[0]}" class="img-fluid">
+
+              <img src="${house.imageUrls[0]}" class="img-fluid" >
            </div>
            
             <div class="card-img-top" src="${house.imageUrls[0]}" alt="Card image cap">
