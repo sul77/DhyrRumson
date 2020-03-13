@@ -1,19 +1,19 @@
 class SokBostadPage extends Base {
 
-    async mount() {
-        this.userChoices = {
-            // t.ex. kvadradmeter, pris etc
-            chosenCity: ''
-        }
-        await this.search();
-    }
+  async mount() {
+    await this.search();
+  }
 
-    async search() {
-        // sokBar sets the app.chosenCity and we
-        // just add this to userChoices
-        this.userChoices.chosenCity = app.chosenCity || "";
-        console.log("this.userChoices", this.userChoices)
-        this.housing = await sql( /*sql*/ `
+  async search() {
+    this.userChoices = {
+      // t.ex. kvadradmeter, pris etc
+      chosenCity: ''
+    }
+    // sokBar sets the app.chosenCity and we
+    // just add this to userChoices
+    this.userChoices.chosenCity = app.chosenCity || "";
+    console.log("this.userChoices", this.userChoices)
+    this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city,
          GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
        FROM Housing, HousingImages, Address
@@ -22,18 +22,22 @@ class SokBostadPage extends Base {
        AND (city = $chosenCity OR $chosenCity = "")
        GROUP BY Housing.id
     `, this.userChoices);
-        console.log("this.housing  (after search in DB)", this.housing)
-            // convert imageUrls to an array
-        for (let house of this.housing) {
-            house.imageUrls = house.imageUrls.split(',');
-        }
-        this.render();
+    console.log("this.housing  (after search in DB)", this.housing)
 
-        console.log(this.housing)
+    if (this.housing.length === 0) {
+      setTimeout(function () { app.goto('/'); }, 1000);
     }
+    // convert imageUrls to an array
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
+    }
+    this.render();
 
-    render() {
-            return /*html*/ `
+    console.log(this.housing)
+  }
+
+  render() {
+    return /*html*/ `
       <div route="/sok-bostad" page-title="Sök Bostad">
       
         ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
