@@ -36,7 +36,7 @@ class SokBostadPage extends Base {
             return /*html*/ `
       <div route="/sok-bostad" page-title="Sök Bostad">
       
-        ${this.housing.length === 0 ? alert('Inga resultat matchar din sökning...') : this.housing.map(house => /*html*/`
+        ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
             <div class="row mb-5">
 
               <div class="col-md-4">
