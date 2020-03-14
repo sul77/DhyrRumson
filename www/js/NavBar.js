@@ -12,7 +12,7 @@ class NavBar extends Base {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             ${this.links.map(link => !link.dropdown ? /*html*/`
-              <li class="nav-item">
+              <li class="nav-item p-2">
                 <a class="nav-link" href="${link.route}">
                   ${link.label}
                 </a>
