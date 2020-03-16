@@ -1,13 +1,13 @@
 class StartPage extends Base {
-    async mount() {
-        this.carousel = new StartPageCarousel();
-        this.sokbar = new Sokbar();
-        this.CheckIfCookiesAccepted();
-        this.f = new ContactForm({
-            toSave: "meeting"
-        });
+  async mount() {
+    this.carousel = new StartPageCarousel();
+    this.sokbar = new Sokbar();
+    this.CheckIfCookiesAccepted();
+    this.f = new ContactForm({
+      toSave: "meeting"
+    });
 
-        this.housing = await sql( /*sql*/ `
+    this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea, Address.city,
          GROUP_CONCAT(HousingImages.nyUrl) AS imageUrls
        FROM Housing, HousingImages, Address
@@ -18,32 +18,32 @@ class StartPage extends Base {
        LIMIT 3
     `);
 
-        // convert imageUrls to an array
-        for (let house of this.housing) {
-            house.imageUrls = house.imageUrls.split(',');
-        }
-
-        console.log(this.housing)
+    // convert imageUrls to an array
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
     }
 
-    CheckIfCookiesAccepted() {
-        setTimeout(function() {
-            if (!localStorage.cookiesAccepted == '1') {
-                $('#cookieInfoDiv').show();
-            }
-        }, 10);
-    }
+    console.log(this.housing)
+  }
 
-    HideCookies() {
-        localStorage.setItem('cookiesAccepted', '1');
-        $('#cookieInfoDiv').hide();
-    }
+  CheckIfCookiesAccepted() {
+    setTimeout(function () {
+      if (!localStorage.cookiesAccepted == '1') {
+        $('#cookieInfoDiv').show();
+      }
+    }, 10);
+  }
+
+  HideCookies() {
+    localStorage.setItem('cookiesAccepted', '1');
+    $('#cookieInfoDiv').hide();
+  }
 
 
 
-    render() {
-            this.CheckIfCookiesAccepted();
-            return /*html*/ `
+  render() {
+    this.CheckIfCookiesAccepted();
+    return /*html*/ `
 
       <div class="row" route="/" page-title="Hem">
 
@@ -78,10 +78,10 @@ class StartPage extends Base {
               <h4 class="card-title">${house.projectName}</h4>
              
              
-              <p class="card-text"><strong>Pris:</strong>${house.price} kr</p>
-              <p class="card-text"><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
-              <p class="card-text"><strong>Boarea:</strong>${house.livingArea} Kvm</p>
-              <p class="card-text"><strong>Område:</strong>${house.postalArea}</p>
+              <p class="card-text"><strong> Pris: </strong>${house.price} kr</p>
+              <p class="card-text"><strong> Antal Rum: </strong>${house.totalRooms} RoK</p>
+              <p class="card-text"><strong> Boarea: </strong>${house.livingArea} Kvm</p>
+              <p class="card-text"><strong> Område: </strong>${house.postalArea}</p>
             
               
            
@@ -92,44 +92,7 @@ class StartPage extends Base {
           
       `)}
 
-  <!--<div class="card mr-5">
-    <img class="card-img-top" src='../images/ExampleEstate1.jpg' alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">FRILIGGANDE VILLA
-
-      <p>Persön, Luleå</p></h5>
-      <p class="card-text">ADRESS:.........................................Månsgårdsvägen 7</p>
-      <p class="card-text">UTGÅNGSPRIS:.........................................2 000 000 kr</p>
-      <p class="card-text">BOAREA:........................................................50kvm</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-
-  <div class="card mr-5">
-    <img class="card-img-top" src='../images/ExampleEstate2.jpg' alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">BOSTADSRÄTTSLÄGENHET
-
-      <p>Stallhagen, Västerås</p></h5>
-      <p class="card-text">ADRESS:.........................................Nanna Svartz Gata 5</p>
-      <p class="card-text">UTGÅNGSPRIS:.........................................2 095 000 kr</p>
-      <p class="card-text">BOAREA:........................................................70kvm</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
   
-  <div class="card">
-    <img class="card-img-top" src='../images/ExampleEstate3.jpg' alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">BOSTADSRÄTTSLÄGENHET
-       <p>Sibbarp, Malmö</p></h5>
-       <p class="card-text">ADRESS:..................................Hammars Parkväg 28B</p>
-      <p class="card-text">UTGÅNGSPRIS:.........................................3 195 000 kr</p>
-      <p class="card-text">BOAREA:........................................................88kvm</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>-->
 
 <div class = "col-12">
  <h2 class="text-center">Möt några av Svergies bästa mäklare</h2>

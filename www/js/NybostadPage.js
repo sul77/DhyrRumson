@@ -29,11 +29,11 @@ class NyBostadPage extends Base {
               <h1>${house.projectName}</h1>
               <div class="nyproduktion-line"></div>
               <p>${house.description}</p>
-              <p><strong>Pris:</strong>${house.price} kr</p>
-              <p><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
-              <p><strong>Boarea:</strong>${house.livingArea} Kv</p>
-              <p><strong>Område:</strong>${house.postalArea}</p>
-              <p><strong>Kommun:</strong>${house.city}</p>
+              <p><strong>Pris: </strong>${house.price} kr</p>
+              <p><strong>Antal Rum: </strong>${house.totalRooms} RoK</p>
+              <p><strong>Boarea: </strong>${house.livingArea} Kv</p>
+              <p><strong>Område: </strong>${house.postalArea}</p>
+              <p><strong>Kommun: </strong>${house.city}</p>
               
            </div>
            <div class="col-md-6">
