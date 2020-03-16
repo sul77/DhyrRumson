@@ -67,30 +67,18 @@ class StartPage extends Base {
 
 <div class="card-group">
  ${this.housing.map(house => `
-
-          <div class="card mr-7 ml-7 mr-3 ">
-           <div class="card-img-top">
-
-              <img src="${house.imageUrls[0]}" class="img-fluid" >
+        <div class="card"  style="margin:5px; border:1px solid !important;">
+        <div class="card-img-top">
+            <img src="${house.imageUrls[0]}" class="img-fluid" >
            </div>
-           
-            <div class="card-img-top" src="${house.imageUrls[0]}" alt="Card image cap">
-             <div class="card-body">
-              <h4 class="card-title">${house.projectName}</h4>
-             
-             
-              <p class="card-text"><strong>Pris:</strong>${house.price} kr</p>
-              <p class="card-text"><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
-              <p class="card-text"><strong>Boarea:</strong>${house.livingArea} Kvm</p>
-              <p class="card-text"><strong>Område:</strong>${house.postalArea}</p>
-            
-              
-           
-          
-           </div>
+         <div class="card-body">
+           <h4 class="card-title">${house.projectName}</h4>
+           <p class="card-text"><strong>Pris:</strong>${house.price} kr</p>
+           <p class="card-text"><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
+           <p class="card-text"><strong>Boarea:</strong>${house.livingArea} Kvm</p>
+           <p class="card-text"><strong>Område:</strong>${house.postalArea}</p>
           </div>
-          </div>
-          
+        </div>
       `)}
 
   
