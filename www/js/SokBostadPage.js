@@ -1,7 +1,41 @@
 class SokBostadPage extends Base {
 
   async mount() {
+    this.filter = this.createFilterObject();
+
     await this.search();
+  }
+
+  createFilterObject() {
+    return {
+      typ: [
+        { key: 'Alla', value: "'Villa', 'Radhus', 'Lägenhet'" },
+        { key: 'Villa', value: "'Villa'" },
+        { key: 'Radhus', value: "'Radhus'" },
+        { key: 'Lägenhet', value: "'Lägenhet'" }
+      ],
+      priceMin: this.createList(0, 10000000, 500000, false),
+      priceMax: this.createList(0, 10000000, 500000, true),
+      roomsMin: this.createList(1, 10, 1, false),
+      roomsMax: this.createList(1, 10, 1, true),
+      rent: this.createList(1000, 10000, 1000, true),
+      livingAryaMin: this.createList(20, 200, 40, false),
+      livingAryaMax: this.createList(20, 200, 40, true),
+      lotSizeMin: this.createList(0, 500, 100, false),
+      lotSizeMax: this.createList(0, 500, 100, true),
+    };
+  }
+
+  createList(start, max, counter, sortDescending) {
+    let data = [];
+    for (let value = start; value <= max; value += counter) {
+      data.push(value);
+    }
+
+    if (!sortDescending)
+      return data;
+    else
+      return data.sort(function (a, b) { return b - a });
   }
 
   async search() {
@@ -13,6 +47,7 @@ class SokBostadPage extends Base {
     // just add this to userChoices
     this.userChoices.chosenCity = app.chosenCity || "";
     console.log("this.userChoices", this.userChoices)
+
     this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city,
          GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
@@ -22,6 +57,7 @@ class SokBostadPage extends Base {
        AND (city = $chosenCity OR $chosenCity = "")
        GROUP BY Housing.id
     `, this.userChoices);
+
     console.log("this.housing  (after search in DB)", this.housing)
 
     if (this.housing.length === 0) {
@@ -36,21 +72,109 @@ class SokBostadPage extends Base {
     console.log(this.housing)
   }
 
+  async getFilterHousing(e) {
+    e.preventDefault();
+
+    let filter = {};
+    for (let element of [...e.target.closest('form').elements]) {
+      if (element.id !== '') {
+        if (element.id !== 'Bostadstyp')
+          filter[element.id] = Number(element.selectedOptions[0].value);
+        else
+          filter[element.id] = element.selectedOptions[0].value;
+      }
+    }
+
+    this.housing = await sql( /*sql*/ `
+       SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city, GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls 
+       FROM Housing
+       JOIN Address ON Housing.addressId = Address.id
+       JOIN HousingImages ON Housing.Id = HousingImages.housingId
+       WHERE (price >= ${filter.PriceMin} AND price <= ${filter.PriceMax}) 
+       AND type IN (${filter.Bostadstyp})
+       AND (livingArea >= ${filter.livingAryaMin} AND livingArea <= ${filter.livingAryaMax})
+       AND(totalRooms >= ${filter.RoomsMin} AND totalRooms <= ${filter.RoomsMax}) 
+       AND rent <= ${filter.Rent}
+       AND (lotSize >= ${filter.lotSizeMin} AND lotSize <= ${filter.lotSizeMax})
+       GROUP BY Housing.id
+    `);
+
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
+    }
+
+    this.render();
+  }
+
   render() {
     return /*html*/ `
-      <div route="/sok-bostad" page-title="Sök Bostad">
-      
+    <div route="/sok-bostad" page-title="Sök Bostad">
+        
+         <form submit="getFilterHousing">
+            <div class="form-group">
+              
+              <label for="Bostadstyp">Bostadstyp</label>
+              <select class="form-control" id="Bostadstyp">
+                ${this.filter.typ.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
+              </select>
+
+              <label for="PriceMin">Pris (min)</label>
+              <select class="form-control" id="PriceMin">
+                ${this.filter.priceMin.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
+              </select>
+
+              <label for="PriceMax">Pris (max)</label>
+              <select class="form-control" id="PriceMax">
+                ${this.filter.priceMax.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
+              </select>
+
+              <label for="RoomsMin">Rum (min)</label>
+              <select class="form-control" id="RoomsMin">
+                ${this.filter.roomsMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+
+              <label for="RoomsMax">Rum (max)</label>
+              <select class="form-control" id="RoomsMax">
+                ${this.filter.roomsMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+            
+              <label for="Rent">Avgift (max)</label>
+              <select class="form-control" id="Rent">
+                ${this.filter.rent.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
+              </select>
+
+              <label for="livingAryaMin">Boarea (min)</label>
+              <select class="form-control" id="livingAryaMin">
+                ${this.filter.livingAryaMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+
+              <label for="livingAryaMax">Boarea (max)</label>
+              <select class="form-control" id="livingAryaMax">
+                ${this.filter.livingAryaMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+
+              <label for="lotSizeMin">Tomtarea (min)</label>
+              <select class="form-control" id="lotSizeMin">
+                ${this.filter.lotSizeMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+
+              <label for="lotSizeMax">Tomtarea (max)</label>
+              <select class="form-control" id="lotSizeMax">
+                ${this.filter.lotSizeMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+              
+            </div>
+            <button type="submit" class="btn btn-primary btn-md sharp float-md-none d-md-inline mt-3">VISA</button>
+          </form>
+        
         ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
             <div class="row mb-5">
-
               <div class="col-md-4">
                   <img src="${house.imageUrls[0]}" class="img-fluid">
-              </div>
-            
+              </div>            
               <div class="col-md-6 Sokbostad-facts">
                 <h1>${house.projectName}</h1>
-                <div class="Sokbostad-line"></div>
-                
+                <div class="Sokbostad-line"></div>                
                 <p>${house.description}</p>
                 <p><strong>Pris:</strong>${house.price} kr</p>
                 <p><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
@@ -59,14 +183,8 @@ class SokBostadPage extends Base {
                 <p><strong>Kommun:</strong>${house.city}</p>
                 <div class="col-md-12"><hr></div>  
               </div>
-            
             </div>
         `)}
-
-        
-      </div>
-      
-    `;
+      </div>`;
   }
-
 }
