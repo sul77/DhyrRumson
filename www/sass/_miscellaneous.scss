@@ -178,7 +178,23 @@ HEAD .nyproduktion-facts p strong {
 }
 
 .köpabostad-img {
-  height: 50vh;
+    height: 50vh;
     object-fit: cover;
-}  
+}
 
+.card-style {
+    margin-top: 3000;
+    padding-top: 100px;
+}
+
+.text-start-page {
+    width: 400;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    padding: 40px 30px 60px 30px;
+    border: 0.5px darkgray;
+    border-radius: 25px;
+    border-style: solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
