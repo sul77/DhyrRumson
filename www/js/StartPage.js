@@ -1,13 +1,13 @@
 class StartPage extends Base {
-    async mount() {
-        this.carousel = new StartPageCarousel();
-        this.sokbar = new Sokbar();
-        this.CheckIfCookiesAccepted();
-        this.f = new ContactForm({
-            toSave: "meeting"
-        });
+  async mount() {
+    this.carousel = new StartPageCarousel();
+    this.sokbar = new Sokbar();
+    this.CheckIfCookiesAccepted();
+    this.f = new ContactForm({
+      toSave: "meeting"
+    });
 
-        this.housing = await sql( /*sql*/ `
+    this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea, Address.city,
          GROUP_CONCAT(HousingImages.nyUrl) AS imageUrls
        FROM Housing, HousingImages, Address
@@ -18,32 +18,32 @@ class StartPage extends Base {
        LIMIT 3
     `);
 
-        // convert imageUrls to an array
-        for (let house of this.housing) {
-            house.imageUrls = house.imageUrls.split(',');
-        }
-
-        console.log(this.housing)
+    // convert imageUrls to an array
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
     }
 
-    CheckIfCookiesAccepted() {
-        setTimeout(function() {
-            if (!localStorage.cookiesAccepted == '1') {
-                $('#cookieInfoDiv').show();
-            }
-        }, 10);
-    }
+    console.log(this.housing)
+  }
 
-    HideCookies() {
-        localStorage.setItem('cookiesAccepted', '1');
-        $('#cookieInfoDiv').hide();
-    }
+  CheckIfCookiesAccepted() {
+    setTimeout(function () {
+      if (!localStorage.cookiesAccepted == '1') {
+        $('#cookieInfoDiv').show();
+      }
+    }, 10);
+  }
+
+  HideCookies() {
+    localStorage.setItem('cookiesAccepted', '1');
+    $('#cookieInfoDiv').hide();
+  }
 
 
 
-    render() {
-            this.CheckIfCookiesAccepted();
-            return /*html*/ `
+  render() {
+    this.CheckIfCookiesAccepted();
+    return /*html*/ `
 
       <div class="row" route="/" page-title="Hem">
 
@@ -55,23 +55,22 @@ class StartPage extends Base {
       </div>
     <div>
     
-    <div class="center_content">
+    <div class="center_content" style="margin:auto">
       ${this.carousel}
       <div class="center_content stack-top start-page-search-holder">
         <h3 float:left>Sök Område</h3>
         ${this.sokbar}
-      </div>
+      </div> 
     </div> 
       
-      <div class="card-style">
+      <div class="col-12 mt-5">
 
 <div class="card-group">
  ${this.housing.map(house => `
 
-          <div class="card mr-7 ml-7 mr-3 ">
+          <div class="card mr-5">
            <div class="card-img-top">
-
-              <img src="${house.imageUrls[0]}" class="img-fluid" >
+              <img src="${house.imageUrls[0]}" class="img-fluid">
            </div>
            
             <div class="card-img-top" src="${house.imageUrls[0]}" alt="Card image cap">
@@ -79,10 +78,10 @@ class StartPage extends Base {
               <h4 class="card-title">${house.projectName}</h4>
              
              
-              <p class="card-text"><strong>Pris:</strong>${house.price} kr</p>
-              <p class="card-text"><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
-              <p class="card-text"><strong>Boarea:</strong>${house.livingArea} Kvm</p>
-              <p class="card-text"><strong>Område:</strong>${house.postalArea}</p>
+              <p class="card-text"><strong> Pris: </strong>${house.price} kr</p>
+              <p class="card-text"><strong> Antal Rum: </strong>${house.totalRooms} RoK</p>
+              <p class="card-text"><strong> Boarea: </strong>${house.livingArea} Kvm</p>
+              <p class="card-text"><strong> Område: </strong>${house.postalArea}</p>
             
               
            
@@ -94,7 +93,8 @@ class StartPage extends Base {
       `)}
 
   
-<div class ="text-start-page">
+
+<div class = "col-12">
  <h2 class="text-center">Möt några av Svergies bästa mäklare</h2>
                    <p class="text-center">
                    DhyrRumson är en av Sveriges snabbast växande mäklarföretag idag.
@@ -102,30 +102,13 @@ class StartPage extends Base {
                    över nästan hela Sverige med inga tecken på att stoppa. I dagsläget befinner sig
                    våran verksamhet bara i Sverige, men vi har planer runt hörnet; att sprida våran verksamhet
                    ut över hela Skandinavien och så småningom; Europa.
-                   Med anledning av utbrottet av Coronaviruset(Covid - 19) kommer 
-                    att införa nya rutiner gällande visningar av bostäder.
-                    Vi tillämpar försiktighetsprincipen vilket betyder att 
-                    vi vill ta det säkra före det osäkra.Spridningen av 
-                    viruset i Sverige är fortfarande mycket låg men då 
-                    det har konstaterats fall i Sverige har vi med omsorg 
-                    för våra kunder och anställda beslutat att införa försiktighetsåtgärder inför våra visningar,
-                     vilket innebär delvis nya arbetsrutiner för våra mäklare.
-
-                   Om du har vistats i områden där smittan är
-                    känd är det viktigt att du följer riktlinjerna 
-                    från Folkhälsomyndigheten gällande Coronaviruset, 
-                    Covid - 19. Om det finns någon risk att du kan vara 
-                    smittbärare ber vi dig att avstå från att delta på visningar.
-                    Kontakta istället ansvarig mäklare för mer information och material.
                    </p>
-                   </div>
-</div>
-                   <div class="text-center">
+                   <div style="text-align:center; display:block">
                    <h2>Kontakta oss</h2>
                    </div>
 
                    ${this.f}
-
+</div>
 
 
     `;

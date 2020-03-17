@@ -1,14 +1,14 @@
 class SokBostadPage extends Base {
 
   async mount() {
-    await this.search();
-  }
-
-  async search() {
     this.userChoices = {
       // t.ex. kvadradmeter, pris etc
       chosenCity: ''
     }
+    await this.search();
+  }
+
+  async search() {
     // sokBar sets the app.chosenCity and we
     // just add this to userChoices
     this.userChoices.chosenCity = app.chosenCity || "";
@@ -23,10 +23,6 @@ class SokBostadPage extends Base {
        GROUP BY Housing.id
     `, this.userChoices);
     console.log("this.housing  (after search in DB)", this.housing)
-
-    if (this.housing.length === 0) {
-      setTimeout(function () { app.goto('/'); }, 1000);
-    }
     // convert imageUrls to an array
     for (let house of this.housing) {
       house.imageUrls = house.imageUrls.split(',');

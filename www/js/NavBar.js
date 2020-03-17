@@ -1,7 +1,7 @@
 class NavBar extends Base {
 
-    render() {
-            return /*html*/ `
+  render() {
+    return /*html*/`
       <nav class="navbar navbar-expand-lg navbar-light font-weight-bold bg-light shadow-lg p-3 bg-white rounded border">
         <a class="navbar-brand" href="/">
          <img src='../images/logo.png' alt="Mäkar" height="42" style="margin-top:-15px;">
@@ -12,7 +12,7 @@ class NavBar extends Base {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             ${this.links.map(link => !link.dropdown ? /*html*/`
-              <li class="nav-item p-2">
+              <li class="nav-item">
                 <a class="nav-link" href="${link.route}">
                   ${link.label}
                 </a>
