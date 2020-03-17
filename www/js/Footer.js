@@ -45,19 +45,18 @@ class Footer extends Base {
                     </ul>
                 </div>
                   </div>
-                  <div class="margin: auto;text-align: center">
-              <div class="col text-center text light">
-                    <p>
-                     © DhyrRumson 2020
-                    </p>
+                 <div class="col text-center text light">
+
               <button type="button" class="btn btn-link" click="backToTop">  <!-- link-type button that calls for 'backToTop' function -->
                   [Tillbaka till toppen]          <!-- '[Back To Top]' receives the button link -->
               </button>                                                      <!-- button ends -->
               </div>
+              <div class="margin: auto;text-align: center">
+ <h4 class="text-center ">© DhyrRumson 2020</h4>
             </div>
-              
+
             </footer>
-            <!-------- Footer ends -------->       
+            <!-------- Footer ends -------->
         </div>
     `;
     }
