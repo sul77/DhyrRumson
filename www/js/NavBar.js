@@ -1,8 +1,8 @@
 class NavBar extends Base {
 
-    render() {
-            return /*html*/ `
-      <nav class="navbar navbar-expand-lg navbar-primary shadow-lg p-3 bg-white rounded border" style="font-size: 20px;" >
+  render() {
+    return /*html*/`
+       <nav class="navbar navbar-expand-lg navbar-primary shadow-lg p-6 bg-white rounded border" style = "font-size: 20px;" >
         <a class="navbar-brand" href="/">
          <img src='../images/logo.png' alt="Mäkar" height="42" style="margin-top:-15px;">
         </a>
