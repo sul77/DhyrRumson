@@ -198,3 +198,164 @@ HEAD .nyproduktion-facts p strong {
     border-style: solid;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.sidenav {      //Though it's called 'sidenav'; it is in fact the css code for the side border images
+    width: 170px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 80px;
+    background: transparent;
+    overflow-x: hidden;
+    padding-top: 100px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #064579;
+  }
+  
+  .main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  @media screen and (max-width: 1750px) {
+    .sidenav {
+        margin-left: -40px;
+    }
+    .sidenav a {
+        margin-left: -40px;
+    }
+  }
+
+  @media screen and (max-width: 1650px) {
+    .sidenav {
+        margin-left: -60px;
+    }
+    .sidenav a {
+        margin-left: -60px;
+    }
+  }
+
+  @media screen and (max-width: 1550px) {
+    .sidenav {
+        margin-left: -70px;
+    }
+    .sidenav a {
+        margin-left: -70px;
+    }
+  }
+
+  @media screen and (max-width: 1540px) {
+    .sidenav {
+        margin-left: -80px;
+    }
+    .sidenav a {
+        margin-left: -80px;
+    }
+  }
+
+  
+
+  @media screen and (max-width: 1520px) {
+    .sidenav {
+        display: none;
+    }
+    .sidenav a {
+        display: none;
+    }
+  }
+
+  .sidenav2 {       //Though it's called 'sidenav'; it is in fact the css code for the side border images
+    width: 170px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    right: 80px;
+    background: transparent;
+    overflow-x: hidden;
+    padding-top: 100px;
+  }
+  
+  .sidenav2 a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+  }
+  
+  .sidenav2 a:hover {
+    color: #064579;
+  }
+  
+  .main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav2 {padding-top: 15px;}
+    .sidenav2 a {font-size: 18px;}
+  }
+
+  @media screen and (max-width: 1750px) {
+    .sidenav2 {
+        margin-right: -40px;
+    }
+    .sidenav2 a {
+        margin-right: -40px;
+    }
+  }
+
+  @media screen and (max-width: 1650px) {
+    .sidenav2 {
+        margin-right: -60px;
+    }
+    .sidenav2 a {
+        margin-right: -60px;
+    }
+  }
+
+  @media screen and (max-width: 1550px) {
+    .sidenav2 {
+        margin-right: -70px;
+    }
+    .sidenav2 a {
+        margin-right: -70px;
+    }
+  }
+
+
+  @media screen and (max-width: 1540px) {
+    .sidenav2 {
+        margin-left: -80px;
+    }
+    .sidenav2 a {
+        margin-left: -80px;
+    }
+  }
+
+  @media screen and (max-width: 1520px) {
+    .sidenav2 {
+        display: none;
+    }
+    .sidenav2 a {
+        display: none;
+    }
+  }
