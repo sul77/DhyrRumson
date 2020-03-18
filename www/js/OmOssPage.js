@@ -25,13 +25,7 @@ class OmOssPage extends Base {
                    </p>
                    <h4 class="text-center"> ______ </h4>
             </div>
-           </div>
-           <div class="sidenav">
-            <img src="/images/BorderImageLeft.png" class="rounded float-left" alt="...">
-            </div>
-            <div class="sidenav2">
-            <img src="/images/BorderImageRight.png" class="rounded float-right" alt="...">
-            </div>
+           </div>        
         </main> 
       </div>
       

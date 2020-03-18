@@ -94,6 +94,12 @@ class App extends Base {
 
           
         </main>
+            <div class="sidenav">
+                <img src="/images/BorderImageLeft.png" class="rounded float-left" alt="...">
+                </div>
+                <div class="sidenav2">
+                <img src="/images/BorderImageRight.png" class="rounded float-right" alt="...">
+            </div>
 
         ${this.footer}
         ${this.shoppingCart}
