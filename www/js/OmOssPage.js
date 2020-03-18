@@ -3,7 +3,7 @@ class OmOssPage extends Base {
   render() {
     return /*html*/`
       <div class="row" route="/om-oss" page-title="Om oss">
-        <main>
+        <main>  
            <div class="card mb-3">
               <img src="images/ExampleOmOss1.jpg" class="card-img-top" alt="...">
                  <div class="card-body">
@@ -25,7 +25,7 @@ class OmOssPage extends Base {
                    </p>
                    <h4 class="text-center"> ______ </h4>
             </div>
-           </div>
+           </div>        
         </main> 
       </div>
       

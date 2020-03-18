@@ -21,17 +21,17 @@ class ContactForm extends Base {
           }
 
         return /*html*/`
-          <div style="padding-top:2px;padding-left: inherit;padding-right: inherit;padding-bottom:19px;width:99%;margin:auto;border:1px solid;border-radius:16px;">
+          <div class="contact-form">
              <form class="checkout-form" submit="saveDetails">
                  ${(this.formFields || []).filter(e => e.type !== "textarea").map(e => /*html*/`
                      <div class="input-group mb-3">
-                         <h4 style="display:block; text-align:left; padding-left: 10px;">${e.label}</h4>
+                         <h4 class="contact-form-label">${e.label}</h4>
                          <input name="${e.key}" type="${e.type}" class="form-control" placeholder="${e.placeholder}" value="" required>
                     </div>`)}
 
                  ${(this.formFields || []).filter(e => e.type === "textarea").map(e => /*html*/`
                       <div class="input-group mb-3">
-                          <h4 style="display:block; text-align:left; padding-left: 10px;">${e.label}</h4>
+                          <h4 class="contact-form-label">${e.label}</h4>
                           <textarea rows="3" class="form-control" name="${e.key}" style="width:100%; height:80px" required></textarea>
                       </div>`)}
 
