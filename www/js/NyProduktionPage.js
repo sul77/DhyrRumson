@@ -15,33 +15,29 @@ class NyProduktionPage extends Base {
         ${this.carousel} 
         ${this.nyBostad}
         ${this.byggHerre}
-        
-
-        <div class="row">
-    <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <p class="font-weight-bold">  Letar du bostad ? </p>
-
+      <div class="row">
+      <div class="col-sm-6">
+        <div class="mb-5  mt-5">
+        <div class="p-3 mb-2 bg-info text-white">Letar du bostad ? </div>
         <p class="card-text">Vi kan ny produktion <br>
                              Här hittar du alla våra aktuella projekt.</p>
-        <a href="/nya-bostader" class="btn btn-primary">Läs mer </a>
-      </div>
-    </div>
+        <a href="/nya-bostader" class="btn btn-info">Läs mer </a>
   </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <p class="font-weight-bold">  Bygger du bostad ? </p>
+  </div>
+      <div class="col-sm-6">
+      <div class="mb-5  mt-5"> 
+      <div class="p-3 mb-2 bg-info text-white">Bygger du bostad ? </div>
+        <div class="card-body">
         <p class="card-text">Vår ambition är att våra mäklare ska inleda ett samarbete med byggherrarna i ett tydigt skede
                               för att skapa rätt föruttsättningar för varje projekt.</p>
-        <a href="bygg-herre" class="btn btn-primary">Läs mer </a>
+        <a href="bygg-herre" class="btn btn-info">Läs mer </a>
+        </div>
       </div>
     </div>
   </div>
 </div>
-      </div>
-      </div>
+</div>
+</div>
     `;
   }
 

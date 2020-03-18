@@ -1,3 +1,4 @@
+
 class Carousel extends Base {
 
   async mount() {
@@ -54,6 +55,10 @@ class Carousel extends Base {
           </a>
       </div>
     `;
+
+
   }
 
 }
+
+
