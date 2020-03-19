@@ -26,7 +26,7 @@ class Carousel extends Base {
   render() {
     return /*html*/`
     
-      <div id="nyProduktionCarousel" class="carousel slide" data-ride="carousel">
+      <div id="nyProduktionCarousel" class="carousel slide" data-ride="carousel"  data-interval="5000">
         <!-- Indicators -->
           <ol class="carousel-indicators">
           ${this.housing.map((house, index) => /*html*/` 
