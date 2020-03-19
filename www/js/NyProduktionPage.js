@@ -6,7 +6,7 @@ class NyProduktionPage extends Base {
     this.byggHerre = new ByggHerrePage();
 
 
-    await sql(/*sql*/`USE workingDb`);
+    await sql(/*sql*/`USE dhyrRumson`);
   }
 
 
