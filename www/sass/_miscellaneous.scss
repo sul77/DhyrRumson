@@ -394,51 +394,53 @@ HEAD .nyproduktion-facts p strong {
   }
 //collapse buttons for 'IntegrityPolicy' ends
 
-.icon{
-    background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-    transition: transform .2s;
-    text-decoration: none;
+
+//CSS for everything related to the navbar begins
+.icon{        //dropdown icon
+    background-color: rgb(255, 255, 255);       //give it white background
+    color: rgb(255, 255, 255);                  //give it white color
+    transition: transform .2s;                    //give it transition property; 'transform' with time span of 0.2seconds
+    text-decoration: none;                        //remove underline from icon (This doesn't work)
 }
 
-.icon:hover{
-    transform: scale(0.90);
+.icon:hover{                    //When dropdown icon is being hovered
+    transform: scale(0.90);     //transform it to the scale of 90% of its original size
 }
 
-.topnav{
-    background-color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    outline: 0.5px solid rgb(194, 194, 194);
+.topnav{                                        //topnav which is the while navbar's body
+    background-color: white;                  //topnav's body becomes white
+    padding-top: 5px;                           //padding-top 5px to lower it slightly. This is done so that the "zoom on hover" works properly
+    padding-bottom: 5px;                        //same goes to the padding-bottom. ^
+    outline: 0.5px solid rgb(194, 194, 194);  //give topnav a half transparent, black, 0.5"pixel-thickness" outline to differentiate it from everything that is not the navbar
    
 }
 
-.topnav a{
-    color: rgb(0, 0, 0);
+.topnav a{                      //topnav a
+    color: rgb(0, 0, 0);      //gets a black color
 }
 
-.topnav a:active{
-    background-color: rgb(255, 255, 255);
-    color: black;
+.topnav a:active{                               //when 'topnav a' is active
+    background-color: rgb(255, 255, 255);     //give background-color white
+    color: black;                             //give color black
 }
 
-.topnav a:hover{
-    background-color: white;
-    color: black;
+.topnav a:hover{                        //when 'topnav a' is hovered
+    background-color: white;          //give background-color white
+    color: black;                     //give color black
 }
 
-.nav-link{
-    background-color: white !important;
-    color: black !important;
-    transition: transform .2s;
-    margin-top: 5px;
-    margin-left: 70px;
+.nav-link{                                  //nav-link are the actual nav buttons such as 'Home', 'Kontakta oss', 'Om oss' etc
+    background-color: white !important;   //give blackground-color white. make important
+    color: black !important;              //give color black. make important
+    transition: transform .2s;              //give property transition: transform with 0.2 seconds transition
+    margin-top: 5px;                        //give nav-links a top margin of 5px
+    margin-left: 70px;                      //give nav-links a left margin of 70px as default, so that it looks centered on a large screen
     
 }
-
-@media screen and (max-width: 1730px) {
-    .nav-link{
-        margin-left: 50px;
+//manual responsiveness of nav-links begin
+@media screen and (max-width: 1730px) {     //when screen's width is 1731px and above 
+    .nav-link{                              //change in 'nav-link'
+        margin-left: 50px;                  //give nav-link buttons a left margin of 50px 
     }
     
 }
@@ -492,68 +494,69 @@ HEAD .nyproduktion-facts p strong {
     
 }
 
-@media screen and (max-width: 1000px) {
-    .nav-link{
-        margin-left: 0px;
+@media screen and (max-width: 1000px) { //when screen width is 1000px and below
+    .nav-link{                          //change in nav-link
+        margin-left: 0px;               //give a left margin of 0px. This is done so that when the nav-link buttons changes into a dropdown menu; it will not look weird
     }
     
 }
 
-.nav-link:hover{
+.nav-link:hover{                                            //when nav-link is being hovered
+    transform: scale(1.10);                                 //transform button scale to 110% of its original size
+    overflow: visible !important;                           //Overflow with everything else. make important.
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);     //give shadow to the buttons sides
+}
+
+.nav-link:active{                                           //when nav-link is actibe (when it is being currently clicked)
+    transform: scale(1.05);                                 //transform button scale to 105% of its original size. This is done to give a nice bounce effect on the navlink when clicked
+    overflow: visible !important;                           //Overflow with everything else. make important.
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);     //give shadow to the buttons sides
+}
+
+.nav-link a:active{                                         //^ same like above, but for nav-link a ^
     transform: scale(1.10);
     overflow: visible !important;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
 }
 
-.nav-link:active{
-    transform: scale(1.05);
-    overflow: visible !important;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
-}
-
-.nav-link a:active{
-    transform: scale(1.10);
-    overflow: visible !important;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
-}
-
-@media screen and (max-width: 1000px) {
-    .nav-link{
-        background-color: white !important;
-        color: black !important;
-        transition: transform .1s;
+@media screen and (max-width: 1000px) {                         //when screen width is 1000 and below
+    .nav-link{                                                  //change in 'nav-link' 
+        background-color: white !important;                   //give background-color white. make important
+        color: black !important;                              //give color black. make important
+        transition: transform .1s;                              //give transition property transform with time span of 0.1second
     }
-    .nav-link:hover{
-        transform: scale(1.005);
-        overflow: visible !important;
-        box-shadow: 1px 1px 1px 1px rgb(116, 116, 116);
+    .nav-link:hover{                                            //when nav-link is hovered
+        transform: scale(1.005);                                //transform scale to 105%
+        overflow: visible !important;                           //Overflow with everything else. make important.
+        box-shadow: 1px 1px 1px 1px rgb(116, 116, 116);       //give shadow to the buttons sides
     }
 }
 
-.navbar-brand img{
-    margin-left: 20px;
-    margin-right: -20px;
-    transition: transform .1s;
+.navbar-brand img{                  //navbar-brand img
+    margin-left: 20px;              //give default left margin of 20px
+    margin-right: -20px;            //give default right margin of -20px (this is done so that the nav-links don't get pushed away from the brand when moved to the right
+    transition: transform .1s;      //give transition property transform with time span of 0.1second
 }
 
-.navbar-brand img:hover{
-    transform: scale(1.10);
+.navbar-brand img:hover{            //when 'nav-bar img' hover
+    transform: scale(1.10);         //transform the scale of the image to 110% of its original size
 }
 
-.navbar-brand img:active{
-    transform: scale(0.90);
+.navbar-brand img:active{           //when 'navbar-brand img' is active/clicked 
+    transform: scale(0.90);         //transform button scale to 105% of its original size. This is done to give a nice bounce effect on the navlink when clicked
 }
 
-@media screen and (max-width: 1098px) {
-    .navbar-brand img{
-        margin-left: 10px;
-        margin-right: -10px;
+@media screen and (max-width: 1098px) {         //when sceen width is below 1098px 
+    .navbar-brand img{                          //change in 'navbar-bran img'
+        margin-left: 10px;                      //give left margin of 10px
+        margin-right: -10px;                    //give right margin of -10px
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .navbar-brand img{
-        margin-left: 0px;
-        margin-right: 0px;
+@media screen and (max-width: 1000px) {         //when screen width is below 1000 (this is the width when the dropdown menu appears)
+    .navbar-brand img{                          //change in 'navbar-brand img'
+        margin-left: 0px;                       //reset the margin
+        margin-right: 0px;                      //reset the margin
     }
 }
+//CSS for everything related to the navbar ends
