@@ -1,12 +1,14 @@
 class NyProduktionPage extends Base {
 
-  mount() {
+  async mount() {
     this.carousel = new Carousel();
     this.nyBostad = new NyBostadPage();
     this.byggHerre = new ByggHerrePage();
 
 
+    await sql(/*sql*/`USE workingDb`);
   }
+
 
   render() {
     return /*html*/`
@@ -30,15 +32,15 @@ class NyProduktionPage extends Base {
         <div class="card-body">
         <p class="card-text">Vår ambition är att våra mäklare ska inleda ett samarbete med byggherrarna i ett tydigt skede
                               för att skapa rätt föruttsättningar för varje projekt.</p>
-        <a href="bygg-herre" class="btn btn-info">Läs mer </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-    `;
-  }
+                  <a href="bygg-herre" class="btn btn-info">Läs mer </a>
+                  
+           
+            
+          `}
+
+  ;
 
 }
+
+
+

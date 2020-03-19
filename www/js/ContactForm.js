@@ -26,13 +26,13 @@ class ContactForm extends Base {
                  ${(this.formFields || []).filter(e => e.type !== "textarea").map(e => /*html*/`
                      <div class="input-group mb-3">
                          <h4 class="contact-form-label">${e.label}</h4>
-                         <input name="${e.key}" type="${e.type}" class="form-control" placeholder="${e.placeholder}" value="" required>
+                         <input name="${e.key}" type="${e.type}" class="form-control-new" placeholder="${e.placeholder}" value="" required>
                     </div>`)}
 
                  ${(this.formFields || []).filter(e => e.type === "textarea").map(e => /*html*/`
                       <div class="input-group mb-3">
                           <h4 class="contact-form-label">${e.label}</h4>
-                          <textarea rows="3" class="form-control" name="${e.key}" style="width:100%; height:80px" required></textarea>
+                          <textarea rows="3" class="form-textarea" name="${e.key}" required></textarea>
                       </div>`)}
 
                  <div style="margin: auto;text-align: center">

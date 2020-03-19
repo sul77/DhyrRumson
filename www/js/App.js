@@ -61,7 +61,7 @@ class App extends Base {
     async sqlQueries() {
         // Which database to use
         await sql( /*sql*/ `
-      USE dhyrRumson
+      USE workingDb
     `);
     }
 

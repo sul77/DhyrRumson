@@ -25,7 +25,7 @@ class StartPageCarousel extends Base {
   render() {
     return /*html*/ `
     
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
         <!-- Indicators -->
           <ol class="carousel-indicators">
           ${this.housing.map((house, index) => /*html*/` 

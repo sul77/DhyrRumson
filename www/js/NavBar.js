@@ -1,38 +1,26 @@
 class NavBar extends Base {
 
+  responsiveFunk() {
+    var x = document.getElementById('myTopnav');
+    if (x.className === 'topnav') {
+      x.className += ' responsive';
+    } else {
+      x.className = 'topnav';
+    }
+  }
   render() {
     return /*html*/`
-       <nav class="navbar navbar-expand-lg navbar-primary shadow-lg p-6 bg-white rounded border " style = "font-size: 20px;" >
+      <div class="topnav" id="myTopnav">
         <a class="navbar-brand" href="/">
-         <img src='../images/logo.png' alt="Mäkar" height="42" style="margin-top:-15px;">
+         <img src='../images/logo.png' alt="Mäkar" height="42" style="margin-top:-10px;">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            ${this.links.map(link => !link.dropdown ? /*html*/`
-              <li class="nav-item pl-4 pr-4">
-                <a class="nav-link" href="${link.route}">
-                  ${link.label}
-                </a>
-              </li>
-          ` : /*html*/`
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="${link.route}"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  ${link.label}
-                </a>
-                <div class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdownMenuLink">
-                  ${link.dropdown.map(item => /*html*/`
-                    <a class="dropdown-item" href="${item.route}">${item.label}</a>
-                  `)}
-                </div>
-              </li>
-          `)}
-          </ul>
-        </div>
-      </nav>
+        ${this.links.map(link =>/*html*/`
+          <a class="nav-link" href="${link.route}">
+            ${link.label}
+          </a>
+        `)}
+        <a href="javascript:void(0);" class="icon" click="responsiveFunk">&#9776;</a>
+      </div>
     `
   }
-
 }

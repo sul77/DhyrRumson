@@ -12,10 +12,10 @@ class VaraMaklarePage extends Base {
       <div class="row" route="/vara-maklare" page-title="Våra mäklare">
 
        ${this.brokers.map(broker => `
-             <div class="col-md-6 shadow-lg p-3 bg-white rounded" style="font-size: 17px;">
+             <div class="col-md-6 shadow-lg p-3 bg-white rounded" style="font-size: 17px margin-top: 20px;">
               <div class="col-md-12">
                 <div class="col-md-3">
-                  <img src="${broker.imgSrc}" style="width:130px">
+                  <img src="${broker.imgSrc}" style="width:100px">
                 </div>
                 <div class="col-md-6 mt-5 ml-5">
                   <p><strong> ${broker.firstName} ${broker.lastName}</strong></p>
