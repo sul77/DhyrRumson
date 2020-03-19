@@ -368,3 +368,192 @@ HEAD .nyproduktion-facts p strong {
     text-align:left;
     padding-left: 10px;
 }
+
+//collapse buttons for 'IntegrityPoliciy' begins
+.CustomCollapseButton{
+    background-color: rgb(223, 223, 223);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    margin-top: 10px;
+    margin-bottom: -15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: transform .2s;  //Transition: transform takes 0.2 seconds
+    overflow: hidden;
+  }
+
+  .CustomCollapseButton:hover {     //On hover:
+    background-color: rgb(202, 202, 202);
+    color: rgb(0, 0, 0);
+    transform: scale(1.005);   //Transform: zoom in 100.5%
+    overflow: hidden;          //Prevent collusion with drop down text window
+    text-decoration: none;
+  }
+//collapse buttons for 'IntegrityPolicy' ends
+
+.icon{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    transition: transform .2s;
+    text-decoration: none;
+}
+
+.icon:hover{
+    transform: scale(0.90);
+}
+
+.topnav{
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    outline: 0.5px solid rgb(194, 194, 194);
+   
+}
+
+.topnav a{
+    color: rgb(0, 0, 0);
+}
+
+.topnav a:active{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.topnav a:hover{
+    background-color: white;
+    color: black;
+}
+
+.nav-link{
+    background-color: white !important;
+    color: black !important;
+    transition: transform .2s;
+    margin-top: 5px;
+    margin-left: 70px;
+    
+}
+
+@media screen and (max-width: 1730px) {
+    .nav-link{
+        margin-left: 50px;
+    }
+    
+}
+
+@media screen and (max-width: 1548px) {
+    .nav-link{
+        margin-left: 40px;
+    }
+    
+}
+
+@media screen and (max-width: 1458px) {
+    .nav-link{
+        margin-left: 30px;
+    }
+    
+}
+
+@media screen and (max-width: 1368px) {
+    .nav-link{
+        margin-left: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 1278px) {
+    .nav-link{
+        margin-left: 10px;
+    }
+    
+}
+
+@media screen and (max-width: 1188px) {
+    .nav-link{
+        margin-left: 0px;
+    }
+    
+}
+
+@media screen and (max-width: 1098px) {
+    .nav-link{
+        margin-left: -10px;
+    }
+    
+}
+
+@media screen and (max-width: 1008px) {
+    .nav-link{
+        margin-left: -15px;
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .nav-link{
+        margin-left: 0px;
+    }
+    
+}
+
+.nav-link:hover{
+    transform: scale(1.10);
+    overflow: visible !important;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
+
+.nav-link:active{
+    transform: scale(1.05);
+    overflow: visible !important;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
+
+.nav-link a:active{
+    transform: scale(1.10);
+    overflow: visible !important;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
+
+@media screen and (max-width: 1000px) {
+    .nav-link{
+        background-color: white !important;
+        color: black !important;
+        transition: transform .1s;
+    }
+    .nav-link:hover{
+        transform: scale(1.005);
+        overflow: visible !important;
+        box-shadow: 1px 1px 1px 1px rgb(116, 116, 116);
+    }
+}
+
+.navbar-brand img{
+    margin-left: 20px;
+    margin-right: -20px;
+    transition: transform .1s;
+}
+
+.navbar-brand img:hover{
+    transform: scale(1.10);
+}
+
+.navbar-brand img:active{
+    transform: scale(0.90);
+}
+
+@media screen and (max-width: 1098px) {
+    .navbar-brand img{
+        margin-left: 10px;
+        margin-right: -10px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar-brand img{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

@@ -32,7 +32,7 @@ class IntegritetPolicyPage extends Base {
                        <h5 class="text-center"> Behandling av personuppgifter </h5>
 
                             <p>
-                            <a class="btn btn-light btn-md sharp" style="width:100%" data-toggle="collapse" href="#collapseVadArEnPersonuppgift" role="button" aria-expanded="false" aria-controls="collapseVadArEnPersonuppgift"><b>Vad är en personuppgift?</b></a>
+                            <a class="CustomCollapseButton" style="width:100%" data-toggle="collapse" href="#collapseVadArEnPersonuppgift" role="button" aria-expanded="false" aria-controls="collapseVadArEnPersonuppgift"><b>Vad är en personuppgift?</b></a>
                             </p>
                             <div class="row">
                             <div class="col">
@@ -51,7 +51,7 @@ class IntegritetPolicyPage extends Base {
                             </div>
                             </div>
                             <p>
-                            <a class="btn btn-light btn-md sharp" style="width:100%" data-toggle="collapse" href="#collapseOmVemSamlarNiInInfromation" role="button" aria-expanded="false" aria-controls="collapseOmVemSamlarNiInInfromation"><b>Om vem samlar ni in information?</b></a>
+                            <a class="CustomCollapseButton" style="width:100%" data-toggle="collapse" href="#collapseOmVemSamlarNiInInfromation" role="button" aria-expanded="false" aria-controls="collapseOmVemSamlarNiInInfromation"><b>Om vem samlar ni in information?</b></a>
                             </p>
                             <div class="row">
                             <div class="col">
@@ -67,7 +67,7 @@ class IntegritetPolicyPage extends Base {
                             </div>
                             </div>
                             <p>
-                            <a class="btn btn-light btn-md sharp" style="width:100%" data-toggle="collapse" href="#collapseVilkenInformationSamlarNiInVarifranKommerDenOchHurGorNiDet" role="button" aria-expanded="false" aria-controls="collapseVilkenInformationSamlarNiInVarifranKommerDenOchHurGorNiDet"><b>Vilken information samlar ni in, varifrån kommer den och hur gör ni det?</b></a>
+                            <a class="CustomCollapseButton" style="width:100%" data-toggle="collapse" href="#collapseVilkenInformationSamlarNiInVarifranKommerDenOchHurGorNiDet" role="button" aria-expanded="false" aria-controls="collapseVilkenInformationSamlarNiInVarifranKommerDenOchHurGorNiDet"><b>Vilken information samlar ni in, varifrån kommer den och hur gör ni det?</b></a>
                             </p>
                             <div class="row">
                             <div class="col">
@@ -95,7 +95,7 @@ class IntegritetPolicyPage extends Base {
                             </div>
                             </div>
                             <p>
-                            <a class="btn btn-light btn-md sharp" style="width:100%" data-toggle="collapse" href="#collapseHurLangeSpararNiMinaPersonuppgifter" role="button" aria-expanded="false" aria-controls="collapseHurLangeSpararNiMinaPersonuppgifter"><b>Hur länge sparar ni mina personuppgifter?</b></a>
+                            <a class="CustomCollapseButton" style="width:100%" data-toggle="collapse" href="#collapseHurLangeSpararNiMinaPersonuppgifter" role="button" aria-expanded="false" aria-controls="collapseHurLangeSpararNiMinaPersonuppgifter"><b>Hur länge sparar ni mina personuppgifter?</b></a>
                             </p>
                             <div class="row">
                             <div class="col">
@@ -117,7 +117,7 @@ class IntegritetPolicyPage extends Base {
                             </div>
                             </div>
                             <p>
-                            <a class="btn btn-light btn-md sharp" style="width:100%" data-toggle="collapse" href="#collapseHurSkyddarNiMinaPersonuppgifter" role="button" aria-expanded="false" aria-controls="collapseHurSkyddarNiMinaPersonuppgifter"><b>Hur skyddar ni mina personuppgifter?</b></a>
+                            <a class="CustomCollapseButton" style="width:100%" data-toggle="collapse" href="#collapseHurSkyddarNiMinaPersonuppgifter" role="button" aria-expanded="false" aria-controls="collapseHurSkyddarNiMinaPersonuppgifter"><b>Hur skyddar ni mina personuppgifter?</b></a>
                             </p>
                             <div class="row">
                             <div class="col">
@@ -138,7 +138,7 @@ class IntegritetPolicyPage extends Base {
                             </div>
                             </div>
                             <p>
-                            <a class="btn btn-light btn-md sharp" style="width:100%" data-toggle="collapse" href="#collapseVadArMinaRattigheter" role="button" aria-expanded="false" aria-controls="collapseVadArMinaRattigheter"><b>Vad är mina rättigheter?</b></a>
+                            <a class="CustomCollapseButton" style="width:100%" data-toggle="collapse" href="#collapseVadArMinaRattigheter" role="button" aria-expanded="false" aria-controls="collapseVadArMinaRattigheter"><b>Vad är mina rättigheter?</b></a>
                             </p>
                             <div class="row">
                             <div class="col">
