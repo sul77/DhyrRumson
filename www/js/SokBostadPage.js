@@ -111,67 +111,99 @@ class SokBostadPage extends Base {
     <div route="/sok-bostad" page-title="Sök Bostad">
         
          <form submit="getFilterHousing">
-            <div class="form-group">
-              
+          <div class="form-group">
+          <div class="col-sm-3">
+          <div class="mb-3  mt-3">
               <label for="Bostadstyp">Bostadstyp</label>
               <select class="form-control" id="Bostadstyp">
                 ${this.filter.typ.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
               </select>
-
+          </div>
+          </div>
+          <div class="col-sm-3">
+          <div class="mb-3  mt-3">
               <label for="PriceMin">Pris (min)</label>
               <select class="form-control" id="PriceMin">
                 ${this.filter.priceMin.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
               </select>
-
+          </div>
+          </div>
+            <div class="col-sm-3">
+            <div class="mb-3  mt-3">
               <label for="PriceMax">Pris (max)</label>
               <select class="form-control" id="PriceMax">
                 ${this.filter.priceMax.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
               </select>
+            </div>
+            </div>
 
-              <label for="RoomsMin">Rum (min)</label>
-              <select class="form-control" id="RoomsMin">
-                ${this.filter.roomsMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
-              </select>
-
-              <label for="RoomsMax">Rum (max)</label>
-              <select class="form-control" id="RoomsMax">
-                ${this.filter.roomsMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
-              </select>
-            
+              <div class="col-sm-3">
+              <div class="mb-3  mt-3">
               <label for="Rent">Avgift (max)</label>
               <select class="form-control" id="Rent">
                 ${this.filter.rent.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
               </select>
-
+          </div>
+          </div>
+                <div class="col-sm-3">
+                <div class="mb-3  mt-3">
+              <label for="RoomsMin">Rum (min)</label>
+              <select class="form-control" id="RoomsMin">
+                ${this.filter.roomsMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+            </div>
+            </div>
+                  <div class="col-sm-3">
+                  <div class="mb-3  mt-3">
+              <label for="RoomsMax">Rum (max)</label>
+              <select class="form-control" id="RoomsMax">
+                ${this.filter.roomsMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+            </div>
+            </div>
+                <div class="col-sm-3">
+                <div class="mb-3  mt-3">
               <label for="livingAryaMin">Boarea (min)</label>
               <select class="form-control" id="livingAryaMin">
                 ${this.filter.livingAryaMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
-
+          </div>
+          </div>
+                <div class="col-sm-3">
+                  <div class="mb-3  mt-3">
               <label for="livingAryaMax">Boarea (max)</label>
               <select class="form-control" id="livingAryaMax">
                 ${this.filter.livingAryaMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
-
+          </div>
+          </div>
+                 <div class="col-sm-6">
+                  <div class="mb-3  mt-3">
               <label for="lotSizeMin">Tomtarea (min)</label>
               <select class="form-control" id="lotSizeMin">
                 ${this.filter.lotSizeMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
-
+            </div>
+            </div>
+                  <div class="col-sm-6">
+                  <div class="mb-3  mt-3">
               <label for="lotSizeMax">Tomtarea (max)</label>
               <select class="form-control" id="lotSizeMax">
                 ${this.filter.lotSizeMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
-              
-            </div>
-            <button type="submit" class="btn btn-primary btn-md sharp float-md-none d-md-inline mt-3">VISA</button>
-          </form>
-        
+              </div>
+                <div class="col-sm-6">
+                <div class="mb-3  mt-4">
+            <button type="submit" class="btn btn-primary btn-lg sharp float-md-none d-lg-inline mt-3">VISA</button>
+          </div>
+          </div>
+          </div>
+            
         ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
-            <div class="row mb-5">
-              <div class="col-md-4">
+              <div class="row mb-5">
+              <div class="col-md-6">
                   <img src="${house.imageUrls[0]}" class="img-fluid">
-              </div>            
+            </div>            
               <div class="col-md-6 Sokbostad-facts">
                 <h1>${house.projectName}</h1>
                 <div class="Sokbostad-line"></div>                
@@ -181,9 +213,11 @@ class SokBostadPage extends Base {
                 <p><strong>Boarea:</strong>${house.livingArea} Kvm</p>
                 <p><strong>Område:</strong>${house.postalArea}</p>
                 <p><strong>Kommun:</strong>${house.city}</p>
-                <div class="col-md-12"><hr></div>  
-              </div>
+                
             </div>
+            </div>
+            </form>
+
         `)}
       </div>`;
   }
