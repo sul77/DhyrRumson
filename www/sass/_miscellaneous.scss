@@ -560,3 +560,32 @@ HEAD .nyproduktion-facts p strong {
     }
 }
 //CSS for everything related to the navbar ends
+
+
+
+//img-thumbnail css begins
+
+.img-thumbnail{
+  margin-top: -20px;
+  overflow: hidden;
+  padding: 0px !important;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+//img-thumbnail css ends
+
+.CustomTextWindow{
+    font-size:18px;
+    color:#ffffff;
+    line-height:1.5;
+    background-color: rgba(0, 0, 0, 0.315);
+    margin-top: -82px;
+    padding-left: 265px;
+    padding-right: 265px;
+    padding-top: 27px;
+    padding-bottom: 18px;
+    position: absolute;
+}
+
