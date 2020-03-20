@@ -32,8 +32,8 @@ class App extends Base {
                 route: '/Kontakta-Oss'
             },
             //{
-                // label: 'Planskiss',
-                //route: '/Planskiss'
+            // label: 'Planskiss',
+            //route: '/Planskiss'
             //},
             {
                 label: 'Om oss',
@@ -64,8 +64,8 @@ class App extends Base {
         await sql( /*sql*/ `
       USE dhyrRumson
     `);
-      // Create Bostad pages from a db query (only id needed)
-      this.BostadPages = await sql(BostadPage, /*sql*/`
+        // Create Bostad pages from a db query (only id needed)
+        this.BostadPages = await sql(BostadPage, /*sql*/ `
       SELECT id FROM Address
     `);
     }

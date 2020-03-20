@@ -1,54 +1,67 @@
 class SokBostadPage extends Base {
 
-  async mount() {
-    this.filter = this.createFilterObject();
+    async mount() {
+        this.filter = this.createFilterObject();
 
-    await this.search();
-  }
-
-  createFilterObject() {
-    return {
-      typ: [
-        { key: 'Alla', value: "'Villa', 'Radhus', 'Lägenhet'" },
-        { key: 'Villa', value: "'Villa'" },
-        { key: 'Radhus', value: "'Radhus'" },
-        { key: 'Lägenhet', value: "'Lägenhet'" }
-      ],
-      priceMin: this.createList(0, 10000000, 500000, false),
-      priceMax: this.createList(0, 10000000, 500000, true),
-      roomsMin: this.createList(1, 10, 1, false),
-      roomsMax: this.createList(1, 10, 1, true),
-      rent: this.createList(1000, 10000, 1000, true),
-      livingAryaMin: this.createList(20, 200, 40, false),
-      livingAryaMax: this.createList(20, 200, 40, true),
-      lotSizeMin: this.createList(0, 500, 100, false),
-      lotSizeMax: this.createList(0, 500, 100, true),
-    };
-  }
-
-  createList(start, max, counter, sortDescending) {
-    let data = [];
-    for (let value = start; value <= max; value += counter) {
-      data.push(value);
+        await this.search();
     }
 
-    if (!sortDescending)
-      return data;
-    else
-      return data.sort(function (a, b) { return b - a });
-  }
-
-  async search() {
-    this.userChoices = {
-      // t.ex. kvadradmeter, pris etc
-      chosenCity: ''
+    createFilterObject() {
+        return {
+            typ: [{
+                    key: 'Alla',
+                    value: "'Villa', 'Radhus', 'Lägenhet'"
+                },
+                {
+                    key: 'Villa',
+                    value: "'Villa'"
+                },
+                {
+                    key: 'Radhus',
+                    value: "'Radhus'"
+                },
+                {
+                    key: 'Lägenhet',
+                    value: "'Lägenhet'"
+                }
+            ],
+            priceMin: this.createList(0, 10000000, 500000, false),
+            priceMax: this.createList(0, 10000000, 500000, true),
+            roomsMin: this.createList(1, 10, 1, false),
+            roomsMax: this.createList(1, 10, 1, true),
+            rent: this.createList(1000, 10000, 1000, true),
+            livingAryaMin: this.createList(20, 200, 40, false),
+            livingAryaMax: this.createList(20, 200, 40, true),
+            lotSizeMin: this.createList(0, 500, 100, false),
+            lotSizeMax: this.createList(0, 500, 100, true),
+        };
     }
-    // sokBar sets the app.chosenCity and we
-    // just add this to userChoices
-    this.userChoices.chosenCity = app.chosenCity || "";
-    console.log("this.userChoices", this.userChoices)
 
-    this.housing = await sql( /*sql*/ `
+    createList(start, max, counter, sortDescending) {
+        let data = [];
+        for (let value = start; value <= max; value += counter) {
+            data.push(value);
+        }
+
+        if (!sortDescending)
+            return data;
+        else
+            return data.sort(function(a, b) {
+                return b - a
+            });
+    }
+
+    async search() {
+        this.userChoices = {
+                // t.ex. kvadradmeter, pris etc
+                chosenCity: ''
+            }
+            // sokBar sets the app.chosenCity and we
+            // just add this to userChoices
+        this.userChoices.chosenCity = app.chosenCity || "";
+        console.log("this.userChoices", this.userChoices)
+
+        this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city,
          GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
        FROM Housing, HousingImages, Address
@@ -58,34 +71,36 @@ class SokBostadPage extends Base {
        GROUP BY Housing.id
     `, this.userChoices);
 
-    console.log("this.housing  (after search in DB)", this.housing)
+        console.log("this.housing  (after search in DB)", this.housing)
 
-    if (this.housing.length === 0) {
-      setTimeout(function () { app.goto('/'); }, 1000);
-    }
-    // convert imageUrls to an array
-    for (let house of this.housing) {
-      house.imageUrls = house.imageUrls.split(',');
-    }
-    this.render();
+        if (this.housing.length === 0) {
+            setTimeout(function() {
+                app.goto('/');
+            }, 1000);
+        }
+        // convert imageUrls to an array
+        for (let house of this.housing) {
+            house.imageUrls = house.imageUrls.split(',');
+        }
+        this.render();
 
-    console.log(this.housing)
-  }
-
-  async getFilterHousing(e) {
-    e.preventDefault();
-
-    let filter = {};
-    for (let element of [...e.target.closest('form').elements]) {
-      if (element.id !== '') {
-        if (element.id !== 'Bostadstyp')
-          filter[element.id] = Number(element.selectedOptions[0].value);
-        else
-          filter[element.id] = element.selectedOptions[0].value;
-      }
+        console.log(this.housing)
     }
 
-    this.housing = await sql( /*sql*/ `
+    async getFilterHousing(e) {
+        e.preventDefault();
+
+        let filter = {};
+        for (let element of[...e.target.closest('form').elements]) {
+            if (element.id !== '') {
+                if (element.id !== 'Bostadstyp')
+                    filter[element.id] = Number(element.selectedOptions[0].value);
+                else
+                    filter[element.id] = element.selectedOptions[0].value;
+            }
+        }
+
+        this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city, GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls 
        FROM Housing
        JOIN Address ON Housing.addressId = Address.id
@@ -99,15 +114,15 @@ class SokBostadPage extends Base {
        GROUP BY Housing.id
     `);
 
-    for (let house of this.housing) {
-      house.imageUrls = house.imageUrls.split(',');
+        for (let house of this.housing) {
+            house.imageUrls = house.imageUrls.split(',');
+        }
+
+        this.render();
     }
 
-    this.render();
-  }
-
-  render() {
-    return /*html*/ `
+    render() {
+            return /*html*/ `
     <div route="/sok-bostad" page-title="Sök Bostad">
         
          <form submit="getFilterHousing">
@@ -208,7 +223,7 @@ class SokBostadPage extends Base {
                 <h1>${house.projectName}</h1>
                 <div class="Sokbostad-line"></div>                
                 <p>${house.description}</p>
-                <a class="btn btn-primary" href="/bostad/${house.addressId}" role="button">Link</a>
+                <a class="btn btn-primary" href="/bostad/${house.id}" role="button">Link</a>
                 <a class="btn btn-primary" href="/bostad/${house.type}" role="button">${house.type}</a>
                 <p><strong>Pris:</strong>${house.price} kr</p>
                 <p><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
