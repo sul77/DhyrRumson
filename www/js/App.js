@@ -31,10 +31,10 @@ class App extends Base {
                 label: 'Kontakta oss',
                 route: '/Kontakta-Oss'
             },
-            {
+            //{
                 // label: 'Planskiss',
                 //route: '/Planskiss'
-            },
+            //},
             {
                 label: 'Om oss',
                 route: '/Om-Oss'
@@ -57,11 +57,16 @@ class App extends Base {
         this.byggHerre = new ByggHerrePage();
         this.Planskiss = new Planskiss();
         this.IntegritetPolicyPage = new IntegritetPolicyPage();
+        this.BostadPage = new BostadPage();
     }
     async sqlQueries() {
         // Which database to use
         await sql( /*sql*/ `
       USE dhyrRumson
+    `);
+      // Create book pages from a db query (only title needed)
+      this.BostadPages = await sql(BostadPage, /*sql*/`
+      SELECT id FROM Address
     `);
     }
 
@@ -86,7 +91,8 @@ class App extends Base {
           ${this.NyProduktionPage}
           ${this.KopaBostadPage}
           ${this.nyBostad}
-          ${this.IntegritetPolicyPage}
+          ${this.IntegritetPolicyPage}    
+          ${this.BostadPages}
 
           ${this.byggHerre}
 
