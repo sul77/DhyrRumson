@@ -64,7 +64,7 @@ class App extends Base {
         await sql( /*sql*/ `
       USE dhyrRumson
     `);
-      // Create book pages from a db query (only title needed)
+      // Create Bostad pages from a db query (only id needed)
       this.BostadPages = await sql(BostadPage, /*sql*/`
       SELECT id FROM Address
     `);

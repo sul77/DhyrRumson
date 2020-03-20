@@ -176,6 +176,8 @@ class SokBostadPage extends Base {
                 <h1>${house.projectName}</h1>
                 <div class="Sokbostad-line"></div>                
                 <p>${house.description}</p>
+                <a class="btn btn-primary" href="/bostad/${house.addressId}" role="button">Link</a>
+                <a class="btn btn-primary" href="/bostad/${house.type}" role="button">${house.type}</a>
                 <p><strong>Pris:</strong>${house.price} kr</p>
                 <p><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
                 <p><strong>Boarea:</strong>${house.livingArea} Kvm</p>
