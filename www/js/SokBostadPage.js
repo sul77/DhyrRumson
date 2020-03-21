@@ -209,7 +209,7 @@ class SokBostadPage extends Base {
               </div>
                 <div class="col-sm-6">
                 <div class="mb-3  mt-4">
-            <button type="submit" class="btn btn-primary btn-lg sharp float-md-none d-lg-inline mt-3">VISA</button>
+            <button type="submit" class="CustomVisaButton">VISA</button>
           </div>
           </div>
           </div>
@@ -223,8 +223,7 @@ class SokBostadPage extends Base {
                 <h1>${house.projectName}</h1>
                 <div class="Sokbostad-line"></div>                
                 <p>${house.description}</p>
-                <a class="btn btn-primary" href="/bostad/${house.id}" role="button">Link</a>
-                <a class="btn btn-primary" href="/bostad/${house.type}" role="button">${house.type}</a>
+                <a class="CustomInvisibleButton" href="/bostad/${house.id}" role="button"> </a>
                 <p><strong>Pris:</strong>${house.price} kr</p>
                 <p><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
                 <p><strong>Boarea:</strong>${house.livingArea} Kvm</p>
