@@ -9,13 +9,13 @@ class StartPage extends Base {
 
     this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea, Address.city,
-         GROUP_CONCAT(HousingImages.nyUrl) AS imageUrls
+         GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
        FROM Housing, HousingImages, Address
        WHERE Housing.id = HousingImages.housingId
-       AND Housing.addressId = Address.id
+       AND Housing.addressId = Address.id 
        AND Housing.nyProduktion = 0
        GROUP BY Housing.id
-       LIMIT 3
+       LIMIT 3 
     `);
 
     // convert imageUrls to an array
