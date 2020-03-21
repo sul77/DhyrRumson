@@ -213,7 +213,7 @@ class SokBostadPage extends Base {
           </div>
           </div>
           </div>
-            
+            </form>
         ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
               <div class="row mb-5">
               <div class="col-md-6">
@@ -233,7 +233,7 @@ class SokBostadPage extends Base {
                 
             </div>
             </div>
-            </form>
+            
 
         `)}
       </div>`;
