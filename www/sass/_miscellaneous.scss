@@ -200,7 +200,8 @@ HEAD .nyproduktion-facts p strong {
 }
 
 //====== SideBorder css begins =======
-.sidenav {      //Though it's called 'sidenav'; it is in fact the css code for the side border images
+.sidenav {
+    //Though it's called 'sidenav'; it is in fact the css code for the side border images
     width: 170px;
     position: fixed;
     z-index: 1;
@@ -209,42 +210,43 @@ HEAD .nyproduktion-facts p strong {
     background: transparent;
     overflow-x: hidden;
     padding-top: 20px;
-  }
-  
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-  }
+}
 
-  @media screen and (max-width: 1750px) {
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+}
+
+@media screen and (max-width: 1750px) {
     .sidenav {
         margin-left: -40px;
-    } 
-  }
+    }
+}
 
-  @media screen and (max-width: 1650px) {
+@media screen and (max-width: 1650px) {
     .sidenav {
         margin-left: -60px;
-    } 
-  }
+    }
+}
 
-  @media screen and (max-width: 1550px) {
+@media screen and (max-width: 1550px) {
     .sidenav {
         margin-left: -70px;
     }
-  }
+}
 
-  @media screen and (max-width: 1540px) {
+@media screen and (max-width: 1540px) {
     .sidenav {
         margin-left: -80px;
-    }  
-  }
+    }
+}
 
-  @media screen and (max-height: 800px) {
-    .sidenav img{
+@media screen and (max-height: 800px) {
+    .sidenav img {
         height: auto;
         margin-top: -40px;
-         width: 170px;
+        width: 170px;
         position: fixed;
         z-index: 1;
         top: 100px;
@@ -254,17 +256,18 @@ HEAD .nyproduktion-facts p strong {
         overflow-y: hidden;
         padding-top: 10px;
     }
-  }
+}
 
-  
-
-  @media screen and (max-width: 1520px) {  //when pixel width is less than 1520
-    .sidenav {                             //change in .sidenav
-        display: none;                     //to display nothing/disable the image
+@media screen and (max-width: 1520px) {
+    //when pixel width is less than 1520
+    .sidenav {
+        //change in .sidenav
+        display: none; //to display nothing/disable the image
     }
-  }
+}
 
-  .sidenav2 {       //Though it's called 'sidenav'; it is in fact the css code for the side border images
+.sidenav2 {
+    //Though it's called 'sidenav'; it is in fact the css code for the side border images
     width: 170px;
     position: fixed;
     z-index: 1;
@@ -273,48 +276,49 @@ HEAD .nyproduktion-facts p strong {
     background: transparent;
     overflow-x: hidden;
     padding-top: 20px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav2 {padding-top: 15px;}
-  }
+}
 
-  @media screen and (max-width: 1750px) {
+@media screen and (max-height: 450px) {
+    .sidenav2 {
+        padding-top: 15px;
+    }
+}
+
+@media screen and (max-width: 1750px) {
     .sidenav2 {
         margin-right: -40px;
     }
-  }
+}
 
-  @media screen and (max-width: 1650px) {
+@media screen and (max-width: 1650px) {
     .sidenav2 {
         margin-right: -60px;
     }
-  }
+}
 
-  @media screen and (max-width: 1550px) {
+@media screen and (max-width: 1550px) {
     .sidenav2 {
         margin-right: -70px;
     }
-  }
+}
 
-
-  @media screen and (max-width: 1540px) {
+@media screen and (max-width: 1540px) {
     .sidenav2 {
         margin-left: -80px;
     }
-  }
+}
 
-  @media screen and (max-width: 1520px) {
+@media screen and (max-width: 1520px) {
     .sidenav2 {
         display: none;
     }
-  } 
+}
 
-  @media screen and (max-height: 800px) {
-    .sidenav2 img{
+@media screen and (max-height: 800px) {
+    .sidenav2 img {
         height: auto;
         margin-top: -40px;
-         width: 170px;
+        width: 170px;
         position: fixed;
         z-index: 1;
         top: 100px;
@@ -322,12 +326,13 @@ HEAD .nyproduktion-facts p strong {
         background: transparent;
         overflow-x: hidden;
         overflow-y: hidden;
-        padding-top: 10px; 
+        padding-top: 10px;
     }
-  } //====== SideBorder css ends =======
+}
 
+//====== SideBorder css ends =======
 .form-control-new {
-   position: relative;
+    position: relative;
     z-index: 2;
     float: left;
     width: 99%;
@@ -337,26 +342,25 @@ HEAD .nyproduktion-facts p strong {
 }
 
 .form-textarea {
-   position: relative;
+    position: relative;
     z-index: 2;
     float: left;
     width: 99%;
     margin-bottom: 0;
     margin-left: 3px;
     margin-right: 3px;
-    width:99%;
-    height:80px;
+    width: 99%;
+    height: 80px;
     border-color: lightgray;
 }
 
 .contact-form {
-    padding-top:2px;
+    padding-top: 2px;
     padding-left: inherit;
     padding-right: inherit;
-    padding-bottom:19px;
-    width:99%;
-    margin:auto;
-
+    padding-bottom: 19px;
+    width: 99%;
+    margin: auto;
     border: 0.5px darkgray;
     border-radius: 25px;
     border-style: solid;
@@ -364,13 +368,13 @@ HEAD .nyproduktion-facts p strong {
 }
 
 .contact-form-label {
-    display:block;
-    text-align:left;
+    display: block;
+    text-align: left;
     padding-left: 10px;
 }
 
 //collapse buttons for 'IntegrityPoliciy' begins
-.CustomCollapseButton{
+.CustomCollapseButton {
     background-color: rgb(223, 223, 223);
     border: none;
     color: rgb(0, 0, 0);
@@ -381,205 +385,214 @@ HEAD .nyproduktion-facts p strong {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    transition: transform .2s;  //Transition: transform takes 0.2 seconds
+    transition: transform .2s; //Transition: transform takes 0.2 seconds
     overflow: hidden;
-  }
+}
 
-  .CustomCollapseButton:hover {     //On hover:
+.CustomCollapseButton:hover {
+    //On hover:
     background-color: rgb(202, 202, 202);
     color: rgb(0, 0, 0);
-    transform: scale(1.005);   //Transform: zoom in 100.5%
-    overflow: hidden;          //Prevent collusion with drop down text window
+    transform: scale(1.005); //Transform: zoom in 100.5%
+    overflow: hidden; //Prevent collusion with drop down text window
     text-decoration: none;
-  }
+}
+
 //collapse buttons for 'IntegrityPolicy' ends
-
-
 //CSS for everything related to the navbar begins
-.icon{        //dropdown icon
-    background-color: rgb(255, 255, 255);       //give it white background
-    color: rgb(255, 255, 255);                  //give it white color
-    transition: transform .2s;                    //give it transition property; 'transform' with time span of 0.2seconds
-    text-decoration: none;                        //remove underline from icon (This doesn't work)
+.icon {
+    //dropdown icon
+    background-color: rgb(255, 255, 255); //give it white background
+    color: rgb(255, 255, 255); //give it white color
+    transition: transform .2s; //give it transition property; 'transform' with time span of 0.2seconds
+    text-decoration: none; //remove underline from icon (This doesn't work)
 }
 
-.icon:hover{                    //When dropdown icon is being hovered
-    transform: scale(0.90);     //transform it to the scale of 90% of its original size
+.icon:hover {
+    //When dropdown icon is being hovered
+    transform: scale(0.90); //transform it to the scale of 90% of its original size
 }
 
-.topnav{                                        //topnav which is the while navbar's body
-    background-color: white;                  //topnav's body becomes white
-    padding-top: 5px;                           //padding-top 5px to lower it slightly. This is done so that the "zoom on hover" works properly
-    padding-bottom: 5px;                        //same goes to the padding-bottom. ^
-    outline: 0.5px solid rgb(194, 194, 194);  //give topnav a half transparent, black, 0.5"pixel-thickness" outline to differentiate it from everything that is not the navbar
-   
+.topnav {
+    //topnav which is the while navbar's body
+    background-color: white; //topnav's body becomes white
+    padding-top: 5px; //padding-top 5px to lower it slightly. This is done so that the "zoom on hover" works properly
+    padding-bottom: 5px; //same goes to the padding-bottom. ^
+    outline: 0.5px solid rgb(194, 194, 194); //give topnav a half transparent, black, 0.5"pixel-thickness" outline to differentiate it from everything that is not the navbar
 }
 
-.topnav a{                      //topnav a
-    color: rgb(0, 0, 0);      //gets a black color
+.topnav a {
+    //topnav a
+    color: rgb(0, 0, 0); //gets a black color
 }
 
-.topnav a:active{                               //when 'topnav a' is active
-    background-color: rgb(255, 255, 255);     //give background-color white
-    color: black;                             //give color black
+.topnav a:active {
+    //when 'topnav a' is active
+    background-color: rgb(255, 255, 255); //give background-color white
+    color: black; //give color black
 }
 
-.topnav a:hover{                        //when 'topnav a' is hovered
-    background-color: white;          //give background-color white
-    color: black;                     //give color black
+.topnav a:hover {
+    //when 'topnav a' is hovered
+    background-color: white; //give background-color white
+    color: black; //give color black
 }
 
-.nav-link{                                  //nav-link are the actual nav buttons such as 'Home', 'Kontakta oss', 'Om oss' etc
-    background-color: white !important;   //give blackground-color white. make important
-    color: black !important;              //give color black. make important
-    transition: transform .2s;              //give property transition: transform with 0.2 seconds transition
-    margin-top: 5px;                        //give nav-links a top margin of 5px
-    margin-left: 70px;                      //give nav-links a left margin of 70px as default, so that it looks centered on a large screen
-    
+.nav-link {
+    //nav-link are the actual nav buttons such as 'Home', 'Kontakta oss', 'Om oss' etc
+    background-color: white !important; //give blackground-color white. make important
+    color: black !important; //give color black. make important
+    transition: transform .2s; //give property transition: transform with 0.2 seconds transition
+    margin-top: 5px; //give nav-links a top margin of 5px
+    margin-left: 70px; //give nav-links a left margin of 70px as default, so that it looks centered on a large screen
 }
+
 //manual responsiveness of nav-links begin
-@media screen and (max-width: 1730px) {     //when screen's width is 1731px and above 
-    .nav-link{                              //change in 'nav-link'
-        margin-left: 50px;                  //give nav-link buttons a left margin of 50px 
+@media screen and (max-width: 1730px) {
+    //when screen's width is 1731px and above 
+    .nav-link {
+        //change in 'nav-link'
+        margin-left: 50px; //give nav-link buttons a left margin of 50px 
     }
-    
 }
 
 @media screen and (max-width: 1548px) {
-    .nav-link{
+    .nav-link {
         margin-left: 40px;
     }
-    
 }
 
 @media screen and (max-width: 1458px) {
-    .nav-link{
+    .nav-link {
         margin-left: 30px;
     }
-    
 }
 
 @media screen and (max-width: 1368px) {
-    .nav-link{
+    .nav-link {
         margin-left: 20px;
     }
-    
 }
 
 @media screen and (max-width: 1278px) {
-    .nav-link{
+    .nav-link {
         margin-left: 10px;
     }
-    
 }
 
 @media screen and (max-width: 1188px) {
-    .nav-link{
+    .nav-link {
         margin-left: 0px;
     }
-    
 }
 
 @media screen and (max-width: 1098px) {
-    .nav-link{
+    .nav-link {
         margin-left: -10px;
     }
-    
 }
 
 @media screen and (max-width: 1008px) {
-    .nav-link{
+    .nav-link {
         margin-left: -15px;
     }
-    
 }
 
-@media screen and (max-width: 1000px) { //when screen width is 1000px and below
-    .nav-link{                          //change in nav-link
-        margin-left: 0px;               //give a left margin of 0px. This is done so that when the nav-link buttons changes into a dropdown menu; it will not look weird
+@media screen and (max-width: 1000px) {
+    //when screen width is 1000px and below
+    .nav-link {
+        //change in nav-link
+        margin-left: 0px; //give a left margin of 0px. This is done so that when the nav-link buttons changes into a dropdown menu; it will not look weird
     }
-    
 }
 
-.nav-link:hover{                                            //when nav-link is being hovered
-    transform: scale(1.10);                                 //transform button scale to 110% of its original size
-    overflow: visible !important;                           //Overflow with everything else. make important.
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);     //give shadow to the buttons sides
+.nav-link:hover {
+    //when nav-link is being hovered
+    transform: scale(1.10); //transform button scale to 110% of its original size
+    overflow: visible !important; //Overflow with everything else. make important.
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205); //give shadow to the buttons sides
 }
 
-.nav-link:active{                                           //when nav-link is actibe (when it is being currently clicked)
-    transform: scale(1.05);                                 //transform button scale to 105% of its original size. This is done to give a nice bounce effect on the navlink when clicked
-    overflow: visible !important;                           //Overflow with everything else. make important.
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);     //give shadow to the buttons sides
+.nav-link:active {
+    //when nav-link is actibe (when it is being currently clicked)
+    transform: scale(1.05); //transform button scale to 105% of its original size. This is done to give a nice bounce effect on the navlink when clicked
+    overflow: visible !important; //Overflow with everything else. make important.
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205); //give shadow to the buttons sides
 }
 
-.nav-link a:active{                                         //^ same like above, but for nav-link a ^
+.nav-link a:active {
+    //^ same like above, but for nav-link a ^
     transform: scale(1.10);
     overflow: visible !important;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
 }
 
-@media screen and (max-width: 1000px) {                         //when screen width is 1000 and below
-    .nav-link{                                                  //change in 'nav-link' 
-        background-color: white !important;                   //give background-color white. make important
-        color: black !important;                              //give color black. make important
-        transition: transform .1s;                              //give transition property transform with time span of 0.1second
+@media screen and (max-width: 1000px) {
+    //when screen width is 1000 and below
+    .nav-link {
+        //change in 'nav-link' 
+        background-color: white !important; //give background-color white. make important
+        color: black !important; //give color black. make important
+        transition: transform .1s; //give transition property transform with time span of 0.1second
     }
-    .nav-link:hover{                                            //when nav-link is hovered
-        transform: scale(1.005);                                //transform scale to 105%
-        overflow: visible !important;                           //Overflow with everything else. make important.
-        box-shadow: 1px 1px 1px 1px rgb(116, 116, 116);       //give shadow to the buttons sides
-    }
-}
-
-.navbar-brand img{                  //navbar-brand img
-    margin-left: 20px;              //give default left margin of 20px
-    margin-right: -20px;            //give default right margin of -20px (this is done so that the nav-links don't get pushed away from the brand when moved to the right
-    transition: transform .1s;      //give transition property transform with time span of 0.1second
-}
-
-.navbar-brand img:hover{            //when 'nav-bar img' hover
-    transform: scale(1.10);         //transform the scale of the image to 110% of its original size
-}
-
-.navbar-brand img:active{           //when 'navbar-brand img' is active/clicked 
-    transform: scale(0.90);         //transform button scale to 105% of its original size. This is done to give a nice bounce effect on the navlink when clicked
-}
-
-@media screen and (max-width: 1098px) {         //when sceen width is below 1098px 
-    .navbar-brand img{                          //change in 'navbar-bran img'
-        margin-left: 10px;                      //give left margin of 10px
-        margin-right: -10px;                    //give right margin of -10px
+    .nav-link:hover {
+        //when nav-link is hovered
+        transform: scale(1.005); //transform scale to 105%
+        overflow: visible !important; //Overflow with everything else. make important.
+        box-shadow: 1px 1px 1px 1px rgb(116, 116, 116); //give shadow to the buttons sides
     }
 }
 
-@media screen and (max-width: 1000px) {         //when screen width is below 1000 (this is the width when the dropdown menu appears)
-    .navbar-brand img{                          //change in 'navbar-brand img'
-        margin-left: 0px;                       //reset the margin
-        margin-right: 0px;                      //reset the margin
+.navbar-brand img {
+    //navbar-brand img
+    margin-left: 20px; //give default left margin of 20px
+    margin-right: -20px; //give default right margin of -20px (this is done so that the nav-links don't get pushed away from the brand when moved to the right
+    transition: transform .1s; //give transition property transform with time span of 0.1second
+}
+
+.navbar-brand img:hover {
+    //when 'nav-bar img' hover
+    transform: scale(1.10); //transform the scale of the image to 110% of its original size
+}
+
+.navbar-brand img:active {
+    //when 'navbar-brand img' is active/clicked 
+    transform: scale(0.90); //transform button scale to 105% of its original size. This is done to give a nice bounce effect on the navlink when clicked
+}
+
+@media screen and (max-width: 1098px) {
+    //when sceen width is below 1098px 
+    .navbar-brand img {
+        //change in 'navbar-bran img'
+        margin-left: 10px; //give left margin of 10px
+        margin-right: -10px; //give right margin of -10px
     }
 }
+
+@media screen and (max-width: 1000px) {
+    //when screen width is below 1000 (this is the width when the dropdown menu appears)
+    .navbar-brand img {
+        //change in 'navbar-brand img'
+        margin-left: 0px; //reset the margin
+        margin-right: 0px; //reset the margin
+    }
+}
+
 //CSS for everything related to the navbar ends
-
-
-
 //img-thumbnail css begins
-
-.img-thumbnail{
-  margin-top: -20px;
-  overflow: hidden;
-  padding: 0px !important;
-  box-sizing: border-box;
-  position: relative;
+.img-thumbnail {
+    margin-top: -20px;
+    overflow: hidden;
+    padding: 0px !important;
+    box-sizing: border-box;
+    position: relative;
 }
-
 
 //img-thumbnail css ends
-
-.CustomTextWindow{
-    font-size:18px;
-    color:#ffffff;
-    line-height:1.5;
+.CustomTextWindow {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.5;
     background-color: rgba(0, 0, 0, 0.315);
     margin-top: -82px;
     padding-left: 265px;
@@ -589,49 +602,46 @@ HEAD .nyproduktion-facts p strong {
     position: absolute;
 }
 
-
 //bostad navbar
 .bostadNavbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: visible;
-    background-color: white !important;                   //give background-color white. make important
-    color: black !important;                              
+    background-color: white !important; //give background-color white. make important
+    color: black !important;
     transition: transform .2s;
     outline: 0.5px solid rgb(194, 194, 194);
     height: 60px;
-  }
-  
- .bostadNavbar li {
+}
+
+.bostadNavbar li {
     padding-top: 6px;
     float: left;
     margin-left: 80px;
-  }
-  
- .bostadNavbar li a {
+}
+
+.bostadNavbar li a {
     display: block;
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     transition: transform .1s;
-  }
-  
- .bostadNavbar li a:hover {
+}
+
+.bostadNavbar li a:hover {
     background-color: rgb(255, 255, 255);
     transform: scale(1.10);
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
-  }
-  
-  a{
-      background-color: black;
-  }
+}
 
+a {
+    background-color: black;
+}
 
-
-  //CustomInvisibleButton for SokBostadPage list begins
-.CustomInvisibleButton{
+//CustomInvisibleButton for SokBostadPage list begins
+.CustomInvisibleButton {
     background-color: rgba(255, 0, 0, 0);
     border-top: 100px;
     color: rgba(0, 0, 0, 0);
@@ -644,22 +654,23 @@ HEAD .nyproduktion-facts p strong {
     text-decoration: none;
     position: relative;
     font-size: 16px;
-    transition: transform .2s;  //Transition: transform takes 0.2 seconds
+    transition: transform .2s; //Transition: transform takes 0.2 seconds
     overflow: visible;
-  }
+}
 
-  .CustomInvisibleButton:hover {     //On hover:
+.CustomInvisibleButton:hover {
+    //On hover:
     background-color: rgba(255, 0, 0, 0);
     color: rgba(0, 0, 0, 0);
-    transform: scale(1.005);   //Transform: zoom in 100.5%
-    overflow: visible;          //Prevent collusion with drop down text window
+    transform: scale(1.005); //Transform: zoom in 100.5%
+    overflow: visible; //Prevent collusion with drop down text window
     text-decoration: none;
     box-shadow: black;
-  }
-//CustomInvisibleButton for SokBostadPage list ends
+}
 
-  //CustomVisaButton for SokBostadPage list begins
-  .CustomVisaButton{
+//CustomInvisibleButton for SokBostadPage list ends
+//CustomVisaButton for SokBostadPage list begins
+.CustomVisaButton {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     left: -570px;
@@ -671,27 +682,118 @@ HEAD .nyproduktion-facts p strong {
     text-decoration: none;
     position: relative;
     font-size: 16px;
-    transition: transform .2s;  //Transition: transform takes 0.2 seconds
+    transition: transform .2s; //Transition: transform takes 0.2 seconds
     overflow: visible;
-  }
+}
 
-  .CustomVisaButton:hover {     //On hover:
+.CustomVisaButton:hover {
+    //On hover:
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    transform: scale(1.10);   //Transform: zoom in 110%
-    overflow: visible;          //Prevent collusion with drop down text window
+    transform: scale(1.10); //Transform: zoom in 110%
+    overflow: visible; //Prevent collusion with drop down text window
     text-decoration: none;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
 
-  }
-
-  .CustomVisaButton:active {     //On active/click:
+.CustomVisaButton:active {
+    //On active/click:
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    transform: scale(1.05);   //Transform: zoom in 100.5%
-    overflow: visible;       
+    transform: scale(1.05); //Transform: zoom in 100.5%
+    overflow: visible;
     text-decoration: none;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
 
-  }
 //CustomVisaButton for SokBostadPage list ends
+//popup sokbostad
+.box {
+    width: 40%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 35px;
+    border: 2px solid #fff;
+    border-radius: 20px/50px;
+    background-clip: padding-box;
+    text-align: center;
+}
+
+.button {
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #06D85F;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+    background: #06D85F;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .popup {
+        width: 70%;
+    }
+}
+
+//end popuo sokbostad
