@@ -225,8 +225,8 @@ class SokBostadPage extends Base {
                 <h1>${house.projectName}</h1>
                 <div class="Sokbostad-line"></div>                
                 <p>${house.description}</p>
-                <a class="btn btn-primary" href="/bostad/${house.id}" role="button">Link</a>
-                <a class="btn btn-primary" href="/bostad/${house.type}" role="button">${house.type}</a>
+                <a class="CustomInvisibleButton" href="/bostad/${house.id}" role="button">Link</a>
+
                 <p><strong>Pris:</strong> ${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
                 <p><strong>Avgift:</strong> ${house.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
                 <p><strong>Antal Rum:</strong> ${house.totalRooms} RoK</p>
