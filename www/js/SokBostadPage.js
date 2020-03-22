@@ -211,11 +211,11 @@ class SokBostadPage extends Base {
               </div>
                 <div class="col-sm-6">
                 <div class="mb-3  mt-4">
-            <button type="submit" class="btn btn-primary btn-lg sharp float-md-none d-lg-inline mt-3">VISA</button>
+            <button type="submit" class="CustomVisaButton">VISA</button>
           </div>
           </div>
           </div>
-            
+            </form>
         ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
               <div class="row mb-5">
               <div class="col-md-6">
@@ -225,6 +225,7 @@ class SokBostadPage extends Base {
                 <h1>${house.projectName}</h1>
                 <div class="Sokbostad-line"></div>                
                 <p>${house.description}</p>
+<<<<<<< HEAD
                 <a class="btn btn-primary" href="/bostad/${house.id}" role="button">Link</a>
                 <a class="btn btn-primary" href="/bostad/${house.type}" role="button">${house.type}</a>
                 <p><strong>Pris:</strong> ${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
@@ -233,10 +234,18 @@ class SokBostadPage extends Base {
                 <p><strong>Boarea:</strong> ${house.livingArea} Kvm</p>
                 <p><strong>Område:</strong> ${house.postalArea}</p>
                 <p><strong>Kommun:</strong> ${house.city}</p>
+=======
+                <a class="CustomInvisibleButton" href="/bostad/${house.id}" role="button"> </a>
+                <p><strong>Pris:</strong>${house.price} kr</p>
+                <p><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
+                <p><strong>Boarea:</strong>${house.livingArea} Kvm</p>
+                <p><strong>Område:</strong>${house.postalArea}</p>
+                <p><strong>Kommun:</strong>${house.city}</p>
+>>>>>>> 272fdb71df799193b9c8b0f32ea7dd2fdeca4399
                 
             </div>
             </div>
-            </form>
+            
 
         `)}
       </div>`;

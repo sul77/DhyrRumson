@@ -589,3 +589,109 @@ HEAD .nyproduktion-facts p strong {
     position: absolute;
 }
 
+
+//bostad navbar
+.bostadNavbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color: white !important;                   //give background-color white. make important
+    color: black !important;                              
+    transition: transform .2s;
+    outline: 0.5px solid rgb(194, 194, 194);
+    height: 60px;
+  }
+  
+ .bostadNavbar li {
+    padding-top: 6px;
+    float: left;
+    margin-left: 80px;
+  }
+  
+ .bostadNavbar li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: transform .1s;
+  }
+  
+ .bostadNavbar li a:hover {
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.10);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+  }
+  
+  a{
+      background-color: black;
+  }
+
+
+
+  //CustomInvisibleButton for SokBostadPage list begins
+.CustomInvisibleButton{
+    background-color: rgba(255, 0, 0, 0);
+    border-top: 100px;
+    color: rgba(0, 0, 0, 0);
+    left: -570px;
+    padding-top: 101px;
+    padding-bottom: 187px;
+    padding-left: 300px;
+    padding-right: 700px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    font-size: 16px;
+    transition: transform .2s;  //Transition: transform takes 0.2 seconds
+    overflow: visible;
+  }
+
+  .CustomInvisibleButton:hover {     //On hover:
+    background-color: rgba(255, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    transform: scale(1.005);   //Transform: zoom in 100.5%
+    overflow: visible;          //Prevent collusion with drop down text window
+    text-decoration: none;
+    box-shadow: black;
+  }
+//CustomInvisibleButton for SokBostadPage list ends
+
+  //CustomVisaButton for SokBostadPage list begins
+  .CustomVisaButton{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    left: -570px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    font-size: 16px;
+    transition: transform .2s;  //Transition: transform takes 0.2 seconds
+    overflow: visible;
+  }
+
+  .CustomVisaButton:hover {     //On hover:
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transform: scale(1.10);   //Transform: zoom in 110%
+    overflow: visible;          //Prevent collusion with drop down text window
+    text-decoration: none;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+
+  }
+
+  .CustomVisaButton:active {     //On active/click:
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);   //Transform: zoom in 100.5%
+    overflow: visible;       
+    text-decoration: none;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+
+  }
+//CustomVisaButton for SokBostadPage list ends
