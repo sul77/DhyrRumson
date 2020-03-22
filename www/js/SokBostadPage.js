@@ -219,12 +219,15 @@ class SokBostadPage extends Base {
         ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
               <div class="row mb-5">
               <div class="col-md-6">
-                  <img src="${house.imageUrls[0]}" class="img-fluid">
+                  <div class="customImageBostad">
+                    <img src="${house.imageUrls[0]}" class="img-fluid">
+                  </div>
             </div>            
               <div class="col-md-6 Sokbostad-facts">
+              <div class="customFacts">
                 <h1>${house.projectName}</h1>
                 <div class="Sokbostad-line"></div>                
-                <p>${house.description}</p>
+                <h2>${house.description}</h2>
                 <a class="CustomInvisibleButton" href="/bostad/${house.id}" role="button">Link</a>
                 <p><strong>Pris:</strong> ${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
                 <p><strong>Avgift:</strong> ${house.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
@@ -232,7 +235,7 @@ class SokBostadPage extends Base {
                 <p><strong>Boarea:</strong> ${house.livingArea} Kvm</p>
                 <p><strong>Område:</strong> ${house.postalArea}</p>
                 <p><strong>Kommun:</strong> ${house.city}</p>
-                
+              </div>  
             </div>
             </div>
             
