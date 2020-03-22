@@ -30,8 +30,8 @@ class SokBostadPage extends Base {
             roomsMin: this.createList(1, 10, 1, false),
             roomsMax: this.createList(1, 10, 1, true),
             rent: this.createList(1000, 10000, 1000, true),
-            livingAryaMin: this.createList(20, 500, 50, false),
-            livingAryaMax: this.createList(20, 500, 50, true),
+            livingAryaMin: this.createList(5, 300, 5, false),
+            livingAryaMax: this.createList(5, 300, 5, true),
             lotSizeMin: this.createList(0, 700, 100, false),
             lotSizeMax: this.createList(0, 700, 100, true),
         };
