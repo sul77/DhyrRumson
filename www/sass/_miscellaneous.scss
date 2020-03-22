@@ -916,8 +916,6 @@ a {
     }
 }
 
-
-}
 @media screen and (max-width: 1199px) {
     .CustomVisaButton {
         background-color: rgb(255, 255, 255);
@@ -935,6 +933,7 @@ a {
         overflow: visible;
     }
 }
+
 @media screen and (max-width: 991px) {
     .CustomVisaButton {
         background-color: rgb(255, 255, 255);
@@ -952,6 +951,7 @@ a {
         overflow: visible;
     }
 }
+
 @media screen and (max-width: 767px) {
     .CustomVisaButton {
         background-color: rgb(255, 255, 255);
@@ -969,43 +969,41 @@ a {
         overflow: visible;
     }
 }
+
 //CustomVisaButton for SokBostadPage list ends
 //customFacts for SokBostadPage list begins
 .customFacts h2 {
     font-size: 13.5px;
     font-style: italic;
 }
+
 @media screen and (max-width: 1199px) {
     .customFacts {
         position: relative;
         top: -20px;
     }
-    
     .customFacts h1 {
         font-size: 25px;
     }
-    
     .customFacts h2 {
         font-size: 13.5px;
         font-style: italic;
     }
-    
     .customFacts p {
         font-size: 13.5px;
         margin-top: -2px;
     }
 }
+
 @media screen and (max-width: 991px) {
     .customFacts {
         position: relative;
         top: -20px;
     }
-    
     .customFacts h1 {
         font-size: 25px;
         margin-bottom: -2px;
     }
-    
     .customFacts h2 {
         font-size: 12.5px;
         margin-bottom: -5px;
@@ -1013,23 +1011,21 @@ a {
         padding-top: 1px;
         font-style: italic;
     }
-    
     .customFacts p {
         font-size: 12.5px;
         margin-bottom: 6px;
     }
 }
+
 @media screen and (max-width: 767px) {
     .customFacts {
         position: relative;
         top: -10px;
     }
-    
     .customFacts h1 {
         font-size: 25px;
         margin-bottom: -2px;
     }
-    
     .customFacts h2 {
         font-size: 14px !important;
         margin-bottom: -5px;
@@ -1037,16 +1033,17 @@ a {
         padding-top: 1px;
         font-style: italic;
     }
-    
     .customFacts p {
         font-size: 14px;
         margin-bottom: 6px;
     }
 }
+
 //customFacts for SokBostadPage list ends
 //SokBostadPage responsiveness begins
 
 /* iphone 6, 6s, 7, 8 */
+
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
     .CustomInvisibleButton {
         background-color: rgba(255, 0, 0, 0);
@@ -1066,7 +1063,9 @@ a {
     }
 }
 
+
 /* iphone 6+, 6s+, 7+, 8+ */
+
 @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
     .CustomInvisibleButton {
         background-color: rgba(255, 0, 0, 0);
@@ -1084,34 +1083,31 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
-    
     .customFacts {
         position: relative;
         top: -20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.521);
     }
-    
     .customFacts h1 {
         font-size: 25px;
     }
-    
     .customFacts h2 {
         font-size: 13.5px;
         font-style: italic;
     }
-    
     .customFacts p {
         font-size: 13.5px;
         margin-top: -2px;
     }
-    
     .customImageBostad img {
         height: 215px;
     }
 }
+
 //SokBostadPage responsiveness ends
 
 /* iphone X , XS, 11 Pro */
+
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     .CustomInvisibleButton {
         background-color: rgba(255, 0, 0, 0);
@@ -1129,33 +1125,30 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
-    
     .customFacts {
         position: relative;
         top: -20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.521);
     }
-    
     .customFacts h1 {
         font-size: 25px;
     }
-    
     .customFacts h2 {
         font-size: 13.5px;
         font-style: italic;
     }
-    
     .customFacts p {
         font-size: 13.5px;
         margin-top: -2px;
     }
-    
     .customImageBostad img {
         height: 215px;
     }
 }
 
+
 /* iphone 5 */
+
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
     .CustomInvisibleButton {
         background-color: rgba(255, 0, 0, 0);
@@ -1173,33 +1166,30 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
-    
     .customFacts {
         position: relative;
         top: -20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.521);
     }
-    
     .customFacts h1 {
         font-size: 25px;
     }
-    
     .customFacts h2 {
         font-size: 13.5px;
         font-style: italic;
     }
-    
     .customFacts p {
         font-size: 13.5px;
         margin-top: -2px;
     }
-    
     .customImageBostad img {
         height: 210px;
     }
 }
 
+
 /* iphone 6/7/8 Plus */
+
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) and (-webkit-device-pixel-ratio: 3) {
     .CustomInvisibleButton {
         background-color: rgba(255, 0, 0, 0);
@@ -1217,35 +1207,33 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
-    
     .customFacts {
         position: relative;
         top: -20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.521);
     }
-    
     .customFacts h1 {
         font-size: 25px;
     }
-    
     .customFacts h2 {
         font-size: 13.5px;
         font-style: italic;
     }
-    
     .customFacts p {
         font-size: 13.5px;
         margin-top: -2px;
     }
-    
     .customImageBostad img {
         height: 210px;
     }
 }
 
+
 /* Pixel 2 and Pixel 2 XL */
 
+
 /* Portrait */
+
 @media screen and (min-device-width: 411px) and (max-device-width :731px) {
     .CustomInvisibleButton {
         background-color: rgba(255, 0, 0, 0);
@@ -1263,33 +1251,30 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
-    
     .customFacts {
         position: relative;
         top: -20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.521);
     }
-    
     .customFacts h1 {
         font-size: 25px;
     }
-    
     .customFacts h2 {
         font-size: 13.5px;
         font-style: italic;
     }
-    
     .customFacts p {
         font-size: 13.5px;
         margin-top: -2px;
     }
-    
     .customImageBostad img {
         height: 220px;
     }
 }
 
+
 /* Galaxy S5 */
+
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
     .CustomInvisibleButton {
         background-color: rgba(255, 0, 0, 0);
@@ -1307,27 +1292,22 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
-    
     .customFacts {
         position: relative;
         top: -20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.521);
     }
-    
     .customFacts h1 {
         font-size: 25px;
     }
-    
     .customFacts h2 {
         font-size: 13.5px;
         font-style: italic;
     }
-    
     .customFacts p {
         font-size: 13.5px;
         margin-top: -2px;
     }
-    
     .customImageBostad img {
         height: 220px;
     }
