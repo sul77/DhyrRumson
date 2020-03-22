@@ -30,10 +30,10 @@ class SokBostadPage extends Base {
             roomsMin: this.createList(1, 10, 1, false),
             roomsMax: this.createList(1, 10, 1, true),
             rent: this.createList(1000, 10000, 1000, true),
-            livingAryaMin: this.createList(20, 200, 40, false),
-            livingAryaMax: this.createList(20, 200, 40, true),
-            lotSizeMin: this.createList(0, 500, 100, false),
-            lotSizeMax: this.createList(0, 500, 100, true),
+            livingAryaMin: this.createList(5, 300, 5, false),
+            livingAryaMax: this.createList(5, 300, 5, true),
+            lotSizeMin: this.createList(0, 700, 100, false),
+            lotSizeMax: this.createList(0, 700, 100, true),
         };
     }
 
@@ -59,7 +59,7 @@ class SokBostadPage extends Base {
             // sokBar sets the app.chosenCity and we
             // just add this to userChoices
         this.userChoices.chosenCity = app.chosenCity || "";
-        console.log("this.userChoices", this.userChoices)
+        // console.log("this.userChoices", this.userChoices)
 
         this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city,
@@ -71,7 +71,7 @@ class SokBostadPage extends Base {
        GROUP BY Housing.id
     `, this.userChoices);
 
-        console.log("this.housing  (after search in DB)", this.housing)
+        // console.log("this.housing  (after search in DB)", this.housing)
 
         if (this.housing.length === 0) {
             setTimeout(function() {
@@ -84,7 +84,7 @@ class SokBostadPage extends Base {
         }
         this.render();
 
-        console.log(this.housing)
+        // console.log(this.housing)
     }
 
     async getFilterHousing(e) {
@@ -98,8 +98,10 @@ class SokBostadPage extends Base {
                 else
                     filter[element.id] = element.selectedOptions[0].value;
             }
-        }
-
+      }
+      
+      console.log('Filter data', filter);
+      this.housing = [];
         this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city, GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls 
        FROM Housing
@@ -117,7 +119,7 @@ class SokBostadPage extends Base {
         for (let house of this.housing) {
             house.imageUrls = house.imageUrls.split(',');
         }
-
+      console.log('Filter result', this.housing)
         this.render();
     }
 
@@ -223,12 +225,14 @@ class SokBostadPage extends Base {
                 <h1>${house.projectName}</h1>
                 <div class="Sokbostad-line"></div>                
                 <p>${house.description}</p>
-                <a class="CustomInvisibleButton" href="/bostad/${house.id}" role="button"> </a>
-                <p><strong>Pris:</strong>${house.price} kr</p>
-                <p><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
-                <p><strong>Boarea:</strong>${house.livingArea} Kvm</p>
-                <p><strong>Område:</strong>${house.postalArea}</p>
-                <p><strong>Kommun:</strong>${house.city}</p>
+                <a class="btn btn-primary" href="/bostad/${house.id}" role="button">Link</a>
+                <a class="btn btn-primary" href="/bostad/${house.type}" role="button">${house.type}</a>
+                <p><strong>Pris:</strong> ${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
+                <p><strong>Avgift:</strong> ${house.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
+                <p><strong>Antal Rum:</strong> ${house.totalRooms} RoK</p>
+                <p><strong>Boarea:</strong> ${house.livingArea} Kvm</p>
+                <p><strong>Område:</strong> ${house.postalArea}</p>
+                <p><strong>Kommun:</strong> ${house.city}</p>
                 
             </div>
             </div>
