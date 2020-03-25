@@ -221,11 +221,14 @@ class SokBostadPage extends Base {
                 <div class="col-sm-6">
                 <div class="mb-3  mt-4">
             <button type="submit" class="CustomVisaButton">VISA</button>
-            <hr class="new1">
+            
           </div>
           </div>
+          
           </div>
+          <hr class="new1">
         </form>
+        
         ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
         <div class="row mb-5" house-id="${house.id}" click="showDetails">
           <div class="col-md-6">

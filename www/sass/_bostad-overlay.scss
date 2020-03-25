@@ -1,36 +1,36 @@
 .bostad-overlay-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  opacity: .3;
-  background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: .6;
+    background-color: #000;
 }
 
 .bostad-overlay-content {
-  position: fixed;
-  top: 7vh;
-  left: 4vw;
-  width: 92vw;
-  height: 86vh;
-  overflow: auto;
-  background-color: #fff;
+    position: fixed;
+    top: 7vh;
+    left: 4vw;
+    width: 92vw;
+    height: 92vh;
+    overflow: auto;
+    background-color: #fff;
 }
 
 .bostad-overlay-main-img {
-  height: 50vh;
-  width: 100%;
-  object-fit: cover;
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
 }
 
 .bostad-overlay-close-btn {
-  background-color: #000;
-  color: #fff;
-  font-weight: bold;
-  position: fixed;
-  padding: 10px;
-  top: 7vh;
-  right: 4vw;
-  z-index: 3;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    position: fixed;
+    padding: 10px;
+    top: 7vh;
+    right: 4vw;
+    z-index: 3;
 }

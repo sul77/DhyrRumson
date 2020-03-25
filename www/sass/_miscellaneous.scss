@@ -199,7 +199,6 @@ HEAD .nyproduktion-facts p strong {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 .form-control-new {
     position: relative;
     z-index: 2;
@@ -677,9 +676,13 @@ a {
 }
 
 hr.new1 {
-    border-top: 1px solid gray;
+    border-top: 1px solid #31B0D5;
     margin-bottom: 80px;
     width: 100px;
+    left: -1580;
+    padding-left: 1040px;
+    padding-right: 2000;
+    float: left;
 }
 
 .CustomVisaButton:hover {
