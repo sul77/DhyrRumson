@@ -64,14 +64,10 @@ class App extends Base {
     await sql( /*sql*/ `
       USE dhyrRumson
     `);
-    // Create Bostad pages from a db query
+    
+    // Create nyBostad pages from a db query
     this.bostadPages = await sql(BostadPage, /*sql*/ `
       SELECT * FROM BostadInfo
-    `);
-
-    // Create nyBostad pages from a db query
-    this.nyBostadPages = await sql(nyBostadPage, /*sql*/ `
-      SELECT * FROM nyDetaljInfo
     `);
   }
 
