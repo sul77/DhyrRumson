@@ -747,24 +747,31 @@ a {
 //CustomInvisibleButton for SokBostadPage list ends
 //CustomVisaButton for SokBostadPage list begins
 .CustomVisaButton {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: #31B0D5;
+    color: #ffffff;
     left: -570px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: center;
     text-decoration: none;
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
     transition: transform .2s; //Transition: transform takes 0.2 seconds
     overflow: visible;
+    margin-bottom: 20px;
+}
+
+hr.new1 {
+    border-top: 1px solid gray;
+    margin-bottom: 80px;
+    width: 100px;
 }
 
 .CustomVisaButton:hover {
     //On hover:
-    background-color: rgb(255, 255, 255);
+    background-color: #17a2b8;
     color: rgb(0, 0, 0);
     transform: scale(1.10); //Transform: zoom in 110%
     overflow: visible; //Prevent collusion with drop down text window
@@ -774,7 +781,7 @@ a {
 
 .CustomVisaButton:active {
     //On active/click:
-    background-color: rgb(255, 255, 255);
+    background-color: #17a2b8;
     color: rgb(0, 0, 0);
     transform: scale(1.05); //Transform: zoom in 100.5%
     overflow: visible;
@@ -789,7 +796,7 @@ a {
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.2);
     padding: 35px;
-    border: 2px solid #fff;
+    border: 2px solid #17a2b8;
     border-radius: 20px/50px;
     background-clip: padding-box;
     text-align: center;
@@ -1575,9 +1582,11 @@ a {
     }
 }
 //Microsoft Edge
+@supports (-ms-ime-align:auto) {}
 
+//Microsoft Edge
 //go-top button css begins
-.go-top{
+.go-top {
     border-radius: 50%;
     outline: none;
     position: fixed;
@@ -1592,27 +1601,25 @@ a {
     display: none;
     overflow: visible;
     transition: transform .2s;
-    
 }
 
-.go-top:hover{
+.go-top:hover {
     outline: none;
     border-radius: 50%;
     background-color: transparent;
     transform: scale(1.20);
 }
 
-.go-top img{
+.go-top img {
     outline: none;
     height: 60px;
     width: auto;
     border-radius: 50%;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.548);
     transition: transform .2s;
-    
 }
 
-.go-top img:hover{
+.go-top img:hover {
     transform: scale(1.20);
     outline: none;
     height: 60px;
@@ -1622,14 +1629,13 @@ a {
     content: url('/images/ArrowUpBlue.png');
 }
 
-.go-top img:active{
+.go-top img:active {
     transform: scale(1.05);
     outline: none;
     height: 60px;
     width: auto;
     border-radius: 50%;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.637);
-    
 }
 //go-top button css ends
 
@@ -1675,3 +1681,5 @@ a {
 
      }
 }
+
+//go-top button css ends
