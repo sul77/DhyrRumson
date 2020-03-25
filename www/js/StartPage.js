@@ -54,7 +54,9 @@ class StartPage extends Base {
     <div>
     
     <div class="center_content">
+    <div class="CustomCarousel">
       ${this.carousel}
+    </div>
       <div class="center_content stack-top start-page-search-holder">
         <h3 float:left>Sök Område</h3>
         ${this.sokbar}
@@ -66,16 +68,18 @@ class StartPage extends Base {
 <div class="card-group">
  ${this.housing.map(house => `
 
-     <div class="card"  style="margin:5px; border:1px solid !important;">
+     <div class="card" style="border: none;">
+     <div class="CustomCardImages">
         <div class="card-img-top">
             <img src="${house.imageUrls[0]}" class="img-fluid" >
            </div>
-         <div class="card-body">
+          <div class="card-body">
            <h4 class="card-title">${house.projectName}</h4>
            <p class="card-text"><strong>Pris:</strong>${house.price} kr</p>
            <p class="card-text"><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
            <p class="card-text"><strong>Boarea:</strong>${house.livingArea} Kvm</p>
            <p class="card-text"><strong>Område:</strong>${house.postalArea}</p>
+           </div>
           </div>
         </div>
       `)}
@@ -97,7 +101,6 @@ class StartPage extends Base {
                     det har konstaterats fall i Sverige har vi med omsorg 
                     för våra kunder och anställda beslutat att införa försiktighetsåtgärder inför våra visningar,
                      vilket innebär delvis nya arbetsrutiner för våra mäklare.
-
                    Om du har vistats i områden där smittan är
                     känd är det viktigt att du följer riktlinjerna 
                     från Folkhälsomyndigheten gällande Coronaviruset, 

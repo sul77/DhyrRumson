@@ -46,7 +46,7 @@ class App extends Base {
     this.footer = new Footer();
     this.startPage = new StartPage();
     this.omOssPage = new OmOssPage();
-    this.KontaktaOssPage = new KontaktaOssPage();
+    this.kontaktaOssPage = new KontaktaOssPage();
     this.missingPage = new MissingPage();
     this.sokBostadPage = new SokBostadPage();
     this.saljaBostadPage = new SaljaBostadPage();
