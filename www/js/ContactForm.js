@@ -35,8 +35,8 @@ class ContactForm extends Base {
                           <textarea rows="3" class="form-textarea" name="${e.key}" required></textarea>
                       </div>`)}
 
-                 <div style="margin: auto;text-align: center">
-                     <button type="submit" class="btn btn-primary btn-md sharp float-md-none  d-md-inline mt-3">Skicka</button>
+                 <div class="CustomFormButton" style="margin: auto;text-align: center">
+                     <button type="submit" class="btn">Skicka</button>
                  </div>
             </form>
            </div>
