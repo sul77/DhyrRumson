@@ -27,10 +27,10 @@ class App extends Base {
       label: 'Våra mäklare',
       route: '/vara-maklare'
     },
-      {
-        label: 'Kontakta oss',
-        route: '/Kontakta-Oss'
-      },
+    {
+      label: 'Kontakta oss',
+      route: '/Kontakta-Oss'
+    },
     //{
     // label: 'Planskiss',
     //route: '/Planskiss'
@@ -46,7 +46,7 @@ class App extends Base {
     this.footer = new Footer();
     this.startPage = new StartPage();
     this.omOssPage = new OmOssPage();
-    this.KontaktaOssPage = new KontaktaOssPage();
+    this.kontaktaOssPage = new KontaktaOssPage();
     this.missingPage = new MissingPage();
     this.sokBostadPage = new SokBostadPage();
     this.saljaBostadPage = new SaljaBostadPage();
@@ -81,7 +81,7 @@ class App extends Base {
         <main class="container">
           ${this.startPage}
           ${this.omOssPage}
-          ${this.KontaktaOssPage}
+          ${this.kontaktaOssPage}
           ${this.missingPage}
           ${this.sokBostadPage}
           ${this.saljaBostadPage}
@@ -93,7 +93,6 @@ class App extends Base {
           ${this.bostadPages}
           ${this.byggHerre}
           ${this.planskiss}
-          ${this.nyBostaPagses}
         </main>
           
 
