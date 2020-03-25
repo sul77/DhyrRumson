@@ -64,7 +64,8 @@ class App extends Base {
     await sql( /*sql*/ `
       USE dhyrRumson
     `);
-    // Create Bostad pages from a db query
+    
+    // Create nyBostad pages from a db query
     this.bostadPages = await sql(BostadPage, /*sql*/ `
       SELECT * FROM BostadInfo
     `);
@@ -92,6 +93,7 @@ class App extends Base {
           ${this.bostadPages}
           ${this.byggHerre}
           ${this.planskiss}
+          ${this.nyBostaPagses}
         </main>
             <div class="sidenav">
                 <img src="/images/BorderImageLeft.png" class="rounded float-left" alt="...">
