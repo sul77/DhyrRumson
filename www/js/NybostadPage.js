@@ -22,7 +22,7 @@ class NyBostadPage extends Base {
   render() {
     return /*html*/`
       <div route="/nya-bostader" page-title="Nyproduktion">
-      <a class="CustomInvisibleButton" href="/ny-bostad/${house.id}" role="button">Link</a>
+      
       ${this.housing.map(house => `
           <div class="row mb-5">
             <div class="col-md-6 nyproduktion-facts">

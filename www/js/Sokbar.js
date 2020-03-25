@@ -64,7 +64,7 @@ class Sokbar extends Base {
   gotoSearchPage() {
     app.chosenCity = this.chosen;
     app.goto('/sok-bostad');
-    app.sokBostadPage.search();
+    app.SokBostadPage.search();
   }
 
   render() {
