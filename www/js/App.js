@@ -27,10 +27,10 @@ class App extends Base {
       label: 'Våra mäklare',
       route: '/vara-maklare'
     },
-    {
-      label: 'Kontakta oss',
-      route: '/Kontakta-Oss'
-    },
+      {
+        label: 'Kontakta oss',
+        route: '/Kontakta-Oss'
+      },
     //{
     // label: 'Planskiss',
     //route: '/Planskiss'
@@ -85,7 +85,7 @@ class App extends Base {
         <main class="container">
           ${this.startPage}
           ${this.omOssPage}
-          ${this.kontaktaOssPage}
+          ${this.KontaktaOssPage}
           ${this.missingPage}
           ${this.sokBostadPage}
           ${this.saljaBostadPage}
