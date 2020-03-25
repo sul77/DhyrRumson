@@ -1,10 +1,14 @@
 class Footer extends Base {
-
-
-    backToTop() { //backToTop function is created
-            document.body.scrollTop = 0; //Scroll to the top for Safari
-            document.documentElement.scrollTop = 0; //Scroll to the top for Chrome, Firefox, IE, and Opera
-        } //backToTop function ends
+    
+    //Load BackToTop.js for stickybutton script
+    componentDidMount() {
+        const script = document.createElement("script");
+        script.src = "/js/BackToTop.js";
+        script.async = true;
+        script.onload = () => this.scriptLoaded();
+      
+        document.body.appendChild(script);
+      }
 
     render() {
         return /*html*/ `      
@@ -46,15 +50,13 @@ class Footer extends Base {
                 </div>
                   </div>
                  <div class="col text-center text light">
-
-              <button type="button" class="btn btn-link" click="backToTop">  <!-- link-type button that calls for 'backToTop' function -->
-                  [Tillbaka till toppen]          <!-- '[Back To Top]' receives the button link -->
-              </button>                                                      <!-- button ends -->
+                    <a href="#" class="go-top">  
+                        <img src='../images/ArrowUp.png' alt="Mäkar">        
+                    </a> 
               </div>
               <div class="margin: auto;text-align: center">
- <h4 class="text-center ">© DhyrRumson 2020</h4>
+                <h4 class="text-center ">© DhyrRumson 2020</h4>
             </div>
-
             </footer>
             <!-------- Footer ends -------->
         </div>

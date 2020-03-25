@@ -22,8 +22,6 @@ class StartPage extends Base {
     for (let house of this.housing) {
       house.imageUrls = house.imageUrls.split(',');
     }
-
-    console.log(this.housing)
   }
 
   CheckIfCookiesAccepted() {

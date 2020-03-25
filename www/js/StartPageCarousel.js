@@ -18,8 +18,6 @@ class StartPageCarousel extends Base {
     for (let house of this.housing) {
       house.imageUrls = house.imageUrls.split(',');
     }
-
-    console.log(this.housing)
   }
 
   render() {

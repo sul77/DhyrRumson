@@ -2,29 +2,24 @@ class BostadPage extends Base {
 
   async mount() {
     this.planskiss = new Planskiss();
-    // Get complete Address details
-    let details = await sql( /*sql*/ `
-          SELECT * FROM BostadInfo WHERE id = $id
-        `, {
-      id: this.id,
-      streetNumber: this.streetNumber,
-      streetName: this.streetName,
-      postCode: this.postCode,
-      postalArea: this.postalArea,
-      city: this.city,
-      country: this.country,
-      areaDescID: this.areaDescID
-    });
-    Object.assign(this, details[0]);
+  }
+
+  closeOverlay() {
+    app.bostadToShow = false;
+    app.render();
   }
 
   render() {
     return /*html*/ `
-      <div route="/bostad/${this.id}" page-title="${this.streetName}">
-          <main>
+      <div>
+        ${app.bostadToShow !== this.id ? '' : /*html*/`
+          <div class="bostad-overlay-bg">
+          </div>
+            <div class="bostad-overlay-content">
+              <div class="bostad-overlay-close-btn" click="closeOverlay">x</div>
               <div class="row">
                 <div class="col"> 
-                  <img src="/images/BostäderBilder/${this.id}.jpg" alt="..." class="img-thumbnail">
+                  <img src="/images/BostäderBilder/${this.id}.jpg" alt="..." class="bostad-overlay-main-img">
                       <div class="CustomTextWindow">
                          <p> Välskött 1-plansvilla med 1 garage belägen nära både förskola och skola</p>
                       </div>            
@@ -48,10 +43,10 @@ class BostadPage extends Base {
                   <h4 class="mb-3">${this.country}</h4>
                   <div id="section1" class="container-fluid">
                     <h4 class="mb-3">${this.areaDescID}</h4>   
-                  </div>         
-          </main>
+                  </div> 
+            </div>        
+        `}
       </div>
-        
       `;
   }
 }

@@ -1312,3 +1312,66 @@ a {
         height: 220px;
     }
 }
+
+
+//Microsoft Edge
+@supports (-ms-ime-align:auto) {
+    
+}
+//Microsoft Edge
+
+//go-top button css begins
+.go-top{
+    border-radius: 50%;
+    outline: none;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+    font-size: 12;
+    padding: 1em;
+    display: none;
+    overflow: visible;
+    transition: transform .2s;
+    
+}
+
+.go-top:hover{
+    outline: none;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: scale(1.20);
+}
+
+.go-top img{
+    outline: none;
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.548);
+    transition: transform .2s;
+    
+}
+
+.go-top img:hover{
+    transform: scale(1.20);
+    outline: none;
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.637);
+}
+
+.go-top img:active{
+    transform: scale(1.05);
+    outline: none;
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.637);
+    
+}
+//go-top button css ends

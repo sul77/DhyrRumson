@@ -1,66 +1,74 @@
 class Sokbar extends Base {
-    mount() {
-        this.foundCities = [];
-        this.selected = -1;
-        sql( /*sql*/ `USE dhyrRumson`);
-    }
+  mount() {
+    this.foundCities = [];
+    this.selected = -1;
+    sql( /*sql*/ `USE dhyrRumson`);
+  }
 
-    clickCity(e) {
-        this.foundCities = [];
-        this.selected = -1;
-        this.chosen = e.target.innerText;
+  clickCity(e) {
+    this.foundCities = [];
+    this.selected = -1;
+    this.chosen = e.target.innerText;
+    this.gotoSearchPage();
+    this.render();
+  }
+
+  selectWithUpDownArrows(e) {
+    if (['ArrowUp', 'ArrowDown'].includes(e.key)) {
+      e.preventDefault();
+      this.selected += (e.key === 'ArrowDown') - (e.key === 'ArrowUp');
+      if (this.selected < 0) {
+        this.selected = this.foundCities.length - 1;
+      }
+      if (this.selected >= this.foundCities.length) {
+        this.selected = 0;
+      }
+      this.render();
+      return;
+    }
+  }
+
+  async searchCity(e) {
+    try {
+      if (['ArrowUp', 'ArrowDown'].includes(e.key)) {
+        return;
+      }
+      if (e.key === 'Enter' && this.selected >= 0) {
+        this.chosen = this.foundCities[this.selected].name;
         this.gotoSearchPage();
+        this.foundCities = [];
+        this.selected = -1;
         this.render();
-    }
-
-    selectWithUpDownArrows(e) {
-        if (['ArrowUp', 'ArrowDown'].includes(e.key)) {
-            e.preventDefault();
-            this.selected += (e.key === 'ArrowDown') - (e.key === 'ArrowUp');
-            if (this.selected < 0) {
-                this.selected = this.foundCities.length - 1;
-            }
-            if (this.selected >= this.foundCities.length) {
-                this.selected = 0;
-            }
-            this.render();
-            return;
-        }
-    }
-
-    async searchCity(e) {
-        try {
-            if (['ArrowUp', 'ArrowDown'].includes(e.key)) {
-                return;
-            }
-            if (e.key === 'Enter' && this.selected >= 0) {
-                this.chosen = this.foundCities[this.selected].name;
-                this.gotoSearchPage();
-                this.foundCities = [];
-                this.selected = -1;
-                this.render();
-                return;
-            }
-            this.selected = 0;
-            this.foundCities = e.target.value.length < 1 ? [] : await sql( /*sql*/ `
+        return;
+      }
+      this.selected = 0;
+      this.foundCities = e.target.value.length < 1 ? [] : await sql( /*sql*/ `
       SELECT name FROM cities WHERE name LIKE $name 
     `, {
-                name: e.target.value + '%'
-            });
-            this.render();
-        } catch (e) {
-            console.log(e.message)
-        }
-    }
+        name: e.target.value + '%'
+      });
 
-    gotoSearchPage() {
-        app.chosenCity = this.chosen;
-        app.goto('/sok-bostad');
-        app.SokBostadPage.search();
-    }
+      // Remove duplicates (not shure why we get them but...)
+      let c = this.foundCities;
+      c = c.map(x => x.name);
+      c = [...new Set(c)];
+      c = c.map(x => ({ name: x }));
+      this.foundCities = c;
 
-    render() {
-            return /*html*/ `
+      this.render();
+    } catch (e) {
+      console.log(e.message)
+    }
+  }
+
+  gotoSearchPage() {
+    app.chosenCity = this.chosen;
+    app.goto('/sok-bostad');
+    app.SokBostadPage.search();
+  }
+
+  render() {
+    return /*html*/ `
       <div class="container">
         <div class="row mt-4">
           <div class="col-12">

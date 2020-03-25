@@ -1,80 +1,77 @@
 class App extends Base {
 
-    async mount() {
+  async mount() {
 
-        await this.sqlQueries();
-        this.navBarLinks = [{
-                label: 'Hem',
-                route: '/'
-            },
-            {
-                label: 'Sök bostad',
-                route: '/sok-bostad'
-            },
-            {
-                label: 'Köpa bostad',
-                route: '/kopa-bostad'
-            },
-            {
-                label: 'Sälja bostad',
-                route: '/salja-bostad'
-            },
-            {
-                label: 'Nyproduktion',
-                route: '/Ny-produktion'
-            },
-            {
-                label: 'Våra mäklare',
-                route: '/vara-maklare'
-            },
-            {
-                label: 'Kontakta oss',
-                route: '/Kontakta-Oss'
-            },
-            //{
-            // label: 'Planskiss',
-            //route: '/Planskiss'
-            //},
-            {
-                label: 'Om oss',
-                route: '/Om-Oss'
-            }
-        ];
-        this.navBar = new NavBar({
-            links: this.navBarLinks
-        });
-        this.footer = new Footer();
-        this.startPage = new StartPage();
-        this.OmOssPage = new OmOssPage();
-        this.KontaktaOssPage = new KontaktaOssPage();
-        this.missingPage = new MissingPage();
-        this.SokBostadPage = new SokBostadPage();
-        this.SaljaBostadPage = new SaljaBostadPage();
-        this.VaraMaklarePage = new VaraMaklarePage();
-        this.NyProduktionPage = new NyProduktionPage();
-        this.KopaBostadPage = new KopaBostadPage();
-        this.nyBostad = new NyBostadPage();
-        this.byggHerre = new ByggHerrePage();
-        this.Planskiss = new Planskiss();
-        this.IntegritetPolicyPage = new IntegritetPolicyPage();
-        this.BostadPage = new BostadPage();
+    await this.sqlQueries();
+    this.navBarLinks = [{
+      label: 'Hem',
+      route: '/'
+    },
+    {
+      label: 'Sök bostad',
+      route: '/sok-bostad'
+    },
+    {
+      label: 'Köpa bostad',
+      route: '/kopa-bostad'
+    },
+    {
+      label: 'Sälja bostad',
+      route: '/salja-bostad'
+    },
+    {
+      label: 'Nyproduktion',
+      route: '/Ny-produktion'
+    },
+    {
+      label: 'Våra mäklare',
+      route: '/vara-maklare'
+    },
+    {
+      label: 'Kontakta oss',
+      route: '/Kontakta-Oss'
+    },
+    //{
+    // label: 'Planskiss',
+    //route: '/Planskiss'
+    //},
+    {
+      label: 'Om oss',
+      route: '/Om-Oss'
     }
-    async sqlQueries() {
-        // Which database to use
-        await sql( /*sql*/ `
+    ];
+    this.navBar = new NavBar({
+      links: this.navBarLinks
+    });
+    this.footer = new Footer();
+    this.startPage = new StartPage();
+    this.omOssPage = new OmOssPage();
+    this.KontaktaOssPage = new KontaktaOssPage();
+    this.missingPage = new MissingPage();
+    this.sokBostadPage = new SokBostadPage();
+    this.saljaBostadPage = new SaljaBostadPage();
+    this.varaMaklarePage = new VaraMaklarePage();
+    this.nyProduktionPage = new NyProduktionPage();
+    this.kopaBostadPage = new KopaBostadPage();
+    this.nyBostad = new NyBostadPage();
+    this.byggHerre = new ByggHerrePage();
+    this.planskiss = new Planskiss();
+    this.integritetPolicyPage = new IntegritetPolicyPage();
+  }
+
+  async sqlQueries() {
+    // Which database to use
+    await sql( /*sql*/ `
       USE dhyrRumson
     `);
-        // Create Bostad pages from a db query (only id needed)
-        this.BostadPages = await sql(BostadPage, /*sql*/ `
-      SELECT id FROM Address
+    // Create Bostad pages from a db query
+    this.bostadPages = await sql(BostadPage, /*sql*/ `
+      SELECT * FROM BostadInfo
     `);
-    }
+  }
 
-
-
-
-    render() {
-        return /*html*/ `
+  render() {
+    return /*html*/ `
     
       <div style="color:'white'" base-title="Minimal: ">
         <header>
@@ -82,23 +79,19 @@ class App extends Base {
         </header>
         <main class="container">
           ${this.startPage}
-          ${this.OmOssPage}
-          ${this.KontaktaOssPage}
+          ${this.omOssPage}
+          ${this.kontaktaOssPage}
           ${this.missingPage}
-          ${this.SokBostadPage}
-          ${this.SaljaBostadPage}
-          ${this.VaraMaklarePage}
-          ${this.NyProduktionPage}
-          ${this.KopaBostadPage}
+          ${this.sokBostadPage}
+          ${this.saljaBostadPage}
+          ${this.varaMaklarePage}
+          ${this.nyProduktionPage}
+          ${this.kopaBostadPage}
           ${this.nyBostad}
-          ${this.IntegritetPolicyPage}    
-          ${this.BostadPages}
-
+          ${this.integritetPolicyPage}    
+          ${this.bostadPages}
           ${this.byggHerre}
-
-          ${this.Planskiss}
-
-          
+          ${this.planskiss}
         </main>
             <div class="sidenav">
                 <img src="/images/BorderImageLeft.png" class="rounded float-left" alt="...">
@@ -111,6 +104,6 @@ class App extends Base {
         ${this.shoppingCart}
       </div>
     `;
-    }
+  }
 
 }
