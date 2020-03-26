@@ -1,7 +1,7 @@
 class NyBostadPage extends Base {
 
-    async mount() {
-        this.housing = await sql( /*sql*/ `
+  async mount() {
+    this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea, Address.city,
          GROUP_CONCAT(HousingImages.nyUrl) AS imageUrls
        FROM Housing, HousingImages, Address
@@ -11,22 +11,22 @@ class NyBostadPage extends Base {
        GROUP BY Housing.id
     `);
 
-        // convert imageUrls to an array
-        for (let house of this.housing) {
-            house.imageUrls = house.imageUrls.split(',');
-        }
-
-        console.log(this.housing)
+    // convert imageUrls to an array
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
     }
 
-    render() {
-            return /*html*/ `
+    console.log(this.housing)
+  }
+
+  render() {
+    return /*html*/ `
       <div route="/nya-bostader" page-title="Nyproduktion">
       
       ${this.housing.map(house => `
         
           <div class="row mb-5">
-            <a href="/ny-bostad/${house.projectName}">
+            <a href="/ny-bostad/${app.cleanName(house.projectName)}">
             <div class="col-md-6 nyproduktion-facts">
               <h1>${house.projectName}</h1>
              

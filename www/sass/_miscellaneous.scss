@@ -199,6 +199,14 @@ HEAD .nyproduktion-facts p strong {
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
 }
 
+.text-start-page h2{
+    color: #31B0D5;
+}
+
+.text-center h2{
+    color: #31B0D5;
+}
+
 .form-control-new {
     position: relative;
     z-index: 2;
@@ -276,6 +284,37 @@ HEAD .nyproduktion-facts p strong {
     transform: scale(1.10);
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
 }
+//Card css for startpage ends
+
+//CustomVaraMaklareButton begins
+.CustomVaraMaklareButton a{
+
+    background-color: #31B0D5;
+    color: white;
+    border-radius: 0%;
+    transition: transform .1s;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
+
+.CustomVaraMaklareButton a:hover{
+
+    background-color: #31B0D5;
+    color: white;
+    border-radius: 0%;
+    transform: scale(1.20);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
+
+.CustomVaraMaklareButton a:active{
+    background-color: #31B0D5;
+    color: white;
+    border-radius: 0%;
+    transform: scale(1.10);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
+//CustomVaraMaklareButton ends
+
+
 
 //Card css for startpage ends
 //collapse buttons for 'IntegrityPoliciy' begins
@@ -458,7 +497,15 @@ HEAD .nyproduktion-facts p strong {
     transform: scale(1.10); //transform button scale to 110% of its original size
     overflow: visible !important; //Overflow with everything else. make important.
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205); //give shadow to the buttons sides
-    color: #31B0D5;
+    color: #31B0D5 !important;
+}
+
+.nav-link:hover:target:active {
+    //when nav-link is being hovered
+    transform: scale(1.10); //transform button scale to 110% of its original size
+    overflow: visible !important; //Overflow with everything else. make important.
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205); //give shadow to the buttons sides
+    color: #31B0D5 !important;
 }
 
 .nav-link:active {
@@ -488,6 +535,7 @@ HEAD .nyproduktion-facts p strong {
         transform: scale(1.005); //transform scale to 105%
         overflow: visible !important; //Overflow with everything else. make important.
         box-shadow: 1px 1px 1px 1px rgb(116, 116, 116); //give shadow to the buttons sides
+        color: #31B0D5 !important;
     }
 }
 
@@ -1549,7 +1597,6 @@ hr.new1 {
     outline: none;
     border-radius: 50%;
     background-color: transparent;
-    transform: scale(1.20);
 }
 
 .go-top img {
@@ -1616,4 +1663,19 @@ hr.new1 {
     }
 }
 
+//go-top button css ends
+
+
+//cards css begins (for Kontakta oss, Om oss, and Integritypolicy)
+
+.card-body{
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.CustomKontaktaOss h2{
+    margin-top: 100px;
+    color: #31B0D5;
+}
 //go-top button css ends
