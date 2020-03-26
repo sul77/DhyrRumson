@@ -27,10 +27,10 @@ class App extends Base {
       label: 'Våra mäklare',
       route: '/vara-maklare'
     },
-      {
-        label: 'Kontakta oss',
-        route: '/Kontakta-Oss'
-      },
+    {
+      label: 'Kontakta oss',
+      route: '/Kontakta-Oss'
+    },
     //{
     // label: 'Planskiss',
     //route: '/Planskiss'
@@ -57,6 +57,7 @@ class App extends Base {
     this.byggHerre = new ByggHerrePage();
     this.planskiss = new Planskiss();
     this.integritetPolicyPage = new IntegritetPolicyPage();
+
   }
 
   async sqlQueries() {
@@ -70,10 +71,13 @@ class App extends Base {
     `);
 
     // Create nyBostad pages from a db query
-    this.nyBostadPages = await sql(nyBostadPage, /*sql*/ `
+    this.nyDetaljPages = await sql(NyDetaljPage, /*sql*/ `
       SELECT * FROM nyDetaljInfo
     `);
+
+    console.log(this.nyDetaljPages)
   }
+
 
   render() {
     return /*html*/ `
@@ -97,7 +101,7 @@ class App extends Base {
           ${this.bostadPages}
           ${this.byggHerre}
           ${this.planskiss}
-          ${this.nyBostaPagses}
+          ${this.nyDetaljPages}
         </main>
             <div class="sidenav">
                 <img src="/images/BorderImageLeft.png" class="rounded float-left" alt="...">
