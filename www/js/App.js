@@ -67,6 +67,11 @@ class App extends Base {
       USE dhyrRumson
     `);
 
+    // DEN HÄR KODEN HADE FÖRSVUNNIT HELT!!!
+    this.bostadPages = await sql(BostadPage, /*sql*/`
+      SELECT * FROM Housing
+    `);
+
     // Create nyBostad pages from a db query
     this.nyDetaljPages = await sql(NyDetaljPage, /*sql*/ `
       SELECT * FROM nyDetaljInfo
