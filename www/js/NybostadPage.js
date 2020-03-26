@@ -22,16 +22,19 @@ class NyBostadPage extends Base {
     render() {
             return /*html*/ `
       <div route="/nya-bostader" page-title="Nyproduktion">
+      
       ${this.housing.map(house => `
-      <a class="CustomInvisibleButton" href="/ny-bostad/${house.id}" role="button">Link</a>
+        
           <div class="row mb-5">
+            <a href="/ny-bostad/${house.projectName}">
             <div class="col-md-6 nyproduktion-facts">
               <h1>${house.projectName}</h1>
+             
               <div class="nyproduktion-line"></div>
               <p>${house.description}</p>
-              <p><strong>Pris: </strong>${house.price} kr</p>
-              <p><strong>Antal Rum: </strong>${house.totalRooms} RoK</p>
-              <p><strong>Boarea: </strong>${house.livingArea} Kv</p>
+              <p><strong>Pris:</strong> ${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
+              <p><strong>Antal Rum: </strong>${house.totalRooms} ROK</p>
+              <p><strong>Boarea: </strong>${house.livingArea} Kvm</p>
               <p><strong>Område: </strong>${house.postalArea}</p>
               <p><strong>Kommun: </strong>${house.city}</p>
               
@@ -40,6 +43,7 @@ class NyBostadPage extends Base {
               <img src="${house.imageUrls[0]}" class="img-fluid">
            </div>
           </div>
+          </a>
       `)}
 
         
