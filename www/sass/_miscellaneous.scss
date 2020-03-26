@@ -199,11 +199,11 @@ HEAD .nyproduktion-facts p strong {
     //box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
 }
 
-.text-start-page h2{
+.text-start-page h2 {
     color: #31B0D5;
 }
 
-.text-center h2{
+.text-center h2 {
     color: #31B0D5;
 }
 
@@ -234,15 +234,13 @@ HEAD .nyproduktion-facts p strong {
 
 .contact-form {
     padding-top: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
     padding-bottom: 19px;
     width: 100%;
     margin: auto;
     border: 0.5px darkgray;
     border-radius: 0%;
-    //outline: 0.5px solid #31B0D5;
-    //box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
     display: block;
 }
 
@@ -284,11 +282,10 @@ HEAD .nyproduktion-facts p strong {
     transform: scale(1.10);
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
 }
+
 //Card css for startpage ends
-
 //CustomVaraMaklareButton begins
-.CustomVaraMaklareButton a{
-
+.CustomVaraMaklareButton a {
     background-color: #31B0D5;
     color: white;
     border-radius: 0%;
@@ -296,8 +293,7 @@ HEAD .nyproduktion-facts p strong {
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
 }
 
-.CustomVaraMaklareButton a:hover{
-
+.CustomVaraMaklareButton a:hover {
     background-color: #31B0D5;
     color: white;
     border-radius: 0%;
@@ -305,17 +301,15 @@ HEAD .nyproduktion-facts p strong {
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
 }
 
-.CustomVaraMaklareButton a:active{
+.CustomVaraMaklareButton a:active {
     background-color: #31B0D5;
     color: white;
     border-radius: 0%;
     transform: scale(1.10);
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
 }
+
 //CustomVaraMaklareButton ends
-
-
-
 //Card css for startpage ends
 //collapse buttons for 'IntegrityPoliciy' begins
 .CustomCollapseButton {
@@ -1671,18 +1665,16 @@ hr.new1 {
 }
 
 //go-top button css ends
-
-
 //cards css begins (for Kontakta oss, Om oss, and Integritypolicy)
-
-.card-body{
+.card-body {
     outline: none;
     border: none;
     box-shadow: none;
 }
 
-.CustomKontaktaOss h2{
+.CustomKontaktaOss h2 {
     margin-top: 100px;
     color: #31B0D5;
 }
+
 //go-top button css ends
