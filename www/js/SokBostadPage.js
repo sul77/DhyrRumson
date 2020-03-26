@@ -236,7 +236,7 @@ class SokBostadPage extends Base {
               <img src="${house.imageUrls[0]}" class="img-fluid">
             </div>
           </div>
-        <div class="col-md-6 Sokbostad-facts">
+        <div class="col-md-6 shadow-lg p-3 bg-white rounded" style="font-size: 17px margin-top: 20px;">
           <div class="customFacts">
             <h1>${house.projectName}</h1>
             <div class="Sokbostad-line"></div>
