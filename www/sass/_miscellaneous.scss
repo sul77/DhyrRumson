@@ -195,7 +195,7 @@ HEAD .nyproduktion-facts p strong {
     padding: 40px 30px 60px 30px;
     border: 0.5px darkgray;
     border-radius: 0%;
-    outline: 0.5px solid #31B0D5;
+    //outline: 0.5px solid #31B0D5;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
 }
 
@@ -215,32 +215,35 @@ HEAD .nyproduktion-facts p strong {
     margin-bottom: 0;
     margin-left: 3px;
     margin-right: 3px;
+    height: 45px;
+    padding-left: 10px;
 }
 
 .form-textarea {
     position: relative;
     z-index: 2;
     float: left;
-    width: 99%;
+    //width: 99%;
     margin-bottom: 0;
     margin-left: 3px;
     margin-right: 3px;
     width: 99%;
-    height: 80px;
+    height: 150px;
     border-color: lightgray;
 }
 
 .contact-form {
-    padding-top: 2px;
-    padding-left: inherit;
-    padding-right: inherit;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     padding-bottom: 19px;
-    width: 99%;
+    width: 100%;
     margin: auto;
     border: 0.5px darkgray;
     border-radius: 0%;
-    outline: 0.5px solid #31B0D5;
+    //outline: 0.5px solid #31B0D5;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    display: block;
 }
 
 .contact-form-label {
@@ -250,20 +253,15 @@ HEAD .nyproduktion-facts p strong {
 }
 
 //Card css for startpage begins
-
-
-
 .CustomCardImages {
     background-color: rgba(94, 217, 255, 0);
-    outline: 0.5px solid #31B0D5;
+    //outline: 0.5px solid #31B0D5;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
     margin-left: 10px;
     margin-right: 10px;
 }
 
-
-.CustomFormButton button{
-
+.CustomFormButton button {
     background-color: #31B0D5;
     color: white;
     border-radius: 0%;
@@ -271,8 +269,7 @@ HEAD .nyproduktion-facts p strong {
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
 }
 
-.CustomFormButton button:hover{
-
+.CustomFormButton button:hover {
     background-color: #31B0D5;
     color: white;
     border-radius: 0%;
@@ -280,7 +277,7 @@ HEAD .nyproduktion-facts p strong {
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
 }
 
-.CustomFormButton button:active{
+.CustomFormButton button:active {
     background-color: #31B0D5;
     color: white;
     border-radius: 0%;
@@ -319,6 +316,7 @@ HEAD .nyproduktion-facts p strong {
 
 
 
+//Card css for startpage ends
 //collapse buttons for 'IntegrityPoliciy' begins
 .CustomCollapseButton {
     background-color: rgba(49, 175, 213, 0.856);
@@ -1077,24 +1075,17 @@ hr.new1 {
         border-radius: 0%;
         outline: 0.5px solid #31B0D5;
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-        
-       
     }
-    
-    .start-page-search-holder{
+    .start-page-search-holder {
         width: 250px;
         height: 100px;
     }
-    
-    .center_content h3{
-       color: rgb(0, 0, 0);
-       font-size: 21px !important;
-       margin-bottom: -10px;
-       
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
     }
-    
     .text-start-page {
-        
         margin-top: 100px;
         margin-bottom: 100px;
         margin-left: 5px;
@@ -1146,6 +1137,11 @@ hr.new1 {
     }
     .customImageBostad img {
         height: 215px;
+        border: 2px solid #fff;
+        box-shadow: 10px 10px 5px #ccc;
+        -moz-box-shadow: 10px 10px 5px #ccc;
+        -webkit-box-shadow: 10px 10px 5px #ccc;
+        -khtml-box-shadow: 10px 10px 5px #ccc;
     }
 }
 
@@ -1194,24 +1190,17 @@ hr.new1 {
         border-radius: 0%;
         outline: 0.5px solid #31B0D5;
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-        
-       
     }
-    
-    .start-page-search-holder{
+    .start-page-search-holder {
         width: 260px;
         height: 100px;
     }
-    
-    .center_content h3{
-       color: rgb(0, 0, 0);
-       font-size: 21px !important;
-       margin-bottom: -10px;
-       
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
     }
-    
     .text-start-page {
-        
         margin-top: 100px;
         margin-bottom: 100px;
         margin-left: 5px;
@@ -1269,24 +1258,17 @@ hr.new1 {
         border-radius: 0%;
         outline: 0.5px solid #31B0D5;
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-        
-       
     }
-    
-    .start-page-search-holder{
+    .start-page-search-holder {
         width: 250px;
         height: 110px;
     }
-    
-    .center_content h3{
-       color: rgb(0, 0, 0);
-       font-size: 21px !important;
-       margin-bottom: -10px;
-       
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
     }
-    
     .text-start-page {
-        
         margin-top: 100px;
         margin-bottom: 100px;
         margin-left: 5px;
@@ -1344,24 +1326,17 @@ hr.new1 {
         border-radius: 0%;
         outline: 0.5px solid #31B0D5;
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-        
-       
     }
-    
-    .start-page-search-holder{
+    .start-page-search-holder {
         width: 430px;
         height: 100px;
     }
-    
-    .center_content h3{
-       color: rgb(0, 0, 0);
-       font-size: 21px !important;
-       margin-bottom: -10px;
-       
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
     }
-    
     .text-start-page {
-        
         margin-top: 100px;
         margin-bottom: 100px;
         margin-left: 5px;
@@ -1422,24 +1397,17 @@ hr.new1 {
         border-radius: 0%;
         outline: 0.5px solid #31B0D5;
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-        
-       
     }
-    
-    .start-page-search-holder{
+    .start-page-search-holder {
         width: 290px;
         height: 120px;
     }
-    
-    .center_content h3{
-       color: rgb(0, 0, 0);
-       font-size: 21px !important;
-       margin-bottom: -10px;
-       
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
     }
-    
     .text-start-page {
-        
         margin-top: 100px;
         margin-bottom: 100px;
         margin-left: 5px;
@@ -1497,23 +1465,16 @@ hr.new1 {
         border-radius: 0%;
         outline: 0.5px solid #31B0D5;
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-        
-       
     }
-    
-    .start-page-search-holder{
+    .start-page-search-holder {
         width: 290px;
     }
-    
-    .center_content h3{
-       color: rgb(0, 0, 0);
-       font-size: 21px !important;
-       margin-bottom: -10px;
-       
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
     }
-    
     .text-start-page {
-        
         margin-top: 100px;
         margin-bottom: 100px;
         margin-left: 5px;
@@ -1527,31 +1488,26 @@ hr.new1 {
     }
 }
 
+
 /* iPad */
+
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
     .center_content {
         background-color: rgba(255, 255, 255, 0.918);
         border-radius: 0%;
         outline: 0.5px solid #31B0D5;
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-        
-       
     }
-    
-    .start-page-search-holder{
+    .start-page-search-holder {
         width: 410px;
         height: 120px;
     }
-    
-    .center_content h3{
-       color: rgb(0, 0, 0);
-       font-size: 21px !important;
-       margin-bottom: -10px;
-       
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
     }
-    
     .text-start-page {
-        
         margin-top: 100px;
         margin-bottom: 100px;
         margin-left: 5px;
@@ -1563,37 +1519,28 @@ hr.new1 {
         outline: 0.5px solid #31B0D5;
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
     }
-  }
+}
 
-  /* iPad Pro */
-  @media only screen 
-  and (min-width: 1024px) 
-  and (max-height: 1366px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+/* iPad Pro */
+
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
     .center_content {
         background-color: rgba(255, 255, 255, 0.918);
         border-radius: 0%;
         outline: 0.5px solid #31B0D5;
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-        
-       
     }
-    
-    .start-page-search-holder{
+    .start-page-search-holder {
         width: 470px;
         height: 120px;
     }
-    
-    .center_content h3{
-       color: rgb(0, 0, 0);
-       font-size: 21px !important;
-       margin-bottom: -10px;
-       
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
     }
-    
     .text-start-page {
-        
         margin-top: 100px;
         margin-bottom: 100px;
         margin-left: 5px;
@@ -1612,23 +1559,18 @@ hr.new1 {
     .CustomCarousel {
         outline: none !important;
         box-shadow: none !important;
-        
     }
-    
-    
     .center_content {
         background-color: rgba(255, 255, 255, 0.918);
         border-radius: 0%;
         outline: none !important;
         box-shadow: none !important;
-       
     }
-    
-    .center_content h3{
-       color: rgb(0, 0, 0);
-       
+    .center_content h3 {
+        color: rgb(0, 0, 0);
     }
 }
+
 //Microsoft Edge
 @supports (-ms-ime-align:auto) {}
 
@@ -1684,49 +1626,41 @@ hr.new1 {
     border-radius: 50%;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.637);
 }
-//go-top button css ends
 
+//go-top button css ends
 .CustomCarousel {
     border-radius: 0%;
     border-radius: 0%;
     outline: 0.5px solid #31B0D5;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-    
 }
-
 
 .center_content {
     background-color: rgba(255, 255, 255, 0.918);
     border-radius: 0%;
     outline: 0.5px solid #31B0D5;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
-   
 }
 
-.start-page-search-holder{
+.start-page-search-holder {
     width: 470px;
     height: 120px;
 }
 
-.center_content h3{
-   color: rgb(0, 0, 0);
-   
+.center_content h3 {
+    color: rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 1000px) {
-    .center_content h3{
-        
+    .center_content h3 {
         font-size: 20px;
-
-     }
+    }
 }
 
 @media screen and (max-width: 865px) {
-    .center_content h3{
-        
+    .center_content h3 {
         font-size: 17px;
-
-     }
+    }
 }
 
 //go-top button css ends
@@ -1744,3 +1678,4 @@ hr.new1 {
     margin-top: 100px;
     color: #31B0D5;
 }
+//go-top button css ends

@@ -40,6 +40,8 @@ class App extends Base {
       route: '/Om-Oss'
     }
     ];
+
+
     this.navBar = new NavBar({
       links: this.navBarLinks
     });
@@ -64,11 +66,32 @@ class App extends Base {
     await sql( /*sql*/ `
       USE dhyrRumson
     `);
-    
-    // Create nyBostad pages from a db query
-    this.bostadPages = await sql(BostadPage, /*sql*/ `
-      SELECT * FROM BostadInfo
+
+    // DEN HÄR KODEN HADE FÖRSVUNNIT HELT!!!
+    this.bostadPages = await sql(BostadPage, /*sql*/`
+      SELECT * FROM Housing
     `);
+
+    // Create nyBostad pages from a db query
+    this.nyDetaljPages = await sql(NyDetaljPage, /*sql*/ `
+      SELECT * FROM nyDetaljInfo
+    `);
+  }
+
+  cleanName(x) {
+    // remove å, ä, ö in names that will be used in urls
+    let toReplace = {
+      'å': 'a',
+      'ä': 'a',
+      'ö': 'o',
+      'Å': 'å',
+      'Ä': 'ä',
+      'Ö': 'O',
+    };
+    for (let [key, val] of Object.entries(toReplace)) {
+      x = x.split(key).join(val);
+    }
+    return x;
   }
 
   render() {
@@ -93,9 +116,8 @@ class App extends Base {
           ${this.bostadPages}
           ${this.byggHerre}
           ${this.planskiss}
+          ${this.nyDetaljPages}
         </main>
-          
-
         ${this.footer}
         ${this.shoppingCart}
       </div>
