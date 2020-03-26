@@ -7,7 +7,7 @@ class KontaktaOssPage extends Base {
     return /*html*/`
       <div class="row" route="/kontakta-oss" page-title="Kontakta oss">
       <main>
-      <div class="card mb-3" style="border-radius: 0%; outline: 0.5px solid #31B0D5; box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);">
+      <div class="card mb-3 shadow-lg">
          <img src="images/ExampleKontaktaOss1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               

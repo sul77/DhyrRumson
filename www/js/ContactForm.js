@@ -21,7 +21,7 @@ class ContactForm extends Base {
           }
 
         return /*html*/`
-          <div class="contact-form">
+          <div class="contact-form shadow-lg">
              <form class="checkout-form" submit="saveDetails">
                  ${(this.formFields || []).filter(e => e.type !== "textarea").map(e => /*html*/`
                      <div class="input-group mb-3">
