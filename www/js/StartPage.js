@@ -75,12 +75,13 @@ class StartPage extends Base {
            </div>
           <div class="card-body">
            <h4 class="card-title">${house.projectName}</h4>
-           <p class="card-text"><strong>Pris:</strong>${house.price} kr</p>
-           <p class="card-text"><strong>Antal Rum:</strong>${house.totalRooms} RoK</p>
-           <p class="card-text"><strong>Boarea:</strong>${house.livingArea} Kvm</p>
-           <p class="card-text"><strong>Område:</strong>${house.postalArea}</p>
+           <p class="card-text"><strong>Pris: </strong>${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
+           <p class="card-text"><strong>Antal Rum: </strong>${house.totalRooms} RoK</p>
+           <p class="card-text"><strong>Boarea: </strong>${house.livingArea} Kvm</p>
+           <p class="card-text"><strong>Område: </strong>${house.postalArea}</p>
            </div>
           </div>
+
         </div>
       `)}
 
