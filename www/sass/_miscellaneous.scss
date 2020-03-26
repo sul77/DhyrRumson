@@ -194,143 +194,11 @@ HEAD .nyproduktion-facts p strong {
     text-align: center;
     padding: 40px 30px 60px 30px;
     border: 0.5px darkgray;
-    border-radius: 25px;
-    border-style: solid;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0%;
+    //outline: 0.5px solid #31B0D5;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
 }
 
-//====== SideBorder css begins =======
-.sidenav {
-    //Though it's called 'sidenav'; it is in fact the css code for the side border images
-    width: 170px;
-    position: fixed;
-    z-index: 1;
-    top: 60px;
-    left: 80px;
-    background: transparent;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-}
-
-@media screen and (max-width: 1750px) {
-    .sidenav {
-        margin-left: -40px;
-    }
-}
-
-@media screen and (max-width: 1650px) {
-    .sidenav {
-        margin-left: -60px;
-    }
-}
-
-@media screen and (max-width: 1550px) {
-    .sidenav {
-        margin-left: -70px;
-    }
-}
-
-@media screen and (max-width: 1540px) {
-    .sidenav {
-        margin-left: -80px;
-    }
-}
-
-@media screen and (max-height: 800px) {
-    .sidenav img {
-        height: auto;
-        margin-top: -40px;
-        width: 170px;
-        position: fixed;
-        z-index: 1;
-        top: 100px;
-        left: 40px;
-        background: transparent;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        padding-top: 10px;
-    }
-}
-
-@media screen and (max-width: 1520px) {
-    //when pixel width is less than 1520
-    .sidenav {
-        //change in .sidenav
-        display: none; //to display nothing/disable the image
-    }
-}
-
-.sidenav2 {
-    //Though it's called 'sidenav'; it is in fact the css code for the side border images
-    width: 170px;
-    position: fixed;
-    z-index: 1;
-    top: 60px;
-    right: 80px;
-    background: transparent;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav2 {
-        padding-top: 15px;
-    }
-}
-
-@media screen and (max-width: 1750px) {
-    .sidenav2 {
-        margin-right: -40px;
-    }
-}
-
-@media screen and (max-width: 1650px) {
-    .sidenav2 {
-        margin-right: -60px;
-    }
-}
-
-@media screen and (max-width: 1550px) {
-    .sidenav2 {
-        margin-right: -70px;
-    }
-}
-
-@media screen and (max-width: 1540px) {
-    .sidenav2 {
-        margin-left: -80px;
-    }
-}
-
-@media screen and (max-width: 1520px) {
-    .sidenav2 {
-        display: none;
-    }
-}
-
-@media screen and (max-height: 800px) {
-    .sidenav2 img {
-        height: auto;
-        margin-top: -40px;
-        width: 170px;
-        position: fixed;
-        z-index: 1;
-        top: 100px;
-        right: 40px;
-        background: transparent;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        padding-top: 10px;
-    }
-}
-
-//====== SideBorder css ends =======
 .form-control-new {
     position: relative;
     z-index: 2;
@@ -362,9 +230,9 @@ HEAD .nyproduktion-facts p strong {
     width: 99%;
     margin: auto;
     border: 0.5px darkgray;
-    border-radius: 25px;
-    border-style: solid;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0%;
+    //outline: 0.5px solid #31B0D5;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
 }
 
 .contact-form-label {
@@ -373,11 +241,45 @@ HEAD .nyproduktion-facts p strong {
     padding-left: 10px;
 }
 
+//Card css for startpage begins
+.CustomCardImages {
+    background-color: rgba(94, 217, 255, 0);
+    //outline: 0.5px solid #31B0D5;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.CustomFormButton button {
+    background-color: #31B0D5;
+    color: white;
+    border-radius: 0%;
+    transition: transform .1s;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
+
+.CustomFormButton button:hover {
+    background-color: #31B0D5;
+    color: white;
+    border-radius: 0%;
+    transform: scale(1.20);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
+
+.CustomFormButton button:active {
+    background-color: #31B0D5;
+    color: white;
+    border-radius: 0%;
+    transform: scale(1.10);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205);
+}
+
+//Card css for startpage ends
 //collapse buttons for 'IntegrityPoliciy' begins
 .CustomCollapseButton {
-    background-color: rgb(223, 223, 223);
+    background-color: rgba(49, 175, 213, 0.856);
     border: none;
-    color: rgb(0, 0, 0);
+    color: white;
     padding: 15px 32px;
     margin-top: 10px;
     margin-bottom: -15px;
@@ -391,8 +293,8 @@ HEAD .nyproduktion-facts p strong {
 
 .CustomCollapseButton:hover {
     //On hover:
-    background-color: rgb(202, 202, 202);
-    color: rgb(0, 0, 0);
+    background-color: #31B0D5;
+    color: white;
     transform: scale(1.005); //Transform: zoom in 100.5%
     overflow: hidden; //Prevent collusion with drop down text window
     text-decoration: none;
@@ -418,7 +320,7 @@ HEAD .nyproduktion-facts p strong {
     background-color: white; //topnav's body becomes white
     padding-top: 5px; //padding-top 5px to lower it slightly. This is done so that the "zoom on hover" works properly
     padding-bottom: 5px; //same goes to the padding-bottom. ^
-    outline: 0.5px solid rgb(194, 194, 194); //give topnav a half transparent, black, 0.5"pixel-thickness" outline to differentiate it from everything that is not the navbar
+    outline: 4px solid rgb(54, 190, 231); //give topnav a half transparent, black, 0.5"pixel-thickness" outline to differentiate it from everything that is not the navbar
 }
 
 .topnav a {
@@ -444,7 +346,7 @@ HEAD .nyproduktion-facts p strong {
     color: black !important; //give color black. make important
     transition: transform .2s; //give property transition: transform with 0.2 seconds transition
     margin-top: 5px; //give nav-links a top margin of 5px
-    margin-left: 70px; //give nav-links a left margin of 70px as default, so that it looks centered on a large screen
+    margin-left: 80px; //give nav-links a left margin of 70px as default, so that it looks centered on a large screen
 }
 
 //manual responsiveness of nav-links begin
@@ -452,41 +354,83 @@ HEAD .nyproduktion-facts p strong {
     //when screen's width is 1731px and above 
     .nav-link {
         //change in 'nav-link'
-        margin-left: 50px; //give nav-link buttons a left margin of 50px 
+        margin-left: 60px; //give nav-link buttons a left margin of 50px 
     }
 }
 
 @media screen and (max-width: 1548px) {
     .nav-link {
-        margin-left: 40px;
+        margin-left: 50px;
     }
 }
 
 @media screen and (max-width: 1458px) {
     .nav-link {
-        margin-left: 30px;
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 1381px) {
+    .nav-link {
+        margin-left: 35px;
     }
 }
 
 @media screen and (max-width: 1368px) {
     .nav-link {
-        margin-left: 20px;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 1301px) {
+    .nav-link {
+        margin-left: 25px;
     }
 }
 
 @media screen and (max-width: 1278px) {
     .nav-link {
-        margin-left: 10px;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 1221px) {
+    .nav-link {
+        margin-left: 15px;
     }
 }
 
 @media screen and (max-width: 1188px) {
     .nav-link {
-        margin-left: 0px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 1141px) {
+    .nav-link {
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 1101px) {
+    .nav-link {
+        margin-left: 3px;
     }
 }
 
 @media screen and (max-width: 1098px) {
+    .nav-link {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 1061px) {
+    .nav-link {
+        margin-left: -5px;
+    }
+}
+
+@media screen and (max-width: 1021px) {
     .nav-link {
         margin-left: -10px;
     }
@@ -494,7 +438,7 @@ HEAD .nyproduktion-facts p strong {
 
 @media screen and (max-width: 1008px) {
     .nav-link {
-        margin-left: -15px;
+        margin-left: -10px;
     }
 }
 
@@ -511,6 +455,7 @@ HEAD .nyproduktion-facts p strong {
     transform: scale(1.10); //transform button scale to 110% of its original size
     overflow: visible !important; //Overflow with everything else. make important.
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205); //give shadow to the buttons sides
+    color: #31B0D5;
 }
 
 .nav-link:active {
@@ -553,11 +498,13 @@ HEAD .nyproduktion-facts p strong {
 .navbar-brand img:hover {
     //when 'nav-bar img' hover
     transform: scale(1.10); //transform the scale of the image to 110% of its original size
+    content: url('/images/logoBlue.png');
 }
 
 .navbar-brand img:active {
     //when 'navbar-brand img' is active/clicked 
     transform: scale(0.90); //transform button scale to 105% of its original size. This is done to give a nice bounce effect on the navlink when clicked
+    content: url('/images/logoBlue.png');
 }
 
 @media screen and (max-width: 1098px) {
@@ -791,24 +738,35 @@ a {
 //CustomInvisibleButton for SokBostadPage list ends
 //CustomVisaButton for SokBostadPage list begins
 .CustomVisaButton {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: #31B0D5;
+    color: #ffffff;
     left: -570px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: center;
     text-decoration: none;
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
     transition: transform .2s; //Transition: transform takes 0.2 seconds
     overflow: visible;
+    margin-bottom: 20px;
+}
+
+hr.new1 {
+    border-top: 1px solid #31B0D5;
+    margin-bottom: 80px;
+    width: 100px;
+    left: -1580;
+    padding-left: 1040px;
+    padding-right: 2000;
+    float: left;
 }
 
 .CustomVisaButton:hover {
     //On hover:
-    background-color: rgb(255, 255, 255);
+    background-color: #17a2b8;
     color: rgb(0, 0, 0);
     transform: scale(1.10); //Transform: zoom in 110%
     overflow: visible; //Prevent collusion with drop down text window
@@ -818,7 +776,7 @@ a {
 
 .CustomVisaButton:active {
     //On active/click:
-    background-color: rgb(255, 255, 255);
+    background-color: #17a2b8;
     color: rgb(0, 0, 0);
     transform: scale(1.05); //Transform: zoom in 100.5%
     overflow: visible;
@@ -833,7 +791,7 @@ a {
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.2);
     padding: 35px;
-    border: 2px solid #fff;
+    border: 2px solid #17a2b8;
     border-radius: 20px/50px;
     background-clip: padding-box;
     text-align: center;
@@ -1061,6 +1019,33 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
+    .center_content {
+        background-color: rgba(255, 255, 255, 0.918);
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+    .start-page-search-holder {
+        width: 250px;
+        height: 100px;
+    }
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
+    }
+    .text-start-page {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        padding: 40px 30px 60px 30px;
+        border: 0.5px darkgray;
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
 }
 
 
@@ -1144,6 +1129,33 @@ a {
     .customImageBostad img {
         height: 215px;
     }
+    .center_content {
+        background-color: rgba(255, 255, 255, 0.918);
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+    .start-page-search-holder {
+        width: 260px;
+        height: 100px;
+    }
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
+    }
+    .text-start-page {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        padding: 40px 30px 60px 30px;
+        border: 0.5px darkgray;
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
 }
 
 
@@ -1185,6 +1197,33 @@ a {
     .customImageBostad img {
         height: 210px;
     }
+    .center_content {
+        background-color: rgba(255, 255, 255, 0.918);
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+    .start-page-search-holder {
+        width: 250px;
+        height: 110px;
+    }
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
+    }
+    .text-start-page {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        padding: 40px 30px 60px 30px;
+        border: 0.5px darkgray;
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
 }
 
 
@@ -1225,6 +1264,33 @@ a {
     }
     .customImageBostad img {
         height: 210px;
+    }
+    .center_content {
+        background-color: rgba(255, 255, 255, 0.918);
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+    .start-page-search-holder {
+        width: 430px;
+        height: 100px;
+    }
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
+    }
+    .text-start-page {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        padding: 40px 30px 60px 30px;
+        border: 0.5px darkgray;
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
     }
 }
 
@@ -1270,6 +1336,33 @@ a {
     .customImageBostad img {
         height: 220px;
     }
+    .center_content {
+        background-color: rgba(255, 255, 255, 0.918);
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+    .start-page-search-holder {
+        width: 290px;
+        height: 120px;
+    }
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
+    }
+    .text-start-page {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        padding: 40px 30px 60px 30px;
+        border: 0.5px darkgray;
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
 }
 
 
@@ -1311,17 +1404,123 @@ a {
     .customImageBostad img {
         height: 220px;
     }
+    .center_content {
+        background-color: rgba(255, 255, 255, 0.918);
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+    .start-page-search-holder {
+        width: 290px;
+    }
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
+    }
+    .text-start-page {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        padding: 40px 30px 60px 30px;
+        border: 0.5px darkgray;
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
 }
 
+
+/* iPad */
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .center_content {
+        background-color: rgba(255, 255, 255, 0.918);
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+    .start-page-search-holder {
+        width: 410px;
+        height: 120px;
+    }
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
+    }
+    .text-start-page {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        padding: 40px 30px 60px 30px;
+        border: 0.5px darkgray;
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+}
+
+
+/* iPad Pro */
+
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .center_content {
+        background-color: rgba(255, 255, 255, 0.918);
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+    .start-page-search-holder {
+        width: 470px;
+        height: 120px;
+    }
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+        font-size: 21px !important;
+        margin-bottom: -10px;
+    }
+    .text-start-page {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        padding: 40px 30px 60px 30px;
+        border: 0.5px darkgray;
+        border-radius: 0%;
+        outline: 0.5px solid #31B0D5;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    }
+}
 
 //Microsoft Edge
 @supports (-ms-ime-align:auto) {
-    
+    .CustomCarousel {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    .center_content {
+        background-color: rgba(255, 255, 255, 0.918);
+        border-radius: 0%;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    .center_content h3 {
+        color: rgb(0, 0, 0);
+    }
 }
-//Microsoft Edge
 
+//Microsoft Edge
+@supports (-ms-ime-align:auto) {}
+
+//Microsoft Edge
 //go-top button css begins
-.go-top{
+.go-top {
     border-radius: 50%;
     outline: none;
     position: fixed;
@@ -1336,42 +1535,77 @@ a {
     display: none;
     overflow: visible;
     transition: transform .2s;
-    
 }
 
-.go-top:hover{
+.go-top:hover {
     outline: none;
     border-radius: 50%;
     background-color: transparent;
     transform: scale(1.20);
 }
 
-.go-top img{
+.go-top img {
     outline: none;
     height: 60px;
     width: auto;
     border-radius: 50%;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.548);
     transition: transform .2s;
-    
 }
 
-.go-top img:hover{
+.go-top img:hover {
     transform: scale(1.20);
     outline: none;
     height: 60px;
     width: auto;
     border-radius: 50%;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.637);
+    content: url('/images/ArrowUpBlue.png');
 }
 
-.go-top img:active{
+.go-top img:active {
     transform: scale(1.05);
     outline: none;
     height: 60px;
     width: auto;
     border-radius: 50%;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.637);
-    
 }
+
+//go-top button css ends
+.CustomCarousel {
+    border-radius: 0%;
+    border-radius: 0%;
+    outline: 0.5px solid #31B0D5;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+}
+
+.center_content {
+    background-color: rgba(255, 255, 255, 0.918);
+    border-radius: 0%;
+    outline: 0.5px solid #31B0D5;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+}
+
+.start-page-search-holder {
+    width: 470px;
+    height: 120px;
+}
+
+.center_content h3 {
+    color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 1000px) {
+    .center_content h3 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 865px) {
+    .center_content h3 {
+        font-size: 17px;
+    }
+}
+
 //go-top button css ends

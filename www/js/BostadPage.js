@@ -1,16 +1,16 @@
 class BostadPage extends Base {
 
-  async mount() {
-    this.planskiss = new Planskiss();
-  }
+    async mount() {
+        this.planskiss = new Planskiss();
+    }
 
-  closeOverlay() {
-    app.bostadToShow = false;
-    app.render();
-  }
+    closeOverlay() {
+        app.bostadToShow = false;
+        app.render();
+    }
 
-  render() {
-    return /*html*/ `
+    render() {
+            return /*html*/ `
       <div>
         ${app.bostadToShow !== this.id ? '' : /*html*/`
           <div class="bostad-overlay-bg">
@@ -20,9 +20,9 @@ class BostadPage extends Base {
               <div class="row">
                 <div class="col"> 
                   <img src="/images/BostäderBilder/${this.id}.jpg" alt="..." class="bostad-overlay-main-img">
-                      <div class="CustomTextWindow">
+                      <!--<div class="CustomTextWindow">
                          <p> Välskött 1-plansvilla med 1 garage belägen nära både förskola och skola</p>
-                      </div>            
+                      </div>-->            
                 </div>
               </div>
               <div class="bostadNavbar">

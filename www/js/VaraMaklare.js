@@ -10,10 +10,16 @@ class VaraMaklarePage extends Base {
   render() {
     return /*html*/`
       <div class="row" route="/vara-maklare" page-title="Våra mäklare">
-
+        <div class= "col-12 text-center">
+         <h3 class= "text-info">Möt några av Svergies bästa mäklare</h3>
+            <p style="font-size: 15px;">
+            I alla affärer jobbar vi aktivt med vårt köparregister Boagenten där över 7.000 köpklara spekulanter i Stockholmsregionen längtar efter rätt bostad.Vi har bästa mäklare som jobbar hos oss .
+            </p>
+        </div>
        ${this.brokers.map(broker => `
-             <div class="col-md-6 shadow-lg p-3 bg-white rounded" style="font-size: 17px margin-top: 20px;">
-              <div class="col-md-12">
+             <div class="col-md-6 mt-5" style="font-size: 15px;">
+              <div class="col-md-12 shadow-lg">
+               <div class="col-md-12">
                 <div class="col-md-3">
                   <img src="${broker.imgSrc}" style="width:100px">
                 </div>
@@ -26,6 +32,7 @@ class VaraMaklarePage extends Base {
                </div>
               </div>
               <div class="col-md-12 mt-5 pb-5 ">${broker.description}</div>
+              </div>
             </div>
       `)}
     </div>`;

@@ -1,77 +1,77 @@
 class SokBostadPage extends Base {
 
-  async mount() {
-    this.filter = this.createFilterObject();
-    await this.search();
-  }
-
-  showDetails(e) {
-    // find the closest parent element with the attribute house-id
-    let baseEl = e.target.closest('[house-id]');
-    // read the id
-    let id = +baseEl.getAttribute('house-id');
-    // show the correct bostad
-    // (have a look at the code in BostadPage.render)
-    app.bostadToShow = id;
-    app.render();
-  }
-
-  createFilterObject() {
-    return {
-      typ: [{
-        key: 'Alla',
-        value: "'Villa', 'Radhus', 'Lägenhet'"
-      },
-      {
-        key: 'Villa',
-        value: "'Villa'"
-      },
-      {
-        key: 'Radhus',
-        value: "'Radhus'"
-      },
-      {
-        key: 'Lägenhet',
-        value: "'Lägenhet'"
-      }
-      ],
-      priceMin: this.createList(0, 10000000, 500000, false),
-      priceMax: this.createList(0, 10000000, 500000, true),
-      roomsMin: this.createList(1, 10, 1, false),
-      roomsMax: this.createList(1, 10, 1, true),
-      rent: this.createList(1000, 10000, 1000, true),
-      livingAryaMin: this.createList(5, 300, 5, false),
-      livingAryaMax: this.createList(5, 300, 5, true),
-      lotSizeMin: this.createList(0, 700, 100, false),
-      lotSizeMax: this.createList(0, 700, 100, true),
-    };
-  }
-
-  createList(start, max, counter, sortDescending) {
-    let data = [];
-    for (let value = start; value <= max; value += counter) {
-      data.push(value);
+    async mount() {
+        this.filter = this.createFilterObject();
+        await this.search();
     }
 
-    if (!sortDescending)
-      return data;
-    else
-      return data.sort(function (a, b) {
-        return b - a
-      });
-  }
-
-  async search() {
-    this.userChoices = {
-      // t.ex. kvadradmeter, pris etc
-      chosenCity: ''
+    showDetails(e) {
+        // find the closest parent element with the attribute house-id
+        let baseEl = e.target.closest('[house-id]');
+        // read the id
+        let id = +baseEl.getAttribute('house-id');
+        // show the correct bostad
+        // (have a look at the code in BostadPage.render)
+        app.bostadToShow = id;
+        app.render();
     }
-    // sokBar sets the app.chosenCity and we
-    // just add this to userChoices
-    this.userChoices.chosenCity = app.chosenCity || "";
-    // console.log("this.userChoices", this.userChoices)
 
-    this.housing = await sql( /*sql*/ `
+    createFilterObject() {
+        return {
+            typ: [{
+                    key: 'Alla',
+                    value: "'Villa', 'Radhus', 'Lägenhet'"
+                },
+                {
+                    key: 'Villa',
+                    value: "'Villa'"
+                },
+                {
+                    key: 'Radhus',
+                    value: "'Radhus'"
+                },
+                {
+                    key: 'Lägenhet',
+                    value: "'Lägenhet'"
+                }
+            ],
+            priceMin: this.createList(0, 10000000, 500000, false),
+            priceMax: this.createList(0, 10000000, 500000, true),
+            roomsMin: this.createList(1, 10, 1, false),
+            roomsMax: this.createList(1, 10, 1, true),
+            rent: this.createList(1000, 10000, 1000, true),
+            livingAryaMin: this.createList(5, 300, 5, false),
+            livingAryaMax: this.createList(5, 300, 5, true),
+            lotSizeMin: this.createList(0, 700, 100, false),
+            lotSizeMax: this.createList(0, 700, 100, true),
+        };
+    }
+
+    createList(start, max, counter, sortDescending) {
+        let data = [];
+        for (let value = start; value <= max; value += counter) {
+            data.push(value);
+        }
+
+        if (!sortDescending)
+            return data;
+        else
+            return data.sort(function(a, b) {
+                return b - a
+            });
+    }
+
+    async search() {
+        this.userChoices = {
+                // t.ex. kvadradmeter, pris etc
+                chosenCity: ''
+            }
+            // sokBar sets the app.chosenCity and we
+            // just add this to userChoices
+        this.userChoices.chosenCity = app.chosenCity || "";
+        // console.log("this.userChoices", this.userChoices)
+
+        this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city,
          GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
        FROM Housing, HousingImages, Address
@@ -81,38 +81,38 @@ class SokBostadPage extends Base {
        GROUP BY Housing.id
     `, this.userChoices);
 
-    // console.log("this.housing  (after search in DB)", this.housing)
+        // console.log("this.housing  (after search in DB)", this.housing)
 
-    if (this.housing.length === 0) {
-      setTimeout(function () {
-        app.goto('/');
-      }, 1000);
-    }
-    // convert imageUrls to an array
-    for (let house of this.housing) {
-      house.imageUrls = house.imageUrls.split(',');
-    }
-    this.render();
+        if (this.housing.length === 0) {
+            setTimeout(function() {
+                app.goto('/');
+            }, 1000);
+        }
+        // convert imageUrls to an array
+        for (let house of this.housing) {
+            house.imageUrls = house.imageUrls.split(',');
+        }
+        this.render();
 
-    // console.log(this.housing)
-  }
-
-  async getFilterHousing(e) {
-    e.preventDefault();
-
-    let filter = {};
-    for (let element of [...e.target.closest('form').elements]) {
-      if (element.id !== '') {
-        if (element.id !== 'Bostadstyp')
-          filter[element.id] = Number(element.selectedOptions[0].value);
-        else
-          filter[element.id] = element.selectedOptions[0].value;
-      }
+        // console.log(this.housing)
     }
 
-    console.log('Filter data', filter);
-    this.housing = [];
-    this.housing = await sql( /*sql*/ `
+    async getFilterHousing(e) {
+        e.preventDefault();
+
+        let filter = {};
+        for (let element of[...e.target.closest('form').elements]) {
+            if (element.id !== '') {
+                if (element.id !== 'Bostadstyp')
+                    filter[element.id] = Number(element.selectedOptions[0].value);
+                else
+                    filter[element.id] = element.selectedOptions[0].value;
+            }
+        }
+
+        console.log('Filter data', filter);
+        this.housing = [];
+        this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city, GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls 
        FROM Housing
        JOIN Address ON Housing.addressId = Address.id
@@ -126,15 +126,15 @@ class SokBostadPage extends Base {
        GROUP BY Housing.id
     `);
 
-    for (let house of this.housing) {
-      house.imageUrls = house.imageUrls.split(',');
+        for (let house of this.housing) {
+            house.imageUrls = house.imageUrls.split(',');
+        }
+        console.log('Filter result', this.housing)
+        this.render();
     }
-    console.log('Filter result', this.housing)
-    this.render();
-  }
 
-  render() {
-    return /*html*/ `
+    render() {
+            return /*html*/ `
       <div route="/sok-bostad" page-title="Sök Bostad">
          <form submit="getFilterHousing">
           <div class="form-group">
@@ -221,10 +221,14 @@ class SokBostadPage extends Base {
                 <div class="col-sm-6">
                 <div class="mb-3  mt-4">
             <button type="submit" class="CustomVisaButton">VISA</button>
+            
           </div>
           </div>
+          
           </div>
+          <hr class="new1">
         </form>
+        
         ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
         <div class="row mb-5" house-id="${house.id}" click="showDetails">
           <div class="col-md-6">
@@ -232,7 +236,7 @@ class SokBostadPage extends Base {
               <img src="${house.imageUrls[0]}" class="img-fluid">
             </div>
           </div>
-        <div class="col-md-6 Sokbostad-facts">
+        <div class="col-md-6 shadow-lg p-3 bg-white rounded" style="font-size: 17px margin-top: 20px;">
           <div class="customFacts">
             <h1>${house.projectName}</h1>
             <div class="Sokbostad-line"></div>
