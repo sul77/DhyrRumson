@@ -28,15 +28,15 @@ class NyBostadPage extends Base {
           <div class="row mb-5">
             <a href="/ny-bostad/${app.cleanName(house.projectName)}">
             <div class="col-md-6 nyproduktion-facts">
-              <h1>${house.projectName}</h1>
+              <h1 style="color: #31B0D5;">${house.projectName}</h1>
              
               <div class="nyproduktion-line"></div>
               <p>${house.description}</p>
-              <p><strong>Pris:</strong> ${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
-              <p><strong>Antal Rum: </strong>${house.totalRooms} ROK</p>
-              <p><strong>Boarea: </strong>${house.livingArea} Kvm</p>
-              <p><strong>Område: </strong>${house.postalArea}</p>
-              <p><strong>Kommun: </strong>${house.city}</p>
+              <p><strong><span style="color: #31B0D5;">Pris:</span> </strong> ${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
+              <p><strong><span style="color: #31B0D5;">Antal Rum:</span> </strong>${house.totalRooms} ROK</p>
+              <p><strong><span style="color: #31B0D5;">Boarea:</span> </strong>${house.livingArea} Kvm</p>
+              <p><strong><span style="color: #31B0D5;">Område:</span> </strong>${house.postalArea}</p>
+              <p><strong><span style="color: #31B0D5;">Kommun:</span> </strong>${house.city}</p>
               
            </div>
            <div class="col-md-6">
