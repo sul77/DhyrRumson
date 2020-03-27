@@ -55,6 +55,7 @@ class App extends Base {
         this.nyBostad = new NyBostadPage();
         this.byggHerre = new ByggHerrePage();
         this.planskiss = new Planskiss();
+        this.imagePlanskiss = new ImagePlanskiss();
         this.integritetPolicyPage = new IntegritetPolicyPage();
     }
 
@@ -114,6 +115,7 @@ class App extends Base {
           ${this.byggHerre}
           ${this.planskiss}
           ${this.nyDetaljPages}
+          ${this.ImagePlanskiss}
         </main>
         ${this.footer}
         ${this.shoppingCart}

@@ -506,7 +506,7 @@ HEAD .nyproduktion-facts p strong {
     //when nav-link is actibe (when it is being currently clicked)
     transform: scale(1.05); //transform button scale to 105% of its original size. This is done to give a nice bounce effect on the navlink when clicked
     overflow: visible !important; //Overflow with everything else. make important.
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.205); //give shadow to the buttons sides
+    box-shadow: 1px 1px 5px 1px #31B0D5; //give shadow to the buttons sides
 }
 
 .nav-link a:active {

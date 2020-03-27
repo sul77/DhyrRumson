@@ -39,7 +39,7 @@ class SokBostadPage extends Base {
             priceMax: this.createList(0, 10000000, 500000, true),
             roomsMin: this.createList(1, 10, 1, false),
             roomsMax: this.createList(1, 10, 1, true),
-            rent: this.createList(1000, 10000, 1000, true),
+            rent: this.createList(1000, 40000, 1000, true),
             livingAryaMin: this.createList(5, 300, 5, false),
             livingAryaMax: this.createList(5, 300, 5, true),
             lotSizeMin: this.createList(0, 700, 100, false),
@@ -246,6 +246,7 @@ class SokBostadPage extends Base {
             <p><strong>Antal Rum:</strong> ${house.totalRooms} RoK</p>
             <p><strong>Boarea:</strong> ${house.livingArea} Kvm</p>
             <p><strong>Område:</strong> ${house.postalArea}</p>
+            <p><strong>Tomtarea:</strong> ${house.lotSize}</p>
             <p><strong>Kommun:</strong> ${house.city}</p>
           </div>
         </div>
