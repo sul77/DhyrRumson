@@ -37,11 +37,6 @@ class BostadPage extends Base {
               </div>
               <div class="bostadNavbar">
                 <ul>
-                  <li><a class="active" href="/bostad/${this.id}">Översikt</a></li>
-                  <li><a href="#">Bilder</a></li>
-                  <li><a href="#">Planskiss</a></li>
-                  <li><a href="#">Beskrivning</a></li>
-                  <li><a href="#">Område</a></li>
                 <ul click="chooseTab">
                   ${this.tabs.map(tab => `
                     <li class="${this.activeTab === tab ? 'active' : ''}"><a href="#">${tab}</a></li>
