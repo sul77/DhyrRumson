@@ -7,11 +7,11 @@ class KontaktaOssPage extends Base {
     return /*html*/`
       <div class="row" route="/kontakta-oss" page-title="Kontakta oss">
       <main>
-      <div class="card mb-3">
+      <div class="card mb-3 shadow-lg">
          <img src="images/ExampleKontaktaOss1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               
-              <h4 class="text-left">Kundtjänst</h4>
+              <h4 class="text-left" style="color: #31B0D5;">Kundtjänst</h4>
               
               <p class="text-left">
               Vardagar kl. 09.00-16.00   
@@ -27,7 +27,7 @@ class KontaktaOssPage extends Base {
               </p>
               
               <h4 class="text-left"> ______ </h4>
-              <h4 class="text-left"> Våra kontor </h4>
+              <h4 class="text-left" style="color: #31B0D5;"> Våra kontor </h4>
               <p class="text-left">
               Just nu befinner sig våra kontor bara på 2 ställen:
               </p>
@@ -41,20 +41,19 @@ class KontaktaOssPage extends Base {
                 Ni är varmt välkommna mellan 09:00 - 15:00 Mån-Fre !
               </p>
               <h4 class="text-left"> ______ </h4>
-              <h4 class="text-left"> Behov av mäklare? </h4>
+              <h4 class="text-left" style="color: #31B0D5;"> Behov av mäklare? </h4>
               <p class="text-left">
                 Om ni är i behov av att komma i kontakt med en mäklare, så besöker du oss på
               </p>
-              <a href="/vara-maklare" class="btn btn-primary btn-md sharp" role="button">Våra mäklare</a>
-              </button>
-
-               <div style="text-align:center; display:block">
-                     <h2>Kontakta oss</h2>
-                </div>
-               ${this.f}
-              
+              <div class="CustomVaraMaklareButton">
+              <a href="/vara-maklare" class="btn" role="button">Våra mäklare</a>
+              </div>   
        </div>
       </div>
+      <div class="CustomKontaktaOss"style="text-align:center; display:block">
+         <h2>Nå oss med formulär</h2>
+        </div>
+      ${this.f}
    </main>
       </div>
       

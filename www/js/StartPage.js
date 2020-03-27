@@ -54,7 +54,7 @@ class StartPage extends Base {
     <div>
     
     <div class="center_content">
-    <div class="CustomCarousel">
+    <div class="CustomCarousel shadow-lg">
       ${this.carousel}
     </div>
       <div class="center_content stack-top start-page-search-holder">
@@ -69,7 +69,7 @@ class StartPage extends Base {
  ${this.housing.map(house => `
 
      <div class="card" style="border: none;">
-     <div class="CustomCardImages">
+     <div class="CustomCardImages shadow-lg">
         <div class="card-img-top">
             <img src="${house.imageUrls[0]}" class="img-fluid" >
            </div>
@@ -86,7 +86,7 @@ class StartPage extends Base {
       `)}
 
   
-<div class ="text-start-page">
+<div class ="text-start-page shadow-lg">
  <h2 class="text-center">Möt några av Svergies bästa mäklare</h2>
                    <p class="text-center">
                    DhyrRumson är en av Sveriges snabbast växande mäklarföretag idag.

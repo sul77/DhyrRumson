@@ -41,16 +41,16 @@ class NyProduktionPage extends Base {
               <div class="card mb-3" style="margin-top: 20px;">
               <div class="row">
                 <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-                  <img class="img-responsive" src="/images/DhyrRumsonWallpaperZoomedPhone.jpg" />    <!--Mobile-->
+                  <img class="img-responsive" src="/images/DhyrRumsonWallpaperNoLogo.jpg" />    <!--Mobile-->
                 </div>
                 <div class="hidden-xs col-sm-12 hidden-md hidden-lg">
-                  <img class="img-responsive" src="/images/DhyrRumsonWallpaperZoomed.jpg" />   <!--Tab-->
+                  <img class="img-responsive" src="/images/DhyrRumsonWallpaperNoLogo.jpg" />   <!--Tab-->
                 </div>
                 <div class="hidden-xs hidden-sm col-md-12 hidden-lg">
-                  <img class="img-responsive" src="/images/DhyrRumsonWallpaper.jpg" />   <!--Desktop-->
+                  <img class="img-responsive" src="/images/DhyrRumsonWallpaperNoLogo.jpg" />   <!--Desktop-->
                 </div>
                 <div class="hidden-xs hidden-sm hidden-md col-lg-12">
-                  <img class="img-responsive" src="/images/DhyrRumsonWallpaper.jpg" />  <!--Large-->
+                  <img class="img-responsive" src="/images/DhyrRumsonWallpaperNoLogo.jpg" />  <!--Large-->
                 </div>
               </div>
             </div>
