@@ -207,32 +207,35 @@ HEAD .nyproduktion-facts p strong {
     margin-bottom: 0;
     margin-left: 3px;
     margin-right: 3px;
+    height: 45px;
+    padding-left: 10px;
 }
 
 .form-textarea {
     position: relative;
     z-index: 2;
     float: left;
-    width: 99%;
+    //width: 99%;
     margin-bottom: 0;
     margin-left: 3px;
     margin-right: 3px;
     width: 99%;
-    height: 80px;
+    height: 150px;
     border-color: lightgray;
 }
 
 .contact-form {
-    padding-top: 2px;
-    padding-left: inherit;
-    padding-right: inherit;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     padding-bottom: 19px;
-    width: 99%;
+    width: 100%;
     margin: auto;
     border: 0.5px darkgray;
     border-radius: 0%;
     //outline: 0.5px solid #31B0D5;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+    display: block;
 }
 
 .contact-form-label {
