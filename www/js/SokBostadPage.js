@@ -247,7 +247,7 @@ class SokBostadPage extends Base {
             <p><strong>Antal Rum:</strong> ${house.totalRooms} RoK</p>
             <p><strong>Boarea:</strong> ${house.livingArea} Kvm</p>
             <p><strong>Område:</strong> ${house.postalArea}</p>
-            <p><strong>Tomtarea:</strong> ${house.lotSize}</p>
+            <!--<p><strong>Tomtarea:</strong> ${house.lotSize}</p>-->
             <p><strong>Kommun:</strong> ${house.city}</p>
           </div>
         </div>
