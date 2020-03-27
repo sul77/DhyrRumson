@@ -64,8 +64,14 @@ class App extends Base {
       USE dhyrRumson
     `);
 
+<<<<<<< HEAD
     this.bostadPages = await sql(BostadPage, /*sql*/ `
       SELECT * FROM detailSearchResult
+=======
+    // DEN HÄR KODEN HADE FÖRSVUNNIT HELT!!!
+    this.bostadPages = await sql(BostadPage, /*sql*/ `
+      SELECT * FROM Housing
+>>>>>>> a55a5dd1abf55e59940776f683d615aed1b6fa7a
     `);
     console.log(this.bostadPages);
 
@@ -91,11 +97,14 @@ class App extends Base {
     return x;
   }
 
+<<<<<<< HEAD
   formatCurrency(x) {
     let formatter = new Intl.NumberFormat('se-SE', { style: 'currency', currency: 'SEK' });
     return formatter.format(x).split(',00').join('');
   }
 
+=======
+>>>>>>> a55a5dd1abf55e59940776f683d615aed1b6fa7a
   render() {
     return /*html*/ `
     
