@@ -678,6 +678,32 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
+
+    hr.new1 {
+        border-top: 1px solid #31B0D5;
+        margin-bottom: 80px;
+        width: 100px;
+        left: -1580;
+        padding-left: 450px !important;
+        padding-right: 450px !important;
+        float: left;
+    }
+    
+}
+
+//responsiveness below 1199px
+@media screen and (max-width: 1086px) {
+    
+    hr.new1 {
+        border-top: 1px solid #31B0D5;
+        margin-bottom: 80px;
+        width: 100px;
+        left: -1580;
+        padding-left: 420px !important;
+        padding-right: 420px !important;
+        float: left;
+    }
+    
 }
 
 //responsiveness below 991px
@@ -698,6 +724,30 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
+
+    hr.new1 {
+        border-top: 1px solid #31B0D5;
+        margin-bottom: 80px;
+        width: 100px;
+        left: -1580;
+        padding-left: 360px !important;
+        padding-right: 360px !important;
+        float: left;
+    }
+}
+
+//responsiveness below 991px
+@media screen and (max-width: 968px) {
+    
+    hr.new1 {
+        border-top: 1px solid #31B0D5;
+        margin-bottom: 80px;
+        width: 100px;
+        left: -1580;
+        padding-left: 300px !important;
+        padding-right: 300px !important;
+        float: left;
+    }
 }
 
 //responsiveness below 767px
@@ -717,6 +767,30 @@ a {
         font-size: 16px;
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
+    }
+
+    hr.new1 {
+        border-top: 1px solid #31B0D5;
+        margin-bottom: 80px;
+        width: 100px;
+        left: -1580;
+        padding-left: 220px !important;
+        padding-right: 220px !important;
+        float: left;
+    }
+}
+
+//responsiveness below 991px
+@media screen and (max-width: 587px) {
+    
+    hr.new1 {
+        border-top: 1px solid #31B0D5;
+        margin-bottom: 80px;
+        width: 100px;
+        left: -1580;
+        padding-left: 200px !important;
+        padding-right: 200px !important;
+        float: left;
     }
 }
 

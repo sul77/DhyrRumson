@@ -31,12 +31,12 @@ class NyBostadPage extends Base {
               <h1 style="color: #31B0D5;">${house.projectName}</h1>
              
               <div class="nyproduktion-line"></div>
-              <p>${house.description}</p>
-              <p><strong><span style="color: #31B0D5;">Pris:</span> </strong> ${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
-              <p><strong><span style="color: #31B0D5;">Antal Rum:</span> </strong>${house.totalRooms} ROK</p>
-              <p><strong><span style="color: #31B0D5;">Boarea:</span> </strong>${house.livingArea} Kvm</p>
-              <p><strong><span style="color: #31B0D5;">Område:</span> </strong>${house.postalArea}</p>
-              <p><strong><span style="color: #31B0D5;">Kommun:</span> </strong>${house.city}</p>
+              <p><span style="color: black;">${house.description}</span></p>
+              <p><strong><span style="color: #31B0D5;">Pris:</span> </strong> <span style="color: black;">${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</span></p>
+              <p><strong><span style="color: #31B0D5;">Antal Rum:</span> </strong><span style="color: black;">${house.totalRooms} ROK</span></p>
+              <p><strong><span style="color: #31B0D5;">Boarea:</span> </strong><span style="color: black;">${house.livingArea} Kvm</span></p>
+              <p><strong><span style="color: #31B0D5;">Område:</span> </strong><span style="color: black;">${house.postalArea}</span></p>
+              <p><strong><span style="color: #31B0D5;">Kommun:</span> </strong><span style="color: black;">${house.city}</span></p>
               
            </div>
            <div class="col-md-6">
