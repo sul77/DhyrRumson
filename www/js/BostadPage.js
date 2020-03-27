@@ -2,11 +2,21 @@ class BostadPage extends Base {
 
     async mount() {
         this.planskiss = new Planskiss();
+        this.tabs = [
+            'Översikt', 'Bilder', 'Planskiss',
+            'Beskrivning', 'Område', 'Visning'
+        ];
+        this.activeTab = 'Översikt';
     }
 
     closeOverlay() {
         app.bostadToShow = false;
         app.render();
+    }
+
+    chooseTab(e) {
+        this.activeTab = e.target.innerHTML;
+        this.render();
     }
 
     render() {
@@ -20,9 +30,9 @@ class BostadPage extends Base {
               <div class="row">
                 <div class="col"> 
                   <img src="/images/BostäderBilder/${this.id}.jpg" alt="..." class="bostad-overlay-main-img">
-                      <!--<div class="CustomTextWindow">
-                         <p> Välskött 1-plansvilla med 1 garage belägen nära både förskola och skola</p>
-                      </div>-->            
+                      <div class="CustomTextWindow">
+                         <p>${this.description}</p>
+                      </div>          
                 </div>
               </div>
               <div class="bostadNavbar">
@@ -32,17 +42,58 @@ class BostadPage extends Base {
                   <li><a href="#">Planskiss</a></li>
                   <li><a href="#">Beskrivning</a></li>
                   <li><a href="#">Område</a></li>
+                <ul click="chooseTab">
+                  ${this.tabs.map(tab => `
+                    <li class="${this.activeTab === tab ? 'active' : ''}"><a href="#">${tab}</a></li>
+                  `)}
                 </ul> 
               </div>
-                <h1>${this.streetName}</h1>
-                 <h4 class="mb-3">${this.city}</h4>
-                  <h4 class="mb-3">${this.streetNumber}</h4>
-                  <h4 class="mb-3">${this.postalArea}</h4>
-                  <h4 class="mb-3">${this.postCode}</h4>
-                  <h4 class="mb-3">${this.country}</h4>
-                  <div id="section1" class="container-fluid">
-                    <h4 class="mb-3">${this.areaDescID}</h4>   
-                  </div> 
+              <div class="container">
+                ${this.activeTab !== 'Översikt' ? '' : `
+                  <div class="row">
+                    <div class="col-12">
+                      <h1>Översikt</h1>
+                      <h3>${app.formatCurrency(this.price)}</h3>
+                      <p>${this.LongDes}</p>
+                    </div>
+                  </div>
+                `}
+                ${this.activeTab !== 'Bilder' ? '' : `
+                  <div class="row">
+                    <div class="col-12">
+                      <h1>Bilder</h1>
+                    </div>
+                  </div>
+                `}
+                ${this.activeTab !== 'Planskiss' ? '' : `
+                  <div class="row">
+                    <div class="col-12">
+                      <h1>Planskiss</h1>
+                    </div>
+                  </div>
+                `}
+                ${this.activeTab !== 'Beskrivning' ? '' : `
+                  <div class="row">
+                    <div class="col-12">
+                      <h1>Beskrivning</h1>
+                    </div>
+                  </div>
+                `}
+                ${this.activeTab !== 'Område' ? '' : `
+                  <div class="row">
+                    <div class="col-12">
+                      <h1>Område</h1>
+                    </div>
+                  </div>
+                `}
+                ${this.activeTab !== 'Visning' ? '' : `
+                  <div class="row">
+                    <div class="col-12">
+                      <h1>Visning</h1>
+                    </div>
+                  </div>
+                `}
+              </div>
             </div>        
         `}
       </div>
