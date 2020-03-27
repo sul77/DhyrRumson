@@ -32,7 +32,6 @@ class BostadPage extends Base {
                   <li><a href="#">Planskiss</a></li>
                   <li><a href="#">Beskrivning</a></li>
                   <li><a href="#">Område</a></li>
-                  <li><a href="#">Visning</a></li>
                 </ul> 
               </div>
                 <h1>${this.streetName}</h1>
