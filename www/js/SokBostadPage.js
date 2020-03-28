@@ -234,30 +234,37 @@ class SokBostadPage extends Base {
               </select>
             </div>
             </div>
-                  <div class="col-sm-6">
-                  <div class="mb-3  mt-3">
+            <div class="col-sm-6">
+            <div class="mb-3  mt-3">
               <label for="lotSizeMax">Tomtarea (max)</label>
               <select class="form-control" id="lotSizeMax">
                 ${this.filter.lotSizeMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
-              </div>
-                <div class="col-sm-6">
-                <div class="mb-3  mt-4">
-            <button type="submit" class="CustomVisaButton">VISA</button>
-            
-          </div>
-          </div>
-          
-                    </div>
-          <div class="col-sm-3">
-                <div class="mb-3  mt-3">
+            </div>
+            <div class="col-sm-6">
+            <div class="mb-3  mt-4">
+              <button type="submit" class="CustomVisaButton">VISA</button>
+            </div>
+            </div>
+        </div>
+
+            <div class="col-sm-3">
+            <div class="mb-3  mt-3">
               <label for="Sortera resultat">Sortera resultat</label>
-              <select class="form-control" id="RoomsMin">
-                ${this.filter.roomsMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              <select class="form-control" id="sortera">
+                ${this.filter.sortera.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
               </select>
             </div>
             </div>
 
+            <div class="col-sm-3">
+            <div class="mb-3  mt-3">
+              <label for="Sortera order">Sortera order</label>
+              <select class="form-control" id="order">
+                ${this.filter.sorteraOrder.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+            </div>
+            </div>
           </div>
           <hr class="new1">
         </form>
