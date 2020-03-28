@@ -269,7 +269,7 @@ class SokBostadPage extends Base {
             <div class="mb-3  mt-3">
               <label for="Sortera order">Sortera order</label>
               <select class="form-control" id="order">
-                ${this.filter.sorteraOrder.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+                ${this.filter.sorteraOrder.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
               </select>
             </div>
             </div>
