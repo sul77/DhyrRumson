@@ -35,6 +35,28 @@ class SokBostadPage extends Base {
         value: "'Lägenhet'"
       }
       ],
+
+      sortera: [{
+        key: 'Price',
+        value: "Price"
+      },
+      {
+        key: 'Rooms',
+        value: "No. of Rooms"
+      },
+      {
+        key: 'Boron',
+        value: "Boron"
+      },
+      {
+        key: 'Address',
+        value: "Street Address"
+      },
+      {
+        key: 'Area',
+        value: "Area"
+      }],
+
       priceMin: this.createList(0, 10000000, 500000, false),
       priceMax: this.createList(0, 10000000, 500000, true),
       roomsMin: this.createList(1, 10, 1, false),
