@@ -155,6 +155,7 @@ class SokBostadPage extends Base {
        AND rent <= ${filter.Rent}
        AND (lotSize >= ${filter.lotSizeMin} AND lotSize <= ${filter.lotSizeMax})
        GROUP BY Housing.id
+       ORDER BY ${filter.sortera} ${filter.order}
     `);
 
     for (let house of this.housing) {
