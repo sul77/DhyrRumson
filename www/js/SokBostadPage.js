@@ -38,23 +38,23 @@ class SokBostadPage extends Base {
 
       sortera: [{
         key: 'Price',
-        value: "Price"
+        value: "price"
       },
       {
-        key: 'Rooms',
-        value: "No. of Rooms"
+        key: 'No. of Rooms',
+        value: "totalRooms"
       },
       {
-        key: 'Boron',
-        value: "Boron"
+        key: 'Boarea',
+        value: "livingArea"
       },
       {
-        key: 'Address',
-        value: "Street Address"
+        key: 'Street Number',
+        value: "streetNumber"
       },
       {
         key: 'Area',
-        value: "Area"
+        value: "postalArea"
       }],
 
       sorteraOrder: [{
