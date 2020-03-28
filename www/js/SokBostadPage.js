@@ -134,7 +134,7 @@ class SokBostadPage extends Base {
     let filter = {};
     for (let element of [...e.target.closest('form').elements]) {
       if (element.id !== '') {
-        if (element.id !== 'Bostadstyp')
+        if (element.id !== 'Bostadstyp' && element.id !== 'sortera' && element.id !== 'order')
           filter[element.id] = Number(element.selectedOptions[0].value);
         else
           filter[element.id] = element.selectedOptions[0].value;
