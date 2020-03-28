@@ -57,6 +57,14 @@ class SokBostadPage extends Base {
         value: "Area"
       }],
 
+      sorteraOrder: [{
+        key: 'Ascending',
+        value: "ASC"
+      }, {
+        key: 'Descending',
+        value: "DESC"
+      }],
+
       priceMin: this.createList(0, 10000000, 500000, false),
       priceMax: this.createList(0, 10000000, 500000, true),
       roomsMin: this.createList(1, 10, 1, false),
