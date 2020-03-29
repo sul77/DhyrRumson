@@ -35,6 +35,36 @@ class SokBostadPage extends Base {
         value: "'Lägenhet'"
       }
       ],
+
+      sortera: [{
+        key: 'Price',
+        value: "price"
+      },
+      {
+        key: 'No. of Rooms',
+        value: "totalRooms"
+      },
+      {
+        key: 'Boarea',
+        value: "livingArea"
+      },
+      {
+        key: 'Street Number',
+        value: "streetNumber"
+      },
+      {
+        key: 'Area',
+        value: "postalArea"
+      }],
+
+      sorteraOrder: [{
+        key: 'Ascending',
+        value: "ASC"
+      }, {
+        key: 'Descending',
+        value: "DESC"
+      }],
+
       priceMin: this.createList(0, 10000000, 500000, false),
       priceMax: this.createList(0, 10000000, 500000, true),
       roomsMin: this.createList(1, 10, 1, false),
@@ -52,6 +82,10 @@ class SokBostadPage extends Base {
     for (let value = start; value <= max; value += counter) {
       data.push(value);
     }
+    // sokBar sets the app.chosenCity and we
+    // just add this to userChoices
+    this.userChoices.chosenCity = app.chosenCity || "";
+    // console.log("this.userChoices", this.userChoices)
 
     if (!sortDescending)
       return data;
@@ -104,7 +138,7 @@ class SokBostadPage extends Base {
     let filter = {};
     for (let element of [...e.target.closest('form').elements]) {
       if (element.id !== '') {
-        if (element.id !== 'Bostadstyp')
+        if (element.id !== 'Bostadstyp' && element.id !== 'sortera' && element.id !== 'order')
           filter[element.id] = Number(element.selectedOptions[0].value);
         else
           filter[element.id] = element.selectedOptions[0].value;
@@ -125,6 +159,7 @@ class SokBostadPage extends Base {
        AND rent <= ${filter.Rent}
        AND (lotSize >= ${filter.lotSizeMin} AND lotSize <= ${filter.lotSizeMax})
        GROUP BY Housing.id
+       ORDER BY ${filter.sortera} ${filter.order}
     `);
 
     for (let house of this.housing) {
@@ -211,23 +246,42 @@ class SokBostadPage extends Base {
               </select>
             </div>
             </div>
-                <div class="col-sm-6">
-                  <div class="mb-3  mt-3">
-                    <label for="lotSizeMax">Tomtarea (max)</label>
-                    <select class="form-control" id="lotSizeMax">
-                    ${this.filter.lotSizeMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+            <div class="col-sm-6">
+            <div class="mb-3  mt-3">
+              <label for="lotSizeMax">Tomtarea (max)</label>
+              <select class="form-control" id="lotSizeMax">
+                ${this.filter.lotSizeMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
             </div>
-                <div class="col-sm-6">
-                <div class="mb-3  mt-4">
-                <button type="submit" class="CustomVisaButton">VISA</button>
+            <div class="col-sm-6">
+            <div class="mb-3  mt-4">
+              <button type="submit" class="CustomVisaButton">VISA</button>
+            </div>
+            </div>
+        </div>
+
+            <div class="col-sm-3">
+            <div class="mb-3  mt-3">
+              <label for="Sortera resultat">Sortera resultat</label>
+              <select class="form-control" id="sortera">
+                ${this.filter.sortera.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
+              </select>
+            </div>
+            </div>
+
+            <div class="col-sm-3">
+            <div class="mb-3  mt-3">
+              <label for="Sortera order">Sortera order</label>
+              <select class="form-control" id="order">
+                ${this.filter.sorteraOrder.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
+              </select>
+            </div>
+            </div>
           </div>
-        </div> 
-      </div>
-           <hr class="new1">
-           </form>
-    
-            ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
+          <hr class="new1">
+        </form>
+        
+        ${this.housing.length === 0 ? 'Inga resultat matchar din sökning...' : this.housing.map(house => /*html*/`
         <div class="row mb-5" house-id="${house.id}" click="showDetails">
           <div class="col-md-6">
             <div class="customImageBostad">
