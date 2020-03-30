@@ -1,7 +1,11 @@
 class SokBostadPage extends Base {
 
   async mount() {
+    let cityList = this.getCities();
+
     this.filter = this.createFilterObject();
+    this.filter.cities = await cityList;
+
     await this.search();
   }
 
@@ -74,7 +78,23 @@ class SokBostadPage extends Base {
       livingAryaMax: this.createList(5, 300, 5, true),
       lotSizeMin: this.createList(0, 700, 100, false),
       lotSizeMax: this.createList(0, 700, 100, true),
+      cities: []
     };
+  }
+
+  async getCities() {
+    let cityList = await sql( /*sql*/ `
+       SELECT DISTINCT city FROM Address ORDER BY city
+    `);
+
+    let a = [];
+    cityList.map(c => a.push("'" + c.city+ "'"));
+    let alla = a.slice(0, -1).join(',') + ', ' + a.slice(-1);
+
+    var data = [{ key: 'Alla', value: alla}]
+    a.map(c => data.push({ key: c.replace("'", '').replace("'", ''), value: c }));
+    
+    return data;
   }
 
   createList(start, max, counter, sortDescending) {
@@ -134,7 +154,7 @@ class SokBostadPage extends Base {
     let filter = {};
     for (let element of [...e.target.closest('form').elements]) {
       if (element.id !== '') {
-        if (element.id !== 'Bostadstyp' && element.id !== 'sortera' && element.id !== 'order')
+        if (element.id !== 'Bostadstyp' && element.id !== 'City' && element.id !== 'sortera' && element.id !== 'order')
           filter[element.id] = Number(element.selectedOptions[0].value);
         else
           filter[element.id] = element.selectedOptions[0].value;
@@ -150,6 +170,7 @@ class SokBostadPage extends Base {
        JOIN HousingImages ON Housing.Id = HousingImages.housingId
        WHERE (price >= ${filter.PriceMin} AND price <= ${filter.PriceMax}) 
        AND type IN (${filter.Bostadstyp})
+       AND Address.city IN (${filter.City})
        AND (livingArea >= ${filter.livingAryaMin} AND livingArea <= ${filter.livingAryaMax})
        AND(totalRooms >= ${filter.RoomsMin} AND totalRooms <= ${filter.RoomsMax}) 
        AND rent <= ${filter.Rent}
@@ -170,6 +191,14 @@ class SokBostadPage extends Base {
       <div route="/sok-bostad" page-title="Sök Bostad">
          <form submit="getFilterHousing">
           <div class="form-group">
+          <div class="col-12">
+          <div class="mb-3  mt-3">
+              <label for="City">Stad</label>
+              <select class="form-control" id="City">
+                ${this.filter.cities.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
+              </select>
+          </div>
+          </div>
           <div class="col-sm-3">
           <div class="mb-3  mt-3">
               <label for="Bostadstyp">Bostadstyp</label>
