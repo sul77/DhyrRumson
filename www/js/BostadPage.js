@@ -116,6 +116,11 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Område</h1>
                     </div>
+                    <div class="col-md-4">
+                    
+                    <p><strong><span style="color: #31B0D5;">${this.description} </span></strong></p>
+                    <p>${this.LongDes}</p>
+                    </div>
                   </div>
                 `}
                 ${this.activeTab !== 'Visning' ? '' : `
