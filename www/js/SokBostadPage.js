@@ -88,12 +88,12 @@ class SokBostadPage extends Base {
     `);
 
     let a = [];
-    cityList.map(c => a.push("'" + c.city+ "'"));
+    cityList.map(c => a.push("'" + c.city + "'"));
     let alla = a.slice(0, -1).join(',') + ', ' + a.slice(-1);
 
-    var data = [{ key: 'Alla', value: alla}]
+    var data = [{ key: 'Alla', value: alla }]
     a.map(c => data.push({ key: c.replace("'", '').replace("'", ''), value: c }));
-    
+
     return data;
   }
 
@@ -324,7 +324,7 @@ class SokBostadPage extends Base {
             <p><strong>Antal Rum:</strong> ${house.totalRooms} RoK</p>
             <p><strong>Boarea:</strong> ${house.livingArea} Kvm</p>
             <p><strong>Område:</strong> ${house.postalArea}</p>
-            <strong>Tomtarea:</strong> ${house.lotSize}
+            <!--<p><strong>Tomtarea:</strong> ${house.lotSize}</p>-->
             <p><strong>Kommun:</strong> ${house.city}</p>
           </div>
         </div>
