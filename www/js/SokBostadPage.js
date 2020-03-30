@@ -149,6 +149,9 @@ class SokBostadPage extends Base {
   }
 
   async getFilterHousing(e) {
+    if (e.type === 'change' && (e.target.id !== 'sortera' && e.target.id !== 'order')) {
+      return
+    }
     e.preventDefault();
 
     let filter = {};
@@ -189,7 +192,7 @@ class SokBostadPage extends Base {
   render() {
     return /*html*/ `
       <div route="/sok-bostad" page-title="Sök Bostad">
-         <form submit="getFilterHousing">
+         <form submit="getFilterHousing" change="getFilterHousing">
           <div class="form-group">
           <div class="col-12">
           <div class="mb-3  mt-3">
