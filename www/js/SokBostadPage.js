@@ -77,6 +77,10 @@ class SokBostadPage extends Base {
             lotSizeMax: this.createList(0, 700, 100, true),
         };
     }
+    // sokBar sets the app.chosenCity and we
+    // just add this to userChoices
+    this.userChoices.chosenCity = app.chosenCity || "";
+    // console.log("this.userChoices", this.userChoices)
 
     createList(start, max, counter, sortDescending) {
         let data = [];
