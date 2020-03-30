@@ -4,37 +4,37 @@ class App extends Base {
 
         await this.sqlQueries();
         this.navBarLinks = [{
-                label: 'Hem',
-                route: '/'
-            },
-            {
-                label: 'Sök bostad',
-                route: '/sok-bostad'
-            },
-            {
-                label: 'Köpa bostad',
-                route: '/kopa-bostad'
-            },
-            {
-                label: 'Sälja bostad',
-                route: '/salja-bostad'
-            },
-            {
-                label: 'Nyproduktion',
-                route: '/Ny-produktion'
-            },
-            {
-                label: 'Våra mäklare',
-                route: '/vara-maklare'
-            },
-            {
-                label: 'Om oss',
-                route: '/Om-Oss'
-            },
-            {
-                label: 'Kontakta oss',
-                route: '/Kontakta-Oss'
-            }
+            label: 'Hem',
+            route: '/'
+        },
+        {
+            label: 'Sök bostad',
+            route: '/sok-bostad'
+        },
+        {
+            label: 'Köpa bostad',
+            route: '/kopa-bostad'
+        },
+        {
+            label: 'Sälja bostad',
+            route: '/salja-bostad'
+        },
+        {
+            label: 'Nyproduktion',
+            route: '/Ny-produktion'
+        },
+        {
+            label: 'Våra mäklare',
+            route: '/vara-maklare'
+        },
+        {
+            label: 'Om oss',
+            route: '/Om-Oss'
+        },
+        {
+            label: 'Kontakta oss',
+            route: '/Kontakta-Oss'
+        }
 
         ];
 
@@ -73,6 +73,8 @@ class App extends Base {
         this.nyDetaljPages = await sql(NyDetaljPage, /*sql*/ `
       SELECT * FROM nyDetaljInfo
     `);
+
+
     }
 
     cleanName(x) {

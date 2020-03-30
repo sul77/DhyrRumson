@@ -28,10 +28,10 @@ class NyBostadPage extends Base {
           <div class="row mb-5">
             <a href="/ny-bostad/${app.cleanName(house.projectName)}">
             <div class="col-md-6 nyproduktion-facts">
-              <h1 style="color: #31B0D5;">${house.projectName}</h1>
+              <h1 style="color: black;">${house.projectName}</h1>
              
               <div class="nyproduktion-line"></div>
-              <p><span style="color: black;">${house.description}</span></p>
+              <h3><span style="color: black;">${house.description}</span></h3>
               <p><strong><span style="color: #31B0D5;">Pris:</span> </strong> <span style="color: black;">${house.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</span></p>
               <p><strong><span style="color: #31B0D5;">Antal Rum:</span> </strong><span style="color: black;">${house.totalRooms} ROK</span></p>
               <p><strong><span style="color: #31B0D5;">Boarea:</span> </strong><span style="color: black;">${house.livingArea} Kvm</span></p>
