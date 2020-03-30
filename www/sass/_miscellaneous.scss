@@ -215,8 +215,12 @@ HEAD .nyproduktion-facts p strong {
     margin-bottom: 0;
     margin-left: 3px;
     margin-right: 3px;
-    height: 45px;
+    height: 48px;
     padding-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
 }
 
 .form-textarea {
@@ -678,7 +682,6 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
-
     hr.new1 {
         border-top: 1px solid #31B0D5;
         margin-bottom: 80px;
@@ -688,12 +691,10 @@ a {
         padding-right: 450px !important;
         float: left;
     }
-    
 }
 
 //responsiveness below 1199px
 @media screen and (max-width: 1086px) {
-    
     hr.new1 {
         border-top: 1px solid #31B0D5;
         margin-bottom: 80px;
@@ -703,7 +704,6 @@ a {
         padding-right: 420px !important;
         float: left;
     }
-    
 }
 
 //responsiveness below 991px
@@ -724,7 +724,6 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
-
     hr.new1 {
         border-top: 1px solid #31B0D5;
         margin-bottom: 80px;
@@ -738,7 +737,6 @@ a {
 
 //responsiveness below 991px
 @media screen and (max-width: 968px) {
-    
     hr.new1 {
         border-top: 1px solid #31B0D5;
         margin-bottom: 80px;
@@ -768,7 +766,6 @@ a {
         transition: transform .2s; //Transition: transform takes 0.2 seconds
         overflow: visible;
     }
-
     hr.new1 {
         border-top: 1px solid #31B0D5;
         margin-bottom: 80px;
@@ -782,7 +779,6 @@ a {
 
 //responsiveness below 991px
 @media screen and (max-width: 587px) {
-    
     hr.new1 {
         border-top: 1px solid #31B0D5;
         margin-bottom: 80px;
@@ -1776,7 +1772,6 @@ hr.new1 {
     .CustomTextWindow {
         display: none;
     }
-    
 }
 
 
@@ -1808,7 +1803,7 @@ hr.new1 {
         border: 0.5px darkgray;
         border-radius: 0%;
         //outline: 0.5px solid #31B0D5;
-       // box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
+        // box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.466);
     }
     hr.new1 {
         border-top: 1px solid #31B0D5;

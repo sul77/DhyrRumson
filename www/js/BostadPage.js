@@ -32,7 +32,8 @@ class BostadPage extends Base {
                   <img src="/images/BostäderBilder/${this.id}.jpg" alt="..." class="bostad-overlay-main-img">
                       <div class="CustomTextWindow">
                          <p>${this.description}</p>
-                      </div>          
+                      </div> 
+                               
                 </div>
               </div>
               <div class="bostadNavbar">
@@ -49,15 +50,40 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Översikt</h1>
                       <h3>${app.formatCurrency(this.price)}</h3>
-                      <p>${this.LongDes}</p>
+                      <div class="col-12">
+                      ${this.LongDes}
+                    </div>
+                      
                     </div>
                   </div>
+                   
+            
+                 <div class="col-sm-3">
+                    <div class="mb-5   mt-5">
+                   <p><strong><span style="color: #31B0D5;">Boarea: </span></strong>${this.livingArea} Kvm</p>
+                   <p><strong><span style="color: #31B0D5;">Antal Rum: </span></strong>${this.totalRooms} ROK</p>
+              </div>
+              </div>
+                <div class="col-sm-3">
+                   <div class="mb-5   mt-5" >
+                   <p><strong><span style="color: #31B0D5;">Pris:</span></strong> ${this.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
+                   <p><strong><span style="color: #31B0D5;">Tillträde:</span> </strong>Q3-Q4-2020</p>
+              </div>
+              </div>
+               <div class="col-sm-3">   
+                <div class="mb-5   mt-5" >
+                   <p><strong><span style="color: #31B0D5;">Område : </span></strong>${this.postalArea} </p>
+                   <p><strong><span style="color: #31B0D5;">Kommun : </span></strong>${this.city} </p>
+              </div>
+              </div>
+              
                 `}
                 ${this.activeTab !== 'Bilder' ? '' : `
                   <div class="row">
                     <div class="col-12">
                       <h1>Bilder</h1>
                     </div>
+                    <img class="img-fluid " src="${this.imageUrls}"> 
                   </div>
                 `}
                 ${this.activeTab !== 'Planskiss' ? '' : `
@@ -65,12 +91,23 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Planskiss</h1>
                     </div>
+
+                    <img class="img-fluid " src="/images/planskiss1.jpg"> 
                   </div>
                 `}
                 ${this.activeTab !== 'Beskrivning' ? '' : `
                   <div class="row">
                     <div class="col-12">
                       <h1>Beskrivning</h1>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-8" style="padding: 5px">
+               <img class="img-fluid " src="${this.imageUrls}" style="height: 300px;
+                   width: 100%" />
+           </div>
+                    <div class="col-md-4">
+                    
+                    <p><strong><span style="color: #31B0D5;">${this.description} </span></strong></p>
+                    <p>${this.LongDes}</p>
                     </div>
                   </div>
                 `}
@@ -79,14 +116,24 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Område</h1>
                     </div>
+                    <div class="col-md-4">
+                    
+                    <p><strong><span style="color: #31B0D5;">${this.description} </span></strong></p>
+                    <p>${this.LongDes}</p>
+                    </div>
                   </div>
                 `}
                 ${this.activeTab !== 'Visning' ? '' : `
                   <div class="row">
+                  
                     <div class="col-12">
                       <h1>Visning</h1>
                     </div>
+                   
                   </div>
+ <p><strong><span style="color: #31B0D5;">Ni är varmt välkommen  till visning.</span></strong> <br></p>
+                    <p><strong><span style="color: #31B0D5;">Visningstid:</span> </strong>2020-05-15</p>
+
                 `}
               </div>
             </div>        
