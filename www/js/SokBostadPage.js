@@ -1,6 +1,5 @@
 class SokBostadPage extends Base {
 
-<<<<<<< HEAD
   async mount() {
     let cityList = this.getCities();
 
@@ -20,67 +19,56 @@ class SokBostadPage extends Base {
     app.bostadToShow = id;
     app.render();
   }
-=======
-    async mount() {
-        this.filter = this.createFilterObject();
-        await this.search();
-    }
->>>>>>> 30e6d2d69d65af2f02aad2d4e6785401768b0079
 
-    showDetails(e) {
-        // find the closest parent element with the attribute house-id
-        let baseEl = e.target.closest('[house-id]');
-        // read the id
-        let id = +baseEl.getAttribute('house-id');
-        // show the correct bostad
-        // (have a look at the code in BostadPage.render)
-        app.bostadToShow = id;
-        app.render();
-    }
+  createFilterObject() {
+    return {
+      typ: [{
+        key: 'Alla',
+        value: "'Villa', 'Radhus', 'Lägenhet'"
+      },
+      {
+        key: 'Villa',
+        value: "'Villa'"
+      },
+      {
+        key: 'Radhus',
+        value: "'Radhus'"
+      },
+      {
+        key: 'Lägenhet',
+        value: "'Lägenhet'"
+      }
+      ],
 
-    createFilterObject() {
-        return {
-            typ: [{
-                    key: 'Alla',
-                    value: "'Villa', 'Radhus', 'Lägenhet'"
-                },
-                {
-                    key: 'Villa',
-                    value: "'Villa'"
-                },
-                {
-                    key: 'Radhus',
-                    value: "'Radhus'"
-                },
-                {
-                    key: 'Lägenhet',
-                    value: "'Lägenhet'"
-                }
-            ],
+      sortera: [{
+        key: 'Price',
+        value: "price"
+      },
+      {
+        key: 'No. of Rooms',
+        value: "totalRooms"
+      },
+      {
+        key: 'Boarea',
+        value: "livingArea"
+      },
+      {
+        key: 'Street Number',
+        value: "streetNumber"
+      },
+      {
+        key: 'Area',
+        value: "postalArea"
+      }],
 
-            sortera: [{
-                    key: 'Price',
-                    value: "price"
-                },
-                {
-                    key: 'No. of Rooms',
-                    value: "totalRooms"
-                },
-                {
-                    key: 'Boarea',
-                    value: "livingArea"
-                },
-                {
-                    key: 'Street Number',
-                    value: "streetNumber"
-                },
-                {
-                    key: 'Area',
-                    value: "postalArea"
-                }
-            ],
+      sorteraOrder: [{
+        key: 'Ascending',
+        value: "ASC"
+      }, {
+        key: 'Descending',
+        value: "DESC"
+      }],
 
-<<<<<<< HEAD
       priceMin: this.createList(0, 10000000, 500000, false),
       priceMax: this.createList(0, 10000000, 500000, true),
       roomsMin: this.createList(1, 10, 1, false),
@@ -113,55 +101,27 @@ class SokBostadPage extends Base {
     let data = [];
     for (let value = start; value <= max; value += counter) {
       data.push(value);
-=======
-            sorteraOrder: [{
-                key: 'Ascending',
-                value: "ASC"
-            }, {
-                key: 'Descending',
-                value: "DESC"
-            }],
-
-            priceMin: this.createList(0, 10000000, 500000, false),
-            priceMax: this.createList(0, 10000000, 500000, true),
-            roomsMin: this.createList(1, 10, 1, false),
-            roomsMax: this.createList(1, 10, 1, true),
-            rent: this.createList(1000, 40000, 1000, true),
-            livingAryaMin: this.createList(5, 300, 5, false),
-            livingAryaMax: this.createList(5, 300, 5, true),
-            lotSizeMin: this.createList(0, 700, 100, false),
-            lotSizeMax: this.createList(0, 700, 100, true),
-        };
->>>>>>> 30e6d2d69d65af2f02aad2d4e6785401768b0079
     }
 
+    if (!sortDescending)
+      return data;
+    else
+      return data.sort(function (a, b) {
+        return b - a
+      });
+  }
 
-    createList(start, max, counter, sortDescending) {
-        let data = [];
-        for (let value = start; value <= max; value += counter) {
-            data.push(value);
-        }
-
-
-        if (!sortDescending)
-            return data;
-        else
-            return data.sort(function(a, b) {
-                return b - a
-            });
+  async search() {
+    this.userChoices = {
+      // t.ex. kvadradmeter, pris etc
+      chosenCity: ''
     }
+    // sokBar sets the app.chosenCity and we
+    // just add this to userChoices
+    this.userChoices.chosenCity = app.chosenCity || "";
+    // console.log("this.userChoices", this.userChoices)
 
-    async search() {
-        this.userChoices = {
-                // t.ex. kvadradmeter, pris etc
-                chosenCity: ''
-            }
-            // sokBar sets the app.chosenCity and we
-            // just add this to userChoices
-        this.userChoices.chosenCity = app.chosenCity || "";
-        // console.log("this.userChoices", this.userChoices)
-
-        this.housing = await sql( /*sql*/ `
+    this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city,
          GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
        FROM Housing, HousingImages, Address
@@ -172,26 +132,25 @@ class SokBostadPage extends Base {
        GROUP BY Housing.id
     `, this.userChoices);
 
-        // console.log("this.housing  (after search in DB)", this.housing)
+    // console.log("this.housing  (after search in DB)", this.housing)
 
-        if (this.housing.length === 0) {
-            setTimeout(function() {
-                app.goto('/');
-            }, 1000);
-        }
-        // convert imageUrls to an array
-        for (let house of this.housing) {
-            house.imageUrls = house.imageUrls.split(',');
-        }
-        this.render();
-
-        // console.log(this.housing)
+    if (this.housing.length === 0) {
+      setTimeout(function () {
+        app.goto('/');
+      }, 1000);
     }
+    // convert imageUrls to an array
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
+    }
+    this.render();
 
-    async getFilterHousing(e) {
-        e.preventDefault();
+    // console.log(this.housing)
+  }
 
-<<<<<<< HEAD
+  async getFilterHousing(e) {
+    e.preventDefault();
+
     let filter = {};
     for (let element of [...e.target.closest('form').elements]) {
       if (element.id !== '') {
@@ -201,21 +160,10 @@ class SokBostadPage extends Base {
           filter[element.id] = element.selectedOptions[0].value;
       }
     }
-=======
-        let filter = {};
-        for (let element of[...e.target.closest('form').elements]) {
-            if (element.id !== '') {
-                if (element.id !== 'Bostadstyp' && element.id !== 'sortera' && element.id !== 'order')
-                    filter[element.id] = Number(element.selectedOptions[0].value);
-                else
-                    filter[element.id] = element.selectedOptions[0].value;
-            }
-        }
->>>>>>> 30e6d2d69d65af2f02aad2d4e6785401768b0079
 
-        console.log('Filter data', filter);
-        this.housing = [];
-        this.housing = await sql( /*sql*/ `
+    console.log('Filter data', filter);
+    this.housing = [];
+    this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city, GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls 
        FROM Housing
        JOIN Address ON Housing.addressId = Address.id
@@ -231,19 +179,18 @@ class SokBostadPage extends Base {
        ORDER BY ${filter.sortera} ${filter.order}
     `);
 
-        for (let house of this.housing) {
-            house.imageUrls = house.imageUrls.split(',');
-        }
-        console.log('Filter result', this.housing)
-        this.render();
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
     }
+    console.log('Filter result', this.housing)
+    this.render();
+  }
 
-    render() {
-            return /*html*/ `
+  render() {
+    return /*html*/ `
       <div route="/sok-bostad" page-title="Sök Bostad">
-        <form submit="getFilterHousing">
+         <form submit="getFilterHousing">
           <div class="form-group">
-<<<<<<< HEAD
           <div class="col-12">
           <div class="mb-3  mt-3">
               <label for="City">Stad</label>
@@ -254,77 +201,74 @@ class SokBostadPage extends Base {
           </div>
           <div class="col-sm-3">
           <div class="mb-3  mt-3">
-=======
-           <div class="col-sm-3">
-            <div class="mb-3  mt-3">
->>>>>>> 30e6d2d69d65af2f02aad2d4e6785401768b0079
               <label for="Bostadstyp">Bostadstyp</label>
               <select class="form-control" id="Bostadstyp">
                 ${this.filter.typ.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
               </select>
           </div>
-        </div>
-       <div class="col-sm-3">
+          </div>
+          <div class="col-sm-3">
           <div class="mb-3  mt-3">
-            <label for="PriceMin">Pris (min)</label>
+              <label for="PriceMin">Pris (min)</label>
               <select class="form-control" id="PriceMin">
                 ${this.filter.priceMin.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
               </select>
-        </div>
-      </div>
-          <div class="col-sm-3">
+          </div>
+          </div>
+            <div class="col-sm-3">
             <div class="mb-3  mt-3">
-               <label for="PriceMax">Pris (max)</label>
-               <select class="form-control" id="PriceMax">
+              <label for="PriceMax">Pris (max)</label>
+              <select class="form-control" id="PriceMax">
                 ${this.filter.priceMax.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
-            </select>
-           </div>
-          </div>
-               <div class="col-sm-3">
-                 <div class="mb-3  mt-3">
-                    <label for="Rent">Avgift (max)</label>
-                    <select class="form-control" id="Rent">
-                    ${this.filter.rent.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
               </select>
             </div>
-          </div>
+            </div>
+
               <div class="col-sm-3">
+              <div class="mb-3  mt-3">
+              <label for="Rent">Avgift (max)</label>
+              <select class="form-control" id="Rent">
+                ${this.filter.rent.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
+              </select>
+          </div>
+          </div>
+                <div class="col-sm-3">
                 <div class="mb-3  mt-3">
-                   <label for="RoomsMin">Rum (min)</label>
-                   <select class="form-control" id="RoomsMin">
-                  ${this.filter.roomsMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              <label for="RoomsMin">Rum (min)</label>
+              <select class="form-control" id="RoomsMin">
+                ${this.filter.roomsMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+            </div>
+            </div>
+                  <div class="col-sm-3">
+                  <div class="mb-3  mt-3">
+              <label for="RoomsMax">Rum (max)</label>
+              <select class="form-control" id="RoomsMax">
+                ${this.filter.roomsMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
             </div>
             </div>
                 <div class="col-sm-3">
-                  <div class="mb-3  mt-3">
-                     <label for="RoomsMax">Rum (max)</label>
-                     <select class="form-control" id="RoomsMax">
-                     ${this.filter.roomsMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+                <div class="mb-3  mt-3">
+              <label for="livingAryaMin">Boarea (min)</label>
+              <select class="form-control" id="livingAryaMin">
+                ${this.filter.livingAryaMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
-            </div>
+          </div>
           </div>
                 <div class="col-sm-3">
                   <div class="mb-3  mt-3">
-                      <label for="livingAryaMin">Boarea (min)</label>
-                      <select class="form-control" id="livingAryaMin">
-                      ${this.filter.livingAryaMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
-              </select>
-          </div>
-        </div>
-              <div class="col-sm-3">
-                <div class="mb-3  mt-3">
-                   <label for="livingAryaMax">Boarea (max)</label>
-                   <select class="form-control" id="livingAryaMax">
-                   ${this.filter.livingAryaMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              <label for="livingAryaMax">Boarea (max)</label>
+              <select class="form-control" id="livingAryaMax">
+                ${this.filter.livingAryaMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
           </div>
           </div>
-              <div class="col-sm-6">
+                 <div class="col-sm-6">
                   <div class="mb-3  mt-3">
-                    <label for="lotSizeMin">Tomtarea (min)</label>
-                    <select class="form-control" id="lotSizeMin">
-                    ${this.filter.lotSizeMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              <label for="lotSizeMin">Tomtarea (min)</label>
+              <select class="form-control" id="lotSizeMin">
+                ${this.filter.lotSizeMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
             </div>
             </div>
