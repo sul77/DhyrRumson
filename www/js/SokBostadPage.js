@@ -182,6 +182,7 @@ class SokBostadPage extends Base {
        AND(totalRooms >= ${filter.RoomsMin} AND totalRooms <= ${filter.RoomsMax}) 
        AND rent <= ${filter.Rent}
        AND (lotSize >= ${filter.lotSizeMin} AND lotSize <= ${filter.lotSizeMax})
+       AND Housing.nyProduktion = 0
        GROUP BY Housing.id
        ORDER BY ${filter.sortera} ${filter.order}
     `);
