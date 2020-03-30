@@ -59,7 +59,8 @@ class SokBostadPage extends Base {
       {
         key: 'Område',
         value: "postalArea"
-      }],
+      }
+      ],
 
       sorteraOrder: [{
         key: 'Stigande',
@@ -91,8 +92,14 @@ class SokBostadPage extends Base {
     cityList.map(c => a.push("'" + c.city + "'"));
     let alla = a.slice(0, -1).join(',') + ', ' + a.slice(-1);
 
-    var data = [{ key: 'Alla', value: alla }]
-    a.map(c => data.push({ key: c.replace("'", '').replace("'", ''), value: c }));
+    var data = [{
+      key: 'Alla',
+      value: alla
+    }]
+    a.map(c => data.push({
+      key: c.replace("'", '').replace("'", ''),
+      value: c
+    }));
 
     return data;
   }
@@ -178,6 +185,7 @@ class SokBostadPage extends Base {
        AND(totalRooms >= ${filter.RoomsMin} AND totalRooms <= ${filter.RoomsMax}) 
        AND rent <= ${filter.Rent}
        AND (lotSize >= ${filter.lotSizeMin} AND lotSize <= ${filter.lotSizeMax})
+       AND Housing.nyProduktion = 0
        GROUP BY Housing.id
        ORDER BY ${filter.sortera} ${filter.order}
     `);
