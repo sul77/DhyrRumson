@@ -96,7 +96,7 @@ class App extends Base {
             style: 'currency',
             currency: 'SEK'
         });
-        return formatter.format(x).split(',00').join('');
+        return formatter.format(x).split('.00').join('');
     }
 
     render() {
