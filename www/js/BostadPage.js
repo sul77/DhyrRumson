@@ -32,7 +32,8 @@ class BostadPage extends Base {
                   <img src="/images/BostäderBilder/${this.id}.jpg" alt="..." class="bostad-overlay-main-img">
                       <div class="CustomTextWindow">
                          <p>${this.description}</p>
-                      </div>          
+                      </div> 
+                               
                 </div>
               </div>
               <div class="bostadNavbar">
@@ -52,12 +53,33 @@ class BostadPage extends Base {
                       <p>${this.LongDes}</p>
                     </div>
                   </div>
+                   
+             <div class="col-sm-3">   
+                <div class="mb-5   mt-5" >
+                   <p><strong><span style="color: #31B0D5;">Område : </span></strong>${this.postalArea} </p>
+                   <p><strong><span style="color: #31B0D5;">Kommun : </span></strong>${this.city} </p>
+              </div>
+              </div>
+                 <div class="col-sm-3">
+                    <div class="mb-5   mt-5">
+                   <p><strong><span style="color: #31B0D5;">Boarea: </span></strong>${this.livingArea} Kvm</p>
+                   <p><strong><span style="color: #31B0D5;">Antal Rum: </span></strong>${this.totalRooms} ROK</p>
+              </div>
+              </div>
+                <div class="col-sm-3">
+                   <div class="mb-5   mt-5" >
+                   <p><strong><span style="color: #31B0D5;">Pris:</span></strong> ${this.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} kr</p>
+                   <p><strong><span style="color: #31B0D5;">Tillträde:</span> </strong>Q3-Q4-2020</p>
+              </div>
+              </div>
+              
                 `}
                 ${this.activeTab !== 'Bilder' ? '' : `
                   <div class="row">
                     <div class="col-12">
                       <h1>Bilder</h1>
                     </div>
+                    <img class="img-fluid " src="${this.imageUrls}"> 
                   </div>
                 `}
                 ${this.activeTab !== 'Planskiss' ? '' : `
@@ -65,6 +87,8 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Planskiss</h1>
                     </div>
+
+                    <img class="img-fluid " src="/images/planskiss1.jpg"> 
                   </div>
                 `}
                 ${this.activeTab !== 'Beskrivning' ? '' : `
@@ -72,6 +96,8 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Beskrivning</h1>
                     </div>
+                    <p>${this.description}</p>
+                    <p>${this.LongDes}</p>
                   </div>
                 `}
                 ${this.activeTab !== 'Område' ? '' : `
@@ -86,6 +112,7 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Visning</h1>
                     </div>
+                    <p><strong><span style="color: #31B0D5;">Visningstid:</span> </strong>Q3-Q4-2020</p>
                   </div>
                 `}
               </div>
