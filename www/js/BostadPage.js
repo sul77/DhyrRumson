@@ -129,9 +129,11 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Visning</h1>
                     </div>
-                    <p><strong><span style="color: #31B0D5;">Ni är varmt välkommen  till visning.</span></strong> </p><br>
-                    <p><strong><span style="color: #31B0D5;">Visningstid:</span> </strong>2020-05-15</p>
+                   
                   </div>
+ <p><strong><span style="color: #31B0D5;">Ni är varmt välkommen  till visning.</span></strong> <br></p>
+                    <p><strong><span style="color: #31B0D5;">Visningstid:</span> </strong>2020-05-15</p>
+
                 `}
               </div>
             </div>        
