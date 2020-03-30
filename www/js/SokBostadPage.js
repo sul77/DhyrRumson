@@ -37,11 +37,11 @@ class SokBostadPage extends Base {
       ],
 
       sortera: [{
-        key: 'Price',
+        key: 'Pris',
         value: "price"
       },
       {
-        key: 'No. of Rooms',
+        key: 'Antal Rum',
         value: "totalRooms"
       },
       {
@@ -49,19 +49,19 @@ class SokBostadPage extends Base {
         value: "livingArea"
       },
       {
-        key: 'Street Number',
+        key: 'Gatu nummer',
         value: "streetNumber"
       },
       {
-        key: 'Area',
+        key: 'Område',
         value: "postalArea"
       }],
 
       sorteraOrder: [{
-        key: 'Ascending',
+        key: 'Stigande',
         value: "ASC"
       }, {
-        key: 'Descending',
+        key: 'Fallande',
         value: "DESC"
       }],
 
