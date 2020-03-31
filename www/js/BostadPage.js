@@ -84,6 +84,16 @@ class BostadPage extends Base {
                       <h1>Bilder</h1>
                     </div>
                     <img class="img-fluid " src="${this.imageUrls}"> 
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior1.jpg">
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior2.jpg"> 
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior3.jpg"> 
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior4.jpg"> 
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior5.jpg"> 
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior6.jpg">
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior7.jpg"> 
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior8.jpg"> 
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior9.jpg"> 
+                    <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior10.jpg"> 
                   </div>
                 `}
                 ${this.activeTab !== 'Planskiss' ? '' : `
