@@ -100,8 +100,7 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Planskiss</h1>
                     </div>
-
-                    <img class="img-fluid " src="/images/planskiss1.jpg"> 
+                     <img class="img-fluid " src="/images/VanligaBostäder/Planskiss/Planskiss${this.id}.jpg"> 
                   </div>
                 `}
                 ${this.activeTab !== 'Beskrivning' ? '' : `
