@@ -83,7 +83,6 @@ class BostadPage extends Base {
                     <div class="col-12">
                       <h1>Bilder</h1>
                     </div>
-                    <img class="img-fluid " src="${this.imageUrls}"> 
                     <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior1.jpg">
                     <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior2.jpg"> 
                     <img class="img-fluid " src="/images/VanligaBostäder/Interior/VanligBostad${this.id}Interior/VanligBostad${this.id}Interior3.jpg"> 
