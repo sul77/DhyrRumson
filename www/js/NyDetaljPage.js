@@ -41,7 +41,7 @@ class NyDetaljPage extends Base {
                    <div class="col-md-6">
                       <div class="mt-5 mb-5">
                           <div class="CustomKontaktaOss"style="text-align:left; display:block">
-                              <h1><span style="color: #31B0D5;"> Om du har fler funderingar tveka inte att kontakta oss</span></h1>  
+                              <h2><span style="color: #31B0D5;"> Om du har fler funderingar tveka inte att kontakta oss</span></h2>  
                         </div> 
                     </div>
                  </div>
