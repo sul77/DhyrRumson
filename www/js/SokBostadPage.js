@@ -1,110 +1,134 @@
 class SokBostadPage extends Base {
 
-    async mount() {
-        this.filter = this.createFilterObject();
-        await this.search();
+  async mount() {
+    let cityList = this.getCities();
+
+    this.filter = this.createFilterObject();
+    this.filter.cities = await cityList;
+
+    await this.search();
+  }
+
+  showDetails(e) {
+    // find the closest parent element with the attribute house-id
+    let baseEl = e.target.closest('[house-id]');
+    // read the id
+    let id = +baseEl.getAttribute('house-id');
+    // show the correct bostad
+    // (have a look at the code in BostadPage.render)
+    app.bostadToShow = id;
+    app.render();
+  }
+
+  createFilterObject() {
+    return {
+      typ: [{
+        key: 'Alla',
+        value: "'Villa', 'Radhus', 'Lägenhet'"
+      },
+      {
+        key: 'Villa',
+        value: "'Villa'"
+      },
+      {
+        key: 'Radhus',
+        value: "'Radhus'"
+      },
+      {
+        key: 'Lägenhet',
+        value: "'Lägenhet'"
+      }
+      ],
+
+      sortera: [{
+        key: 'Pris',
+        value: "price"
+      },
+      {
+        key: 'Antal Rum',
+        value: "totalRooms"
+      },
+      {
+        key: 'Boarea',
+        value: "livingArea"
+      },
+      {
+        key: 'Gatu nummer',
+        value: "streetNumber"
+      },
+      {
+        key: 'Område',
+        value: "postalArea"
+      }
+      ],
+
+      sorteraOrder: [{
+        key: 'Stigande',
+        value: "ASC"
+      }, {
+        key: 'Fallande',
+        value: "DESC"
+      }],
+
+      priceMin: this.createList(0, 10000000, 500000, false),
+      priceMax: this.createList(0, 10000000, 500000, true),
+      roomsMin: this.createList(1, 10, 1, false),
+      roomsMax: this.createList(1, 10, 1, true),
+      rent: this.createList(1000, 40000, 1000, true),
+      livingAryaMin: this.createList(5, 300, 5, false),
+      livingAryaMax: this.createList(5, 300, 5, true),
+      lotSizeMin: this.createList(0, 700, 100, false),
+      lotSizeMax: this.createList(0, 700, 100, true),
+      cities: []
+    };
+  }
+
+  async getCities() {
+    let cityList = await sql( /*sql*/ `
+       SELECT DISTINCT city FROM Address ORDER BY city
+    `);
+
+    let a = [];
+    cityList.map(c => a.push("'" + c.city + "'"));
+    let alla = a.slice(0, -1).join(',') + ', ' + a.slice(-1);
+
+    var data = [{
+      key: 'Alla',
+      value: alla
+    }]
+    a.map(c => data.push({
+      key: c.replace("'", '').replace("'", ''),
+      value: c
+    }));
+
+    return data;
+  }
+
+  createList(start, max, counter, sortDescending) {
+    let data = [];
+    for (let value = start; value <= max; value += counter) {
+      data.push(value);
     }
 
-    showDetails(e) {
-        // find the closest parent element with the attribute house-id
-        let baseEl = e.target.closest('[house-id]');
-        // read the id
-        let id = +baseEl.getAttribute('house-id');
-        // show the correct bostad
-        // (have a look at the code in BostadPage.render)
-        app.bostadToShow = id;
-        app.render();
+    if (!sortDescending)
+      return data;
+    else
+      return data.sort(function (a, b) {
+        return b - a
+      });
+  }
+
+  async search() {
+    this.userChoices = {
+      // t.ex. kvadradmeter, pris etc
+      chosenCity: ''
     }
+    // sokBar sets the app.chosenCity and we
+    // just add this to userChoices
+    this.userChoices.chosenCity = app.chosenCity || "";
+    // console.log("this.userChoices", this.userChoices)
 
-    createFilterObject() {
-        return {
-            typ: [{
-                    key: 'Alla',
-                    value: "'Villa', 'Radhus', 'Lägenhet'"
-                },
-                {
-                    key: 'Villa',
-                    value: "'Villa'"
-                },
-                {
-                    key: 'Radhus',
-                    value: "'Radhus'"
-                },
-                {
-                    key: 'Lägenhet',
-                    value: "'Lägenhet'"
-                }
-            ],
-
-            sortera: [{
-                    key: 'Price',
-                    value: "price"
-                },
-                {
-                    key: 'No. of Rooms',
-                    value: "totalRooms"
-                },
-                {
-                    key: 'Boarea',
-                    value: "livingArea"
-                },
-                {
-                    key: 'Street Number',
-                    value: "streetNumber"
-                },
-                {
-                    key: 'Area',
-                    value: "postalArea"
-                }
-            ],
-
-            sorteraOrder: [{
-                key: 'Ascending',
-                value: "ASC"
-            }, {
-                key: 'Descending',
-                value: "DESC"
-            }],
-
-            priceMin: this.createList(0, 10000000, 500000, false),
-            priceMax: this.createList(0, 10000000, 500000, true),
-            roomsMin: this.createList(1, 10, 1, false),
-            roomsMax: this.createList(1, 10, 1, true),
-            rent: this.createList(1000, 40000, 1000, true),
-            livingAryaMin: this.createList(5, 300, 5, false),
-            livingAryaMax: this.createList(5, 300, 5, true),
-            lotSizeMin: this.createList(0, 700, 100, false),
-            lotSizeMax: this.createList(0, 700, 100, true),
-        };
-    }
-
-
-    createList(start, max, counter, sortDescending) {
-        let data = [];
-        for (let value = start; value <= max; value += counter) {
-            data.push(value);
-        }
-
-
-        if (!sortDescending)
-            return data;
-        else
-            return data.sort(function(a, b) {
-                return b - a
-            });
-    }
-
-    async search() {
-        this.userChoices = {
-                // t.ex. kvadradmeter, pris etc
-                chosenCity: ''
-            }
-            // sokBar sets the app.chosenCity and we
-            // just add this to userChoices
-        this.userChoices.chosenCity = app.chosenCity || "";
-        // console.log("this.userChoices", this.userChoices)
-
-        this.housing = await sql( /*sql*/ `
+    this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city,
          GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls
        FROM Housing, HousingImages, Address
@@ -115,133 +139,147 @@ class SokBostadPage extends Base {
        GROUP BY Housing.id
     `, this.userChoices);
 
-        // console.log("this.housing  (after search in DB)", this.housing)
+    // console.log("this.housing  (after search in DB)", this.housing)
 
-        if (this.housing.length === 0) {
-            setTimeout(function() {
-                app.goto('/');
-            }, 1000);
-        }
-        // convert imageUrls to an array
-        for (let house of this.housing) {
-            house.imageUrls = house.imageUrls.split(',');
-        }
-        this.render();
+    if (this.housing.length === 0) {
+      setTimeout(function () {
+        app.goto('/');
+      }, 1000);
+    }
+    // convert imageUrls to an array
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
+    }
+    this.render();
 
-        // console.log(this.housing)
+    // console.log(this.housing)
+  }
+
+  async getFilterHousing(e) {
+    if (e.type === 'change' && (e.target.id !== 'sortera' && e.target.id !== 'order')) {
+      return
+    }
+    e.preventDefault();
+
+    let filter = {};
+    for (let element of [...e.target.closest('form').elements]) {
+      if (element.id !== '') {
+        if (element.id !== 'Bostadstyp' && element.id !== 'City' && element.id !== 'sortera' && element.id !== 'order')
+          filter[element.id] = Number(element.selectedOptions[0].value);
+        else
+          filter[element.id] = element.selectedOptions[0].value;
+      }
     }
 
-    async getFilterHousing(e) {
-        e.preventDefault();
-
-        let filter = {};
-        for (let element of[...e.target.closest('form').elements]) {
-            if (element.id !== '') {
-                if (element.id !== 'Bostadstyp' && element.id !== 'sortera' && element.id !== 'order')
-                    filter[element.id] = Number(element.selectedOptions[0].value);
-                else
-                    filter[element.id] = element.selectedOptions[0].value;
-            }
-        }
-
-        console.log('Filter data', filter);
-        this.housing = [];
-        this.housing = await sql( /*sql*/ `
+    console.log('Filter data', filter);
+    this.housing = [];
+    this.housing = await sql( /*sql*/ `
        SELECT Housing.*, Address.postalArea AS postalArea, Address.city AS city, GROUP_CONCAT(HousingImages.ordinaryUrl) AS imageUrls 
        FROM Housing
        JOIN Address ON Housing.addressId = Address.id
        JOIN HousingImages ON Housing.Id = HousingImages.housingId
        WHERE (price >= ${filter.PriceMin} AND price <= ${filter.PriceMax}) 
        AND type IN (${filter.Bostadstyp})
+       AND Address.city IN (${filter.City})
        AND (livingArea >= ${filter.livingAryaMin} AND livingArea <= ${filter.livingAryaMax})
        AND(totalRooms >= ${filter.RoomsMin} AND totalRooms <= ${filter.RoomsMax}) 
        AND rent <= ${filter.Rent}
        AND (lotSize >= ${filter.lotSizeMin} AND lotSize <= ${filter.lotSizeMax})
+       AND Housing.nyProduktion = 0
        GROUP BY Housing.id
        ORDER BY ${filter.sortera} ${filter.order}
     `);
 
-        for (let house of this.housing) {
-            house.imageUrls = house.imageUrls.split(',');
-        }
-        console.log('Filter result', this.housing)
-        this.render();
+    for (let house of this.housing) {
+      house.imageUrls = house.imageUrls.split(',');
     }
+    console.log('Filter result', this.housing)
+    this.render();
+  }
 
-    render() {
-            return /*html*/ `
+  render() {
+    return /*html*/ `
       <div route="/sok-bostad" page-title="Sök Bostad">
-        <form submit="getFilterHousing">
+         <form submit="getFilterHousing" change="getFilterHousing">
           <div class="form-group">
-           <div class="col-sm-3">
-            <div class="mb-3  mt-3">
+          <div class="col-12">
+          <div class="mb-3  mt-3">
+              <label for="City">Stad</label>
+              <select class="form-control" id="City">
+                ${this.filter.cities.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
+              </select>
+          </div>
+          </div>
+          <div class="col-sm-3">
+          <div class="mb-3  mt-3">
               <label for="Bostadstyp">Bostadstyp</label>
               <select class="form-control" id="Bostadstyp">
                 ${this.filter.typ.map(e => /*html*/` <option value="${e.value}">${e.key}</option> `)}
               </select>
           </div>
-        </div>
-       <div class="col-sm-3">
+          </div>
+          <div class="col-sm-3">
           <div class="mb-3  mt-3">
-            <label for="PriceMin">Pris (min)</label>
+              <label for="PriceMin">Pris (min)</label>
               <select class="form-control" id="PriceMin">
                 ${this.filter.priceMin.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
               </select>
-        </div>
-      </div>
-          <div class="col-sm-3">
+          </div>
+          </div>
+            <div class="col-sm-3">
             <div class="mb-3  mt-3">
-               <label for="PriceMax">Pris (max)</label>
-               <select class="form-control" id="PriceMax">
+              <label for="PriceMax">Pris (max)</label>
+              <select class="form-control" id="PriceMax">
                 ${this.filter.priceMax.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
-            </select>
-           </div>
-          </div>
-               <div class="col-sm-3">
-                 <div class="mb-3  mt-3">
-                    <label for="Rent">Avgift (max)</label>
-                    <select class="form-control" id="Rent">
-                    ${this.filter.rent.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
               </select>
             </div>
-          </div>
+            </div>
+
               <div class="col-sm-3">
+              <div class="mb-3  mt-3">
+              <label for="Rent">Avgift (max)</label>
+              <select class="form-control" id="Rent">
+                ${this.filter.rent.map(e => /*html*/` <option value="${e}">${e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</option> `)}
+              </select>
+          </div>
+          </div>
+                <div class="col-sm-3">
                 <div class="mb-3  mt-3">
-                   <label for="RoomsMin">Rum (min)</label>
-                   <select class="form-control" id="RoomsMin">
-                  ${this.filter.roomsMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              <label for="RoomsMin">Rum (min)</label>
+              <select class="form-control" id="RoomsMin">
+                ${this.filter.roomsMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              </select>
+            </div>
+            </div>
+                  <div class="col-sm-3">
+                  <div class="mb-3  mt-3">
+              <label for="RoomsMax">Rum (max)</label>
+              <select class="form-control" id="RoomsMax">
+                ${this.filter.roomsMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
             </div>
             </div>
                 <div class="col-sm-3">
-                  <div class="mb-3  mt-3">
-                     <label for="RoomsMax">Rum (max)</label>
-                     <select class="form-control" id="RoomsMax">
-                     ${this.filter.roomsMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+                <div class="mb-3  mt-3">
+              <label for="livingAryaMin">Boarea (min)</label>
+              <select class="form-control" id="livingAryaMin">
+                ${this.filter.livingAryaMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
-            </div>
+          </div>
           </div>
                 <div class="col-sm-3">
                   <div class="mb-3  mt-3">
-                      <label for="livingAryaMin">Boarea (min)</label>
-                      <select class="form-control" id="livingAryaMin">
-                      ${this.filter.livingAryaMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
-              </select>
-          </div>
-        </div>
-              <div class="col-sm-3">
-                <div class="mb-3  mt-3">
-                   <label for="livingAryaMax">Boarea (max)</label>
-                   <select class="form-control" id="livingAryaMax">
-                   ${this.filter.livingAryaMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              <label for="livingAryaMax">Boarea (max)</label>
+              <select class="form-control" id="livingAryaMax">
+                ${this.filter.livingAryaMax.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
           </div>
           </div>
-              <div class="col-sm-6">
+                 <div class="col-sm-6">
                   <div class="mb-3  mt-3">
-                    <label for="lotSizeMin">Tomtarea (min)</label>
-                    <select class="form-control" id="lotSizeMin">
-                    ${this.filter.lotSizeMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
+              <label for="lotSizeMin">Tomtarea (min)</label>
+              <select class="form-control" id="lotSizeMin">
+                ${this.filter.lotSizeMin.map(e => /*html*/` <option value="${e}">${e}</option> `)}
               </select>
             </div>
             </div>

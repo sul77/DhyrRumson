@@ -1942,3 +1942,19 @@ hr.new1 {
 }
 
 //go-top button css ends
+
+.active{
+
+    transition: transform .2s;
+    transform: scale(1.1);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.185);
+    
+}
+.ignore-css .active{ 
+    
+    transition: none;
+    transform: none;
+    box-shadow: none;
+
+}
+

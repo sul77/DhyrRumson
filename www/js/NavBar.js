@@ -11,9 +11,11 @@ class NavBar extends Base {
   render() {
     return /*html*/`
       <div class="topnav" id="myTopnav">
+      <div class="ignore-css">
         <a class="navbar-brand" href="/">
          <img src='../images/logo.png' alt="Mäkar" height="42" style="margin-top:-10px;">
         </a>
+      </div>
         ${this.links.map(link =>/*html*/`
           <a class="nav-link" href="${link.route}">
             ${link.label}
